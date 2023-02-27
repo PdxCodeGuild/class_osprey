@@ -59,7 +59,6 @@ There are several graphical interfaces to Git. You can edit files directly on Gi
 - [git tutorial](https://git-scm.com/docs/gittutorial/)
 - [bitbucket git tutorial](https://www.atlassian.com/git/tutorials)
 - [git cheat sheet 1](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
-- [git cheat sheet 2](file:///C:/Users/flux/Downloads/SWTM-2088_Atlassian-Git-Cheatsheet.pdf)
 - [super simple git guide](https://rogerdudler.github.io/git-guide/)
 
 

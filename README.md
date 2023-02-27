@@ -3,7 +3,7 @@
 Repo for the PDX Code Guild Intensive Python/JavaScript Fullstack Bootcamp starting 2/27/2023
 
 Class is held from February 27, 2023 to June 9, 2023,
-M-F 9:30 a.m. – 4: pm
+M-F 9:30 a.m. – 4:30 p.m.
 
 ### Holidays
 
@@ -16,11 +16,11 @@ M-F 9:30 a.m. – 4: pm
 
   - danny@pdxcodeguild.com
 
-- Gage Liebl, TA
 
 ## Capstone Dates:
 
 Capstone proposal due: May 17, 2023 (tentative)
+
 Presentation Day: June 9, 2023
 
 <!-- 

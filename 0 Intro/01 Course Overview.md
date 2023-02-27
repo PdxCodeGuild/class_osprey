@@ -26,7 +26,7 @@
 
 - Practical knowledge of Python, HTML, CSS, JavaScript and Django
 - Theoretical knowledge of the fundamental concepts of programming
-- General knowledge of computer hardware, networking, and professional programming
+- General knowledge of computer hardware, and professional programming
 - Habits and skills that enable programming - source control, testing, debugging, etc
 - Growth mentality, the ability to self-teach, the ability to reason through problems on your own
 - Communication skills, the ability to explain complex technical concepts in simple terms
@@ -75,7 +75,7 @@ This course is a kick-start to learning web development, it is immersive and pra
 
 ## Submitting Lab Solutions
 
-Students will submit lab solutions by using `commit` and `push` to a repository and creating a link in the `README.md` to them.
+Students will submit lab solutions by using `commit` and `push` to a repository.
 
 ## Healthy Habits
 
@@ -222,7 +222,7 @@ For [mob programming](https://en.wikipedia.org/wiki/Mob_programming), one studen
 
 ### Student Presentations
 
-At the end of each section, you'll give a presentation on an assignment of your choice. This is practice for your capstone presentation which you'll give on the last day of class.
+At the end of each section, you'll give a presentation on your mini-capstone. This is practice for your capstone presentation which you'll give on the last day of class.
 
 These presentations help you practice communicating technical topics in English. Being able to speak intelligently about programming is almost as important as programming itself. This skill will allow you to better talk to interviewers, managers, clients, coworkers, and more.
 
@@ -242,8 +242,9 @@ For your capstone presentation, you should plan out what features of your projec
 
 - Week 1, 2, 3, 4: Python
 - Week 5, 6: HTML + CSS + Flask
-- Week 7, 8, 9: Django + Django Rest Framework
+- Week 7, 8, 9: Django
 - Week 9, 10, 11: JavaScript + Vue
+- Week 11.5: Django Rest Framework
 - Week 12, 13, 14: Capstone
 
 A more detailed course timeline with all assignments and due dates can be found in the `README.md`.
@@ -278,7 +279,7 @@ As a member of the PDX Code Community, I agree to the following code of conduct:
 - Respect the personal property of others and the property of PDX Code Guild.
 
 #### Remote students:
-- While attending remotely, students must be present during class. Being present remotely is defined as:
+While attending remotely, students must be present during class. Being present remotely is defined as:
 - Participating via video with your face showing during class time except for short breaks as you would normally have if you were in an in-person classroom.
 - Participating in class discussions.
 - Sharing your screen and code as directed by the instructor.
@@ -324,7 +325,7 @@ We will be using Zoom for holding class. This is the closest we can get to an in
 
 ### Slack
 
-Slack is a chat application. THis is how I will send out quick updates and how you can ask other students and instructors questions. Keep in mind Slack is ephemeral, and messages will disappear after about two weeks.
+Slack is a chat application. This is how I will send out quick updates and how you can ask other students and instructors questions. Keep in mind Slack is ephemeral, and messages will disappear after 90 days.
 
 ### Github
 
