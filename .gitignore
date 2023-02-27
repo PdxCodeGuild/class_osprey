@@ -1,6 +1,5 @@
 secrets.*
 .vscode
-class_otter.code-
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -117,3 +116,6 @@ uploaded_files/
 node_modules
 /code/jeremy_b/to_do/
 *.code-workspace
+
+# notes
+notes/

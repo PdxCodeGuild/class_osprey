@@ -193,7 +193,7 @@ Students will submit lab solutions by using `commit` and `push` to a repository 
 
 ### Lectures & Demonstrations
 
-The purpose of lectures is to introduce and explain a topic. Most lectures are followed by live demonstrations. Please do not  distract yourself during lecture. These will be recorded and posted after class.
+The purpose of lectures is to introduce and explain a topic. Most lectures include live demonstrations. Please do not  distract yourself during lecture.
 
 ### Labs
 
@@ -211,7 +211,7 @@ Don't consider an assignment 'finished' until it's been thoroughly tested. Try m
 
 Once you've finished a lab, or a major portion of a lab, commit and push your work. Unless you have a good reason (building's on fire), only commit working code.
 
-Labs have a soft due date of Friday the week they are assigned, unless otherwised noted by the instructor. They must be completed and turned in 14 days after they are first assigned. If labs are not finished by 14 days after they are first assigned, students will need to meet with the instructor to make an ction plan to get caught up. Failure to make up overdue work may result in academic probation.
+Labs have a soft due date within a few days of when they are assigned, as noted by the instructor. They must be completed and turned in 14 days after they are first assigned. If labs are not finished by 14 days after they are first assigned, students will need to meet with the instructor to make an action plan to get caught up. Failure to make up overdue work may result in academic probation.
 
 ### Pair, Group, & Mob Programming
 
@@ -316,7 +316,7 @@ PDX Code Guild doesn't hold class sessions on the following holidays. Holidays d
 
 ### Contact
 
-You are welcome to email me at any time: [merritt@pdxcodeguild.com](mailto:merritt@pdxcodeguild.com). We will also have a channel on the [PDX Code Guild Slack](https://portlandcodeguild.slack.com/).
+You are welcome to email me at any time: [danny@pdxcodeguild.com](mailto:danny@pdxcodeguild.com). We will also have a channel on the [PDX Code Guild Slack](https://portlandcodeguild.slack.com/).
 
 ### Zoom
 

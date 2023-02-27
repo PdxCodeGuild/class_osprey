@@ -1,34 +1,29 @@
-# YYYY-MM-DD Intensive Python/JavaScript Fullstack Bootcamp
+# 2023-02-27 Intensive Python/JavaScript Fullstack Bootcamp
 
-Repo for the PDX Code Guild Intensive Python/JavaScript Fullstack Bootcamp starting MM/DD/YYYY
+Repo for the PDX Code Guild Intensive Python/JavaScript Fullstack Bootcamp starting 2/27/2023
 
-Class is held from **Month Day, Year to Month Day, Year**
-M-F H:MM am – H:MM pm
+Class is held from February 27, 2023 to June 9, 2023,
+M-F 9:30 a.m. – 4: pm
 
 ### Holidays
 
-- Month Day (Reason)
-- Month Day (Reason)
-- Month Day (Reason)
-- Month Day (Reason)
-- Month Day (Reason)
+- May 29 (Memorial Day)
+- (four more, TBD)
 
 ### Staff
 
-- NAME OF INSTRUCTOR, Instructor
+- Danny Burrow, Instructor
 
-  - NAME@pdxcodeguild.com
+  - danny@pdxcodeguild.com
 
-- NAME OF TA, TA
-
-  - NAME@gmail.com
+- Gage Liebl, TA
 
 ## Capstone Dates:
 
-Capstone proposal due: Month Day, Year  
-Presentation Day: Month Day, Year
+Capstone proposal due: May 17, 2023 (tentative)
+Presentation Day: June 9, 2023
 
-
+<!-- 
 ## Django Labs Assigned:
 
 | Lab   | Name                   | Points Value | Date Assigned | Due Date              | Not Accepted After |
@@ -67,23 +62,24 @@ Presentation Day: Month Day, Year
 | Group | Flask Todos            | 10           | Jun 1st       | Jun 1st               | Jun 15th           |
 | 05    | Flask Redo             | 10           | Jun 2nd       | Jun 6th               | Jun 16th           |
 | 06    | Personal Portfolio     | 20           | Jun 3rd       | Jun 7th               | Jun 17th           |
+ -->
 
 ## Python Labs Assigned:
 
 | Lab   | Name                   | Points Value | Date Assigned | Due Date              | Not Accepted After |
 | ----- | ---------------------- | ------------ | ------------- | --------------------- | ------------------ |
-| 01    | Number To Phrase       | 10           | Apr 27th      | May 2nd               | May 11th           |
-| 02    | Blackjack Advice       | 10           | Apr 28th      | May 2nd               | May 12th           |
-| 03    | Pick 6                 | 10           | Apr 28th      | May 2nd               | May 12th           |
-| 04    | Credit Card Validation | 5            | May 2nd       | May 9th               | May 16th           |
-| 05    | ROT13                  | 5            | May 2nd       | May 9th               | May 16th           |
-| Group | Jackalope              | 10           | May 3rd       | May 3rd               | May 17th           |
-| 06    | ARI                    | 10           | May 4th       | May 9th               | May 18th           |
-| 07    | Contact List           | 25           | May 5th       | May 9th               | May 19th           |
-| 08    | ATM                    | 10           | May 9th       | May 16th              | May 23rd           |
-| 09    | Dad Joke API           | 5            | May 12th      | May 16th              | May 26th           |
-| 10    | Quotes API             | 20           | May 16th      | May 23rd              | May 30th           |
-| 11    | Mini-Capstone          | 30           | May 18th      | May 23rd              | Jun 1st            |
+| 01    | Number To Phrase       | 10           | Feb 28th      | Mar 3nd               | Mar 14th           |
+<!-- | 02    | Blackjack Advice       | 10           | Feb 28th      | Mar 2nd               | Mar 12th           |
+| 03    | Pick 6                 | 10           | Feb 28th      | Mar 2nd               | Mar 12th           |
+| 04    | Credit Card Validation | 5            | Mar 2nd       | Mar 9th               | Mar 16th           |
+| 05    | ROT13                  | 5            | Mar 2nd       | Mar 9th               | Mar 16th           |
+| Group | Jackalope              | 10           | Mar 3rd       | Mar 3rd               | Mar 17th           |
+| 06    | ARI                    | 10           | Mar 4th       | Mar 9th               | Mar 18th           |
+| 07    | Contact List           | 25           | Mar 5th       | Mar 9th               | Mar 19th           |
+| 08    | ATM                    | 10           | Mar 9th       | Mar 16th              | Mar 23rd           |
+| 09    | Dad Joke API           | 5            | Mar 12th      | Mar 16th              | Mar 26th           |
+| 10    | Quotes API             | 20           | Mar 16th      | Mar 23rd              | Mar 30th           |
+| 11    | Mini-Capstone          | 30           | Mar 18th      | Mar 23rd              | Jun 1st            | -->
 
 
 ## Student Presentations
