@@ -29,6 +29,6 @@ elif int(number) == 15:
     print ('fifteen')
 
 elif tens == 1:
-    print(f"{one_dict[number]}teen")
+    print(f"{one_dict[ones]}teen")
 else:
     print(f'{ten_dict[tens]}{one_dict[ones]}')
