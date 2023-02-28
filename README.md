@@ -5,6 +5,9 @@ Repo for the PDX Code Guild Intensive Python/JavaScript Fullstack Bootcamp start
 Class is held from February 27, 2023 to June 9, 2023,
 M-F 9:30 a.m. – 4:30 p.m.
 
+![Osprey](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/OspreyNASA.jpg/640px-OspreyNASA.jpg)
+
+
 ### Holidays
 
 - May 29 (Memorial Day)
