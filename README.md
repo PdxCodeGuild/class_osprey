@@ -23,6 +23,9 @@ Capstone proposal due: May 17, 2023 (tentative)
 
 Presentation Day: June 9, 2023
 
+![Osprey](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/OspreyNASA.jpg/640px-OspreyNASA.jpg)
+
+
 <!-- 
 ## Django Labs Assigned:
 
