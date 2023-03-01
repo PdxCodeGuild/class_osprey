@@ -2,14 +2,10 @@
 # Handle numbers from 100-999.
 
 
-x = 168
-# hundreds_digit =
-# print(hundreds_digit)
-tens_digit = x//10 * 10
-print(tens_digit)
-ones_digit = x%10
-print(ones_digit)
+x = 212
 
+tens_digit = (x%100)//10 *10
+ones_digit = x%10
 
 number_conversion = {
     0: "zero",
@@ -40,30 +36,47 @@ number_conversion = {
     70:"seventy",
     80:"eighty",
     90:"ninty",
-    100:"onehundred",
-    200:'twohundred',
-    300: 'threehundred',
-    400:'fourhundred',
-    500:'fivehundred',
-    600:'sixhundred',
-    700:"sevenhundred",
-    800:'eighthundred',
-    900:"ninehundred",
-
-    
+    # 100:"one hundred",
+    # 200:'two hundred',
+    # 300: 'three hundred',
+    # 400:'four hundred',
+    # 500:'five hundred',
+    # 600:'six hundred',
+    # 700:"seven hundred",
+    # 800:'eight hundred',
+    # 900:"nine hundred",
 }
 
 
-# if x < 9:
-#     print(number_conversion.get(ones_digit))
+if x < 100:
 
-# elif 11 <= x <= 19:
-#     print(number_conversion[x]) 
-# elif ones_digit == 0:
-#     print((number_conversion.get(tens_digit)))
-# elif x> 100:
-#     print(number_conversion.get(hundreds_digit) + ' ' +number_conversion.get(tens_digit) + '-' + (number_conversion.get(ones_digit)))
-# else:
-#     print(number_conversion.get(tens_digit) + '-' + (number_conversion.get(ones_digit)))
+    if x <= 9:
+        print(number_conversion.get(ones_digit))
+
+    elif 11 <= x <= 19:
+        print(number_conversion[x]) 
+
+    elif ones_digit == 0:
+        print((number_conversion.get(tens_digit)))
+    else:
+        print(number_conversion.get(tens_digit)) + ' ' + number_conversion.get(ones_digit)
 
 
+elif x >= 100:
+    tens_digit = (x%100)//10 *10
+    print(f'{number_conversion.get(x//100)}' ' hundred', end=" ")
+
+    if tens_digit == 10:
+        print(f'{number_conversion[ones_digit + tens_digit]}')
+
+    elif 20 <= tens_digit and ones_digit == 0:
+        print(number_conversion.get(tens_digit))
+        
+    else:
+        tens_text = number_conversion.get(tens_digit)
+        if tens_digit == 0:
+            tens_text = ''
+        ones_text = number_conversion.get(ones_digit)
+        if ones_digit == 0:
+            ones_text = ''
+        print(f'{tens_text} {ones_text}')
