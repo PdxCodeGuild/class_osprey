@@ -27,7 +27,7 @@ ones_table = {
 }
 
 tens_table = {
-    0: 'zero',
+    0: '',
     1: 'null',
     2: 'twenty',
     3: 'thirty',
@@ -78,6 +78,6 @@ elif x >= 10 and x <= 19:
 elif x <10:
     print(f'That is a {english_ones}')
 elif x >= 10 and x <100:
-    print(f'That is a {english_tens}{english_ones}')
+    print(f'That is {english_tens}{english_ones}')
 else:
     print(f'That is {english_hundreds}{english_tens}{english_ones}')
