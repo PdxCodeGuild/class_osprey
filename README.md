@@ -71,9 +71,9 @@ Presentation Day: June 9, 2023
 
 | Lab   | Name                   | Points Value | Date Assigned | Due Date              | Not Accepted After |
 | ----- | ---------------------- | ------------ | ------------- | --------------------- | ------------------ |
-| 01    | Number To Phrase       | 10           | Feb 28th      | Mar 3nd               | Mar 14th           |
-<!-- | 02    | Blackjack Advice       | 10           | Feb 28th      | Mar 2nd               | Mar 12th           |
-| 03    | Pick 6                 | 10           | Feb 28th      | Mar 2nd               | Mar 12th           |
+| 01    | Number To Phrase       | 10           | Feb 28th      | Mar 3rd               | Mar 14th           |
+| 02    | Blackjack Advice       | 10           | Feb 28th      | Mar 3rd               | Mar 14th           |
+<!-- | 03    | Pick 6                 | 10           | Feb 28th      | Mar 2nd               | Mar 12th           |
 | 04    | Credit Card Validation | 5            | Mar 2nd       | Mar 9th               | Mar 16th           |
 | 05    | ROT13                  | 5            | Mar 2nd       | Mar 9th               | Mar 16th           |
 | Group | Jackalope              | 10           | Mar 3rd       | Mar 3rd               | Mar 17th           |
