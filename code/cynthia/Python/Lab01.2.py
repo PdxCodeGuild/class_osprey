@@ -2,10 +2,7 @@
 # Handle numbers from 100-999.
 
 
-x = 212
 
-tens_digit = (x%100)//10 *10
-ones_digit = x%10
 
 number_conversion = {
     0: "zero",
@@ -47,6 +44,10 @@ number_conversion = {
     # 900:"nine hundred",
 }
 
+x = 25
+
+tens_digit = (x%100)//10 *10
+ones_digit = x%10
 
 if x < 100:
 
@@ -59,7 +60,7 @@ if x < 100:
     elif ones_digit == 0:
         print((number_conversion.get(tens_digit)))
     else:
-        print(number_conversion.get(tens_digit)) + ' ' + number_conversion.get(ones_digit)
+        print(number_conversion.get(tens_digit) + ' ' + number_conversion.get(ones_digit))
 
 
 elif x >= 100:
