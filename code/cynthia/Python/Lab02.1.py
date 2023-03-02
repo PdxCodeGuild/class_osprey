@@ -11,83 +11,36 @@
 # Print out the current total point value and the advice.
 
 
-# face_cards = {
-#     1: 'A',
-#     10: 'J',
-#     10: 'K',
-#     10:'Q',
-# }
-
-
-
-# print("Choose three cards from options A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, or K ")
-
-# card_1 = int(input("What's your first card? "))
-# card_2 = int(input("What's your second card? "))
-# card_3 = int(input("What's your third card? "))
-
-
-
-# def sum(card_1, card_2, card_3):
-#     sum = card_1 + card_2 + card_3
-#     return sum 
-# # print(sum(card_1, card_2, card_3))
-
-# #all of this works, do not touch
-# if sum(card_1, card_2, card_3) < 17:
-#     print(f"{sum(card_1, card_2, card_3)} Hit")
-
-# elif 17>= sum(card_1, card_2, card_3) < 21:
-#     print(f"{sum(card_1, card_2, card_3)} Stay")
-
-# elif sum(card_1, card_2, card_3) == 21:
-#     print("Blackjack!")
-# else:
-#     print("Already Busted")
-
-
-
-
-
-#################
-#list jkq, if ace add 1, if in face cards add ten, else add int cast 
-#loop over user_input
-#define a hand value
-
-face_cards = ['J', 'Q', 'K']
-# face_cards = 10
-A = 1
-hand_value = 0
+deck = {
+    'A' : 1,
+    'J': 10,
+    'K': 10,
+    'Q': 10,
+    '2':2,
+    '3':3,
+    '4':4,
+    '5':5,
+    '6':6,
+    '7':7,
+    '8':8,
+    '9':9,
+    '10':10,
+}
 
 card_1 = input("What's your first card? ")
 card_2 = input("What's your second card? ")
 card_3 = input("What's your third card? ")
 
-user_input = card_1, card_2, card_3
-
-while A in user_input:
-    hand_value +=1
-    print(hand_value)
-
-    if face_cards in user_input:
-        hand_value += 10
-    else:
-        hand_value += int(sum(user_input))
-
-print(hand_value)
+hand_value = deck.get(card_1) + deck.get(card_2) + deck.get(card_3)
 
 
+if hand_value < 17:
+    print(f"{hand_value} Hit")
 
+elif 17>= hand_value < 21:
+    print(f"{hand_value} Stay")
 
-
-# all of this works, do not touch
-# if sum(card_1, card_2, card_3) < 17:
-#     print(f"{sum(card_1, card_2, card_3)} Hit")
-
-# elif 17>= sum(card_1, card_2, card_3) < 21:
-#     print(f"{sum(card_1, card_2, card_3)} Stay")
-
-# elif sum(card_1, card_2, card_3) == 21:
-#     print("Blackjack!")
-# else:
-#     print("Already Busted")
+elif hand_value == 21:
+    print("Blackjack!")
+else:
+    print("Already Busted")
