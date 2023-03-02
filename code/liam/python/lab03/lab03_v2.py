@@ -21,22 +21,21 @@ def num_matches(winning, ticket):
     return match_finds
 
 #function that takes in matches and returns winnings
+#updated to swap if/elif conditions for a dictionary
 
 def match_to_win(match):
-    if match == 0:
-        winnings = 0
-    elif match == 1:
-        winnings = 4
-    elif match == 2:
-        winnings = 7
-    elif match == 3:
-        winnings = 100
-    elif match == 4:
-        winnings = 50000
-    elif match == 5:
-        winnings = 1000000
-    elif match == 6:
-        winnings = 25000000
+
+    prize_pool = {
+        0: 0,
+        1: 4,
+        2: 7,
+        3: 100,
+        4: 50000,
+        5: 1000000,
+        6: 25000000,
+    }
+
+    winnings = prize_pool[match]
 
     return winnings
 #END OF FUNCTIONS
