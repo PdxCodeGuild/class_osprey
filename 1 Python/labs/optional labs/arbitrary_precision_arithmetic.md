@@ -1,5 +1,4 @@
-
-# Lab: Arbitrary Precision Arithmetic
+# Arbitrary Precision Arithmetic
 
 [Arbitrary Precision Arithmetic](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic) is a way of performing arithmetic with greater precision than that offered by ordinary ints and floats. One python library for this is [mpmath](http://mpmath.org/).
 
@@ -10,6 +9,7 @@ Remember doing [long addition](https://en.wikipedia.org/wiki/Elementary_arithmet
 ```
 What is the first number? 23422340923410340239482304
 What is the second number? 303003025050020203492
+
 23422340923410340239482304 + 303003025050020203492 = 23422643926435390259685796
 ```
 

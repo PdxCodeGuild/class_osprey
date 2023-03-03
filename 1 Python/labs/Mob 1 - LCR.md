@@ -1,5 +1,4 @@
-
-# Lab: LCR Simulator
+# Mob Lab: LCR Simulator
 
 LCR is a dice game, one of pure chance. Therefore, we can write a simulator to avoid wasting the time playing it ourselves. Description from [wikipedia](https://en.wikipedia.org/wiki/LCR_(dice_game)):
 

@@ -1,4 +1,4 @@
-# Lab 8: Peaks and Valleys
+# Peaks and Valleys
 
 Define the following functions:
 

@@ -1,14 +1,5 @@
-# Lab: Knights who say Ni!
+# Knights who say Ni!
 
-###### Delivery Method: Instructional exercise.
-
-------------------------------
-
-##### Goal
-
-Learn how to write and execute a doctest.
-
----------------------------------------------------------
 
 ##### Instructions
 

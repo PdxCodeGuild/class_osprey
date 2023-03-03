@@ -1,4 +1,4 @@
-# Lab 1: Turtle
+# Turtle
 
 ## Explanation
 
