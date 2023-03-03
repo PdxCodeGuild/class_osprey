@@ -19,39 +19,32 @@ or list has sequences, tuple of (player, chips)
 
 win condition when only one person has chips > 0'''
 
+
 def creating_players():
     players = []
     chips = []
-    creating = 'yes'
-    while creating == 'yes':
+
+    while True:
         entry = input('Player name, type Done to finish: ')
-        
-        if entry == 'Done':
+        if entry == 'Done' or entry == 'done':
             print(players)
             break
-
         players.append(entry)
-    for player in players:
         chips.append(3)
+
     return players, chips
 
 
-
-def LCR_active(chips, player_index):
+def LCR_round(chips, players, player_index):
     dice_options = ['L', 'C', 'R', '.', '.', '.']
 
-    roll_count = 0
+    # ternary operator
+    # variable = val1 if condition else val2
+    roll_count = 3 if chips[player_index] >= 3 else chips[player_index]
 
-    if chips[player_index] >= 3:
-        roll_count = 3
-    else:
-        roll_count = chips[player_index]
-
-    for i in range(roll_count):
+    for _ in range(roll_count):
         dice_roll = random.choice(dice_options)
-        # dice_roll = 'R'
         if dice_roll == "C":
-
             chips[player_index] -= 1
         elif dice_roll == 'R':
             chips[player_index] -= 1
@@ -62,36 +55,29 @@ def LCR_active(chips, player_index):
         elif dice_roll == 'L':
             chips[player_index] -= 1
             chips[player_index - 1] += 1
-        else: 
-            dice_roll == "."
-        print(f'{dice_roll} is in {chips}')
+        print(f'{players[player_index]}\'s turn: {dice_roll} -- {chips}')
     return chips
 
-players, chips_start = creating_players()
 
-
-def outcome(players):
-
+def is_game_continuing(players):
     chip_holders = 0
-
     for score in players:
         if score > 0:
             chip_holders += 1
-    if chip_holders > 1:
-        return True
-    return False
+    return chip_holders > 1
+
+
+player_list, chips_tracker = creating_players()
 
 while True:
-    for i in range(len(players)):
-        if outcome(chips_start):
-            chips_start = LCR_active(chips_start, i)
+    for i in range(len(player_list)):
+        if is_game_continuing(chips_tracker):
+            chips_tracker = LCR_round(chips_tracker, player_list, i)
         else:
             break
-    if not outcome(chips_start):
+    if not is_game_continuing(chips_tracker):
         break
 
-high_score = max(chips_start)
+winner_index = chips_tracker.index(max(chips_tracker))
 
-score_finder = chips_start.index(high_score)
-
-print(f'The winner is {players[score_finder]}')
+print(f'The winner is {player_list[winner_index]}!')
