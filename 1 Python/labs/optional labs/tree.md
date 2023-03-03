@@ -1,4 +1,3 @@
-
 # Lab: Tree
 
 A tree is a type of data structure, one that represents a hierarchy. Try running the code below and implement the following functions.
