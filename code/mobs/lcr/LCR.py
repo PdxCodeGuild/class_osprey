@@ -22,25 +22,26 @@ win condition when only one person has chips > 0'''
 
 pot = 0
 
-# def creating_players():
-#     players = []
-#     chips = []
-#     creating = 'yes'
-#     while creating == 'yes':
-#         entry = input('Player name, type Done to finish: ')
+def creating_players():
+    players = []
+    chips = []
+    creating = 'yes'
+    while creating == 'yes':
+        entry = input('Player name, type Done to finish: ')
         
-#         if entry == 'Done':
-#             print(players)
-#             break
+        if entry == 'Done':
+            print(players)
+            break
 
-#         players.append(entry)
-#     for player in players:
-#         chips.append(3)
-#     return players, chips
+        players.append(entry)
+    for player in players:
+        chips.append(3)
+    return players, chips
 
-# creating_players()
 
-chips = [3, 3, 3]
+
+
+# chips = [3, 3, 3]
 
 def LCR_active(chips, player_index):
     dice_options = ['L', 'C', 'R', '.', '.', '.']
@@ -53,13 +54,16 @@ def LCR_active(chips, player_index):
         roll_count = chips[player_index]
     for i in range(roll_count):
         dice_roll = random.choice(dice_options)
-        
+        # dice_roll = 'R'
         if dice_roll == "C":
             pot += 1 
             chips[player_index] -= 1
         elif dice_roll == 'R':
             chips[player_index] -= 1
-            chips[player_index + 1] += 1
+            if len(chips) == player_index + 1:
+                chips[0] += 1
+            else:
+                chips[player_index + 1] += 1
         elif dice_roll == 'L':
             chips[player_index] -= 1
             chips[player_index - 1] += 1
@@ -68,6 +72,6 @@ def LCR_active(chips, player_index):
         print(f'{dice_roll} is in {chips} and the pot is {pot}')
     return chips, pot
 
-       
-LCR_active(chips, 1)
-print(chips)
+players, chips_start = creating_players()
+LCR_active(chips_start, 3)
+
