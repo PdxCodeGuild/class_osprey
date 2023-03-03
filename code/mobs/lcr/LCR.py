@@ -46,9 +46,14 @@ def LCR_active(chips, player_index):
     dice_options = ['L', 'C', 'R', '.', '.', '.']
     # dice_roll = random.sample(dice_options)
     pot = 0
-    for i in range(chips[player_index]):
+    roll_count = 0
+    if chips[player_index] >= 3:
+        roll_count = 3
+    else:
+        roll_count = chips[player_index]
+    for i in range(roll_count):
         dice_roll = random.choice(dice_options)
-#        if dice_options.count(dice_roll): 
+        
         if dice_roll == "C":
             pot += 1 
             chips[player_index] -= 1
@@ -61,12 +66,8 @@ def LCR_active(chips, player_index):
         else: 
             dice_roll == "."
         print(f'{dice_roll} is in {chips} and the pot is {pot}')
-        return chips, pot
-        '''if chips[i] >= 3:
-            dice_roll * 3
-        else:
-            dice_roll == chips
-        
-        '''
+    return chips, pot
+
+       
 LCR_active(chips, 1)
 print(chips)
