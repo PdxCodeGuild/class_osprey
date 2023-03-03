@@ -40,21 +40,27 @@ pot = 0
 
 # creating_players()
 
-chips = [3, 3]
+chips = [3, 3, 3]
 
 def LCR_active(chips, player_index):
     dice_options = ['L', 'C', 'R', '.', '.', '.']
     # dice_roll = random.sample(dice_options)
     pot = 0
     for i in range(chips[player_index]):
-        dice_roll = "C" #random.sample(dice_options)
-        if dice_options.count(dice_roll): 
-            if dice_roll == "C":
-                pot += 1 
-                chips[player_index] -= 1
-            else: 
-                dice_roll == "."
-            print(f'{dice_roll} is in {chips} and the pot is {pot}')
+        dice_roll = random.choice(dice_options)
+#        if dice_options.count(dice_roll): 
+        if dice_roll == "C":
+            pot += 1 
+            chips[player_index] -= 1
+        elif dice_roll == 'R':
+            chips[player_index] -= 1
+            chips[player_index + 1] += 1
+        elif dice_roll == 'L':
+            chips[player_index] -= 1
+            chips[player_index - 1] += 1
+        else: 
+            dice_roll == "."
+        print(f'{dice_roll} is in {chips} and the pot is {pot}')
         return chips, pot
         '''if chips[i] >= 3:
             dice_roll * 3
