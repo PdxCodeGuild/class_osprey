@@ -22,7 +22,6 @@ win condition when only one person has chips > 0'''
 
 pot = 0
 
-dice_options = ['L', 'C', 'R', '.', '.', '.']
 
 def creating_players():
     players = []
@@ -44,6 +43,27 @@ def creating_players():
     return players, chips
 
 creating_players()
+chips = [3, 3]
+def LCR_active(chips):
+    dice_options = ['L', 'C', 'R', '.', '.', '.']
+    dice_roll = "C" #random.sample(dice_options)
+    for i in chips:
+        if chips.count(dice_roll):
+            print(f'{dice_roll} is in {chips}')
+            
+        '''if chips[i] >= 3:
+            dice_roll * 3
+        else:
+            dice_roll == chips
+        
+    
+        if dice_roll == "C":
+            pot += 1 
+            i -= 1
 
-def LCR_active():
-    pass
+        else: 
+            dice_roll == "."
+        return chips
+        '''
+LCR_active(chips)
+print(chips)
