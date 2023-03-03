@@ -5,30 +5,30 @@ first_card = input('What is your first card? ')
 second_card = input('What is your second card? ')
 third_card = input('What is your third card? ')
 
-face_values = {
+card_worth = {
     'A': 1,
     'J': 10,
     'Q': 10,
     'K': 10,
+    '1': 1,
+    '2': 2,
+    '3': 3,
+    '4': 4,
+    '5': 5,
+    '6': 6,
+    '7': 7,
+    '8': 8,
+    '9': 9,
 }
 
-for keys in face_values:
-    if first_card == keys:
-        first_card = face_values[keys]
-    if second_card == keys:
-        second_card = face_values[keys]
-    if third_card == keys:
-        third_card = face_values[keys]
-
-#now we want all integers to add up, converting too early loses face card value
-
-first_card = int(first_card)
-second_card = int(second_card)
-third_card = int(third_card)
+#change from first submission - using dictionary exclusively rather than for loop
+first_value = card_worth[first_card]
+second_value = card_worth[second_card]
+third_value = card_worth[third_card]
 
 #establish the full hand
 #add up numerical values on hand
-hand = first_card + second_card + third_card
+hand = first_value + second_value + third_value
 
 if hand < 17:
     print(f'At {hand} you should hit')
