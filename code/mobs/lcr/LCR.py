@@ -19,9 +19,6 @@ or list has sequences, tuple of (player, chips)
 
 win condition when only one person has chips > 0'''
 
-
-pot = 0
-
 def creating_players():
     players = []
     chips = []
@@ -40,23 +37,21 @@ def creating_players():
 
 
 
-
-# chips = [3, 3, 3]
-
 def LCR_active(chips, player_index):
     dice_options = ['L', 'C', 'R', '.', '.', '.']
-    # dice_roll = random.sample(dice_options)
-    pot = 0
+
     roll_count = 0
+
     if chips[player_index] >= 3:
         roll_count = 3
     else:
         roll_count = chips[player_index]
+
     for i in range(roll_count):
         dice_roll = random.choice(dice_options)
         # dice_roll = 'R'
         if dice_roll == "C":
-            pot += 1 
+
             chips[player_index] -= 1
         elif dice_roll == 'R':
             chips[player_index] -= 1
@@ -69,9 +64,34 @@ def LCR_active(chips, player_index):
             chips[player_index - 1] += 1
         else: 
             dice_roll == "."
-        print(f'{dice_roll} is in {chips} and the pot is {pot}')
-    return chips, pot
+        print(f'{dice_roll} is in {chips}')
+    return chips
 
 players, chips_start = creating_players()
-LCR_active(chips_start, 3)
 
+
+def outcome(players):
+
+    chip_holders = 0
+
+    for score in players:
+        if score > 0:
+            chip_holders += 1
+    if chip_holders > 1:
+        return True
+    return False
+
+while True:
+    for i in range(len(players)):
+        if outcome(chips_start):
+            chips_start = LCR_active(chips_start, i)
+        else:
+            break
+    if not outcome(chips_start):
+        break
+
+high_score = max(chips_start)
+
+score_finder = chips_start.index(high_score)
+
+print(f'The winner is {players[score_finder]}')
