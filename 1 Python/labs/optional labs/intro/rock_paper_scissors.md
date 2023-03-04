@@ -1,4 +1,4 @@
-# Lab 7: Rock Paper Scissors
+# Rock Paper Scissors
 
 Let's play rock-paper-scissors with the computer.
 

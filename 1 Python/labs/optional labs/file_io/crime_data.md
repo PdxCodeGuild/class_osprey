@@ -1,4 +1,3 @@
-
 # Crime Data
 
 Open one of the crime data csv's in the data folder, and derive the following statistics.

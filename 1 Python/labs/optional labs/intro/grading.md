@@ -1,5 +1,4 @@
-
-# Lab 3: Grading
+# Grading
 
 Let's convert a number grade to a letter grade, using `if` and `elif` statements and comparisons.
 
