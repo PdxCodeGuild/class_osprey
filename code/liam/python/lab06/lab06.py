@@ -9,7 +9,7 @@ sentences = 0
 
 
 #file in
-path = 'class_osprey\code\liam\python\lab06\spagettisburg.txt'
+path = 'code\liam\python\lab06\spagettisburg.txt'
 
 with open(path, 'r', encoding='utf-8') as file:
     contents = file.read()
