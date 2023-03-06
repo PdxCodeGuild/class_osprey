@@ -4,7 +4,7 @@
 
 import random
 
-winning_numbers = random.sample(range(0,20),6)
+winning_numbers = random.sample(range(0,99),6)
 
 def num_matches(winning_numbers, user_numbers):
     matches = 0
