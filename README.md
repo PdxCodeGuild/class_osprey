@@ -75,10 +75,9 @@ Presentation Day: June 9, 2023
 | 02    | Blackjack Advice       | 10           | Feb 28th      | Mar 3rd               | Mar 14th           |
 | 03    | Pick 6                 | 10           | Mar 1st       | Mar 3rd               | Mar 15th           |
 | 04    | Credit Card Validation | 5            | Mar 2nd       | Mar 7th               | Mar 16th           |
-<!-- | 05    | ROT13                  | 5            | Mar 2nd       | Mar 9th               | Mar 16th           |
-| Group | Jackalope              | 10           | Mar 3rd       | Mar 3rd               | Mar 17th           |
-| 06    | ARI                    | 10           | Mar 4th       | Mar 9th               | Mar 18th           |
-| 07    | Contact List           | 25           | Mar 5th       | Mar 9th               | Mar 19th           |
+| 05    | ROT13                  | 5            | Mar 3rd       | Mar 8th               | Mar 17th           |
+| 06    | ARI                    | 10           | Mar 6th       | Mar 9th               | Mar 20th           |
+<!-- | 07    | Contact List           | 25           | Mar 5th       | Mar 9th               | Mar 19th           |
 | 08    | ATM                    | 10           | Mar 9th       | Mar 16th              | Mar 23rd           |
 | 09    | Dad Joke API           | 5            | Mar 12th      | Mar 16th              | Mar 26th           |
 | 10    | Quotes API             | 20           | Mar 16th      | Mar 23rd              | Mar 30th           |
