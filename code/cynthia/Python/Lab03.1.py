@@ -30,6 +30,7 @@
 # After the loop, print the final balance
 
 
+cynthia-python-lab03
 
 import random
 
@@ -69,5 +70,4 @@ for pick6 in range(100000):
 
 final_total = earnings - expenses  
 print(f'Your balance is {final_total}')
-
 
