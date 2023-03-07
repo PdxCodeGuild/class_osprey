@@ -77,8 +77,8 @@ Presentation Day: June 9, 2023
 | 04    | Credit Card Validation | 5            | Mar 2nd       | Mar 7th               | Mar 16th           |
 | 05    | ROT13                  | 5            | Mar 3rd       | Mar 8th               | Mar 17th           |
 | 06    | ARI                    | 10           | Mar 6th       | Mar 9th               | Mar 20th           |
-<!-- | 07    | Contact List           | 25           | Mar 5th       | Mar 9th               | Mar 19th           |
-| 08    | ATM                    | 10           | Mar 9th       | Mar 16th              | Mar 23rd           |
+| 07    | Contact List           | 25           | Mar 7th       | Mar 13th              | Mar 21st           |
+<!--| 08    | ATM                    | 10           | Mar 9th       | Mar 16th              | Mar 23rd           |
 | 09    | Dad Joke API           | 5            | Mar 12th      | Mar 16th              | Mar 26th           |
 | 10    | Quotes API             | 20           | Mar 16th      | Mar 23rd              | Mar 30th           |
 | 11    | Mini-Capstone          | 30           | Mar 18th      | Mar 23rd              | Jun 1st            | -->
