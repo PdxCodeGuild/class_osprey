@@ -10,20 +10,14 @@ sentances = contents.count('.')
 
 for character in string.punctuation:
     contents = contents.replace(character, '')
-print(contents)
-
-character_count = len(contents)
-print(character_count)
-# print(character_count)
 
 text_as_list = contents.split()
 word_count = len(text_as_list)
-print(word_count)
-# print(text_as_list)
 
-input_number = 4.71*(character_count/word_count) + 0.5*(word_count/sentances) -21.43
-print(round(input_number))
+contents = contents.replace(" ",'')
+character_count = len(contents) 
 
+input_number = round(4.71*(character_count/word_count) + 0.5*(word_count/sentances) -21.43)
 
 ari_scale = {
      1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
