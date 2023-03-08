@@ -1,5 +1,7 @@
-#lab07.1
+#lab07.2
 #without using csv import
+
+
 
 with open('code/cynthia/addess_book.csv', 'r') as file:
     text = file.read().split('\n')
