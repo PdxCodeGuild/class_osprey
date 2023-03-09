@@ -15,28 +15,43 @@ between the guess counter and guessed letters need to ask user to imput a letter
 '''
 
 
-def load_words():
-    with open('code\mobs\hangman\english.txt', 'r') as file:
-        words = file.read().split('\n')
+# def load_words():
+#     with open('code/mobs/hangman/english.txt', 'r') as file:
+#         words = file.read().split('\n')
 
-    choices = []
+#     choices = []
 
-    for word in words:
-        if len(word) >= 5:
-            choices.append(word)
-    print(choices)
+#     for word in words:
+#         if len(word) >= 5:
+#             choices.append(word)
+#     # print(choices)
+#     return(choices)
 
+# choices = load_words()
+# word_to_guess = random.choice(choices)
+# print(word_to_guess)
 
-load_words()
+word_to_guess = 'otter'
+
 holder = []
-singular_word = 'water'
 
-for letter in range(len(singular_word)):
+for letter in range(len(word_to_guess)):
     holder.append('_') 
 blanks = ' '.join(holder)
 
-
-
-
 print(blanks)
 
+
+user_guesses = []
+guess_count = 10
+
+
+while True: 
+    guesses = input("guess a letter: ")
+    user_guesses.append(guesses)
+    if guesses in word_to_guess:
+        
+        for letter in range(len(word_to_guess)):
+
+
+    print(user_guesses, holder)
