@@ -1,5 +1,5 @@
 import random
-
+import string
 # Hangman
 
 '''
@@ -47,11 +47,27 @@ guess_count = 10
 
 
 while True: 
-    guesses = input("guess a letter: ")
-    user_guesses.append(guesses)
-    if guesses in word_to_guess:
-        
-        for letter in range(len(word_to_guess)):
-
-
-    print(user_guesses, holder)
+    guess = input("guess a letter: ").lower()
+   
+    if guess in word_to_guess:
+        user_guesses.append(guess)
+        for match in range(len(holder)):
+            for letter in range(len(word_to_guess)):
+                if guess == word_to_guess[letter]:
+                    holder[letter] = guess
+                
+    
+    elif guess in string.ascii_letters:
+        user_guesses.append(guess)
+        guess_count -= 1
+    else:
+        print("invalid guess.")
+        continue
+    print(user_guesses, holder, guess_count)
+    if guess_count == 0:
+        print(f'you lost, the word was {word_to_guess}')
+        play_again = input("Would you like to play again?")
+        if play_again == 'y':
+            continue # TODO we need to move our random choice to game loop
+        else:
+            break
