@@ -16,5 +16,3 @@ for line in text:
 
     friends_dictionary = {'name': name, 'favorite color':favorite_color, 'favorite fruit':favorite_fruit }
     print(friends_dictionary)
-
-
