@@ -1,3 +1,5 @@
+import random
+
 # Hangman
 
 '''
@@ -13,12 +15,19 @@ between the guess counter and guessed letters need to ask user to imput a letter
 '''
 
 
-def load_words(path):
+def load_words():
     with open('code\mobs\hangman\english.txt', 'r') as file:
         words = file.read().split('\n')
 
     choices = []
 
+    for word in words:
+        if len(word) >= 5:
+            choices.append(word)
+    print(choices)
+
+
+load_words()
 holder = []
 singular_word = 'water'
 
