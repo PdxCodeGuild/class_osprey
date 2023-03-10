@@ -1,6 +1,6 @@
 #Contact list - v3 REWRITE time
 
-with open('code\liam\python\lab07\contacts_og.csv', 'r') as file:
+with open('practice_files\submission_backups\python\lab07\contacts_og.csv', 'r') as file:
     lines = file.read().split('\n')
     # print(lines) #verify read
 
@@ -23,20 +23,23 @@ for line in lines[1:]: #index 0 not popped, use 1 and onward for info
 
 #crud begins
 while True:  
-    current_list = [x for x in all_contacts]
+    valid_choices = ['C', 'R', 'U', 'D', 'done']
     choice = input('''For your contacts, would you like to:
 Create, Retrieve, Update, or Delete a record?
 Enter "C", "R", "U", "D", or "done" to exit: ''')
 
+    while choice not in valid_choices:
+        print('Invalid option.')
+        break
 #-----------------------CREATE
     while choice == 'C':
         print('''You have chosen to create!
-        We'll need some information for the new file.
-        What is the new entry\'s... ''')
-        c_name = input('name: ')
-        c_age = input('age: ')
-        c_favanimal = input('favorite animal: ')
-        c_pokemon = input('favorite pokemon: ')
+We'll need some information for the new file.
+What is the new entry\'s... ''')
+        c_name = input('Name: ').title()
+        c_age = input('Age: ')
+        c_favanimal = input('Favorite animal: ')
+        c_pokemon = input('Favorite pokemon: ').title()
         
         new_list = [c_name, c_age, c_favanimal, c_pokemon]
 
@@ -53,9 +56,12 @@ Enter "C", "R", "U", "D", or "done" to exit: ''')
 
 #-----------------------RETRIEVE    
     while choice == 'R':
-        print(f'''You have chosen to retrieve the records.
-        Currently, your list of contacts is: 
-        {current_list}''')
+        print('You have chosen to retrieve.')
+        r_name = input('Whose information would you like to see? ').title()
+        print(f'Loading information for {r_name}...')
+        for match in range(len(all_contacts)):
+            if r_name == all_contacts[match]['name']:
+                print(all_contacts[match])
         break
 
 #-----------------------UPDATE
