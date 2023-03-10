@@ -1,6 +1,6 @@
 #Contact list - v3 REWRITE time
 
-with open('practice_files\submission_backups\python\lab07\contacts_og.csv', 'r') as file:
+with open('code\liam\python\lab07\contacts_og.csv', 'r') as file:
     lines = file.read().split('\n')
     # print(lines) #verify read
 
