@@ -1,4 +1,4 @@
-# Lab 13: Compass
+# Lab 9: Compass
 
 Copy the [compass module](13_compass.py) in this folder. Fill in code in each place that has `...` to make the methods work. 
 
