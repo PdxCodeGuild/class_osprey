@@ -36,6 +36,12 @@ class Card:
     def show(self):
         print(self)
 
+    def __eq__(self, __o: object) -> bool:
+        if self.suit == __o.suit and self.value == __o.value:
+            return True
+        else:
+            return False
+
     # overwrite the "string method" to determine what will display
     # when you print (or string cast) an instance of this class
     def __str__(self) -> str:
@@ -101,6 +107,10 @@ if __name__ == '__main__':
     print(type(ace))
     ace.show()
     print(ace)
+
+    ace2 = Card('A', 'Spades')
+    print(ace == ace)
+    print(ace == ace2)
 
     # To set up the game:
     # create a deck and shuffle it
