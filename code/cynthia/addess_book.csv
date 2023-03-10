@@ -1,3 +1,7 @@
+name,favorite color,favorite_fruit
 Robert,blue,blueberries
 Gabby,purple,strawberries
-Gracie,red, apples
+Gracie,red,apples
+{'name': 'Robert', 'favorite color': 'blue', 'favorite fruit': 'blueberries'}
+
+{'name': 'Gabby', 'favorite color': 'purple', 'favorite fruit': 'strawberries'}
