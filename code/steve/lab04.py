@@ -3,7 +3,7 @@
 cc_number = list(input("What is your credit card number? "))
 
 # check digit
-check_digit = cc_number.pop()
+check_digit = int(cc_number.pop())
 
 # reversing list order
 cc_number.reverse() 
@@ -28,8 +28,6 @@ total = sum(single) + sum(double)
 
 
 
-
-
 number_to_verify = (total % 10) % 10
 
 if number_to_verify == check_digit:
@@ -37,6 +35,5 @@ if number_to_verify == check_digit:
 else:
     print("Invalid number")
 
-
-
+print(number_to_verify, check_digit)
 
