@@ -8,11 +8,15 @@ if code_decode == "1":
 
     code = input("Please enter your secret code:  ")
     letter_mover = int(input("Please enter the number of letters you want shifted in the code: "))
-    decode = 26 - letter_mover
+    if letter_mover > 25:
+        shift = letter_mover % 26
+    else:
+        shift = letter_mover
+    decode = 26 - shift
 
     code = list(code)
 
-    letters2 = letters[letter_mover:] + letters[:letter_mover]
+    letters2 = letters[shift:] + letters[:shift]
 
     cipher2 = dict(zip(letters, letters2))
 
