@@ -35,22 +35,21 @@ while True:
     print(friends_list)
 
     friend_info = []
- 
 
     retrieve = input('Would you like to retrieve friend?:')
-    if retrieve != 'y':
+    while retrieve != 'y':
         break
     info = input('Name of friend for info: ')
-
+    
     for i in range(len(friends_list)):
         if friends_list[i]['name'] == info:
             friend_info.append(friends_list[i])
             break
     print(friend_info)
 
-
+    
     update = input("Would you like to update a friend? ")
-    if update != 'y':
+    while update != 'y':
         break
     friend_to_update = input('Name of the friend you want to update: ')
     attribute_key= input('What attribute do you want to update? ')
@@ -61,11 +60,17 @@ while True:
             friends_list[i][attribute_key] = new_attribute
     print(friends_list)
 
-    delete = input("Would you like to delete a friend? ")
-    if delete != 'y':
-        break
-    delete_a_friend = input("What is the name of the person to remove? ")
-    for i in range(len(friends_list)):
-        if friends_list[i]['name'] == delete_a_friend:
-            del friends_list[i]
-    print(friends_list)
+    # delete = input("Would you like to delete a friend? ")
+    # while delete != 'y':
+    #     break
+    # delete_a_friend = input("What is the name of the person to remove? ")
+    # for i in range(len(friends_list)):
+    #     if friends_list[i]['name'] == delete_a_friend:
+    #         del friends_list[i]['name']
+    #         break
+    # print(friends_list)
+
+
+
+with open('code/cynthia/addess_book.csv', 'a') as file:
+        file.write(friends_list)
