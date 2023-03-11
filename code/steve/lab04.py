@@ -6,7 +6,7 @@ cc_number = [int(i) for i in cc_number]
 check_digit = int(cc_number.pop())
 print(cc_number)
 # reversing list order
-cc_number.reverse() 
+cc_number.reverse()
 doubled_list = cc_number.copy()
 '''to_double = cc_number[0::2]
 stay = cc_number[1::2]
@@ -38,9 +38,8 @@ total = sum(subtracted_list)
 number_to_verify = (total % 10)
 
 if number_to_verify == check_digit:
-    print("Valid number") 
+    print("Valid number")
 else:
     print("Invalid number")
 
 print(number_to_verify, check_digit)
-

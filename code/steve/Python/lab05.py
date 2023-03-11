@@ -2,12 +2,14 @@ import string
 
 letters = list(string.ascii_lowercase)
 
-code_decode = input("If you want to create a code enter 1, if you want to decode a message enter 2: ")
+code_decode = input(
+    "If you want to create a code enter 1, if you want to decode a message enter 2: ")
 
 if code_decode == "1":
 
     code = input("Please enter your secret code:  ")
-    letter_mover = int(input("Please enter the number of letters you want shifted in the code: "))
+    letter_mover = int(
+        input("Please enter the number of letters you want shifted in the code: "))
     if letter_mover > 25:
         shift = letter_mover % 26
     else:
@@ -29,7 +31,8 @@ if code_decode == "1":
 
 else:
     decode = input("Please enter the message you would like to decode: ")
-    origin_code = int(input("Please enter the number the message was coded with: "))
+    origin_code = int(
+        input("Please enter the number the message was coded with: "))
     decoder = 26 - origin_code
     decode = list(decode)
 
@@ -43,5 +46,3 @@ else:
     decoded_message = [x if x not in cipher3 else cipher3[x] for x in decode]
 
     print(f"your code is: {''.join(decoded_message)}.")
-
-
