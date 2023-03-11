@@ -24,3 +24,8 @@ For example, the worked out steps would be:
 6. 85
 7. 5
 8. `True` Valid!
+
+
+## Bonus requirement!
+
+Find at least one place to use either map or filter with a lambda
