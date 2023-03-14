@@ -1,5 +1,5 @@
-#lab07.1
-#without using csv import
+# lab07.1
+# without using csv import
 
 
 with open('code/cynthia/addess_book.csv', 'r') as friends_list_file:
@@ -11,5 +11,6 @@ friends_list = []
 
 for line in lines:
     individuals = line.split(',')
-    friends_list.append({keys[0]: individuals[0], keys[1]:individuals[1], keys [2]: individuals[2]})
+    friends_list.append(
+        {keys[0]: individuals[0], keys[1]: individuals[1], keys[2]: individuals[2]})
 print(f'Your friends are {friends_list}')
