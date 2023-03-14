@@ -4,7 +4,7 @@
 Players take turns placing tokens (a 'O' or 'X') into a 3x3 grid.
 Whoever gets three in a row first wins.
 
-You will write a **Player** class and **Game** class to model Tic Tac Toe, and a function **main** that models gameplay taking in user inputs through a REPL.
+You will write a **Player** class and **Game** class to model Tic Tac Toe, and a function **main** that models gameplay taking in user inputs through REPL.
 
 
 The Player class has the following properties: 
@@ -17,7 +17,7 @@ The Game class has the following properties:
 You can represent the board however you like, such as a 2D list, tuples, or dictionary.
 
 The Game class has the following methods:
-* `__str__()` Returns a pretty string representation of the game board
+* `__repr__()` Returns a pretty string representation of the game board
 ```py
 >>> print(board)
 X| | 
