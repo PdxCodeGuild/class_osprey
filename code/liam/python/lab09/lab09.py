@@ -59,6 +59,7 @@ class Compass:
     def __eq__(self, other) -> bool:
         if self.heading == other.heading:
             return True
+        return 'The compasses are not the same.'
 
     def __gt__(self, other):
         raise TypeError('Cardinal directions cannot be greater or less than')
