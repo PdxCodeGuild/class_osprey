@@ -38,14 +38,15 @@ class Game():
             board_row = self.row2
         elif row == 2:
             board_row = self.row3
+        else:
+            return False
 
         if board_row[col] == ' ':
                 board_row[col] = player.token
+        
         else:
             print('Spot taken!')
-            self.row = int(input('Row: '))
-            self.col = int(input('Col: '))
-
+            return False
 
         return self.__str__
     
@@ -101,14 +102,16 @@ if __name__ == '__main__':
             row = input('Row: ')
             col = input('Col: ')
 
-                for choice in valid_choices: 
-                    if row and col in valid_choices:
-                            break
-                    else:
-                        print("invalid input")
-                        continue
-                break
-            game.move(row, col, playerX)
+            for choice in valid_choices: 
+                if row and col in valid_choices: #wrong
+                        break
+                else:
+                    print("invalid input")
+                    continue
+            break
+
+        if not game.move(row, col, playerX):
+            
             print(game)
         game.calc_winner(playerX)
 
