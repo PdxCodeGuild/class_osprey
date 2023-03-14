@@ -30,91 +30,44 @@
 # After the loop, print the final balance
 
 
-#creates 6 computer generated random numbers 
+cynthia-python-lab03
+
 import random
 
-winning_numbers = random.sample(range(0,20),6)
-print(winning_numbers)
-user_numbers = random.sample(range(0,20),6)
-# print(user_numbers)
+winning_numbers = random.sample(range(0,99),6)
 
 
-#this is the function if we want the user to input their own numbers 
-# user_numbers = []
-# x = 6
-# for numbers in range(x):
-#     numbers = int(input('enter numbers: '))
-#     user_numbers.append(numbers)
-#     # return user_numbers
-# print(user_numbers)
-
-
-money = 0
-
-def pick6():
-    game = input('would you like to pick6?')
-    if game == 'y':
-        print(user_numbers)
-    return pick6
-pick6()
-
-
-if pick6 == True:
-    money = money - 2
-    print (money)
-else:
-     print(f'Remaining money {money}')
-
-#compare the list with the computer number/ needs to be modified to only show consecutive matches?
-
-
-result= []
 def num_matches(winning_numbers, user_numbers):
-    for number in winning_numbers:
-        if number in user_numbers:
-            if number not in result:
-                result.append(number)
-            print(result)
-    return num_matches
-num_matches(winning_numbers, user_numbers)
+    matches = 0
+    for i in range(6):
+        if winning_numbers[i] == user_numbers[i]:
+            matches += 1
+    return matches
 
 
 
-#determine how many match in order
-def matches():
-    if len(result) == 0:
-        print("there are no matching numbers")
+winnings = {
+    0: 0,
+    1: 4,
+    2: 7,
+    3: 100,
+    4: 5000,
+    5: 1000000,
+    6: 25000000
 
-    elif len(result) == 1:
-        print('there is one matching number')
-        money = money + 4
-        print(money)
+}
 
-    elif len(result) == 2:
-        print('there are two matching numbers')
-        money = money + 7
-        print(money)
 
-    elif len(result) == 3:
-        print('there are three matching numbers')
-        money = money + 100
-        print(money) 
+expenses = 0
+earnings = 0
 
-    elif len(result) == 4:
-        print('there are four matching numbers')
-        money = money + 50000
-        print(money)
+for pick6 in range(100000):
+    user_numbers = random.sample(range(1,99),6) 
+    match_count = num_matches(winning_numbers, user_numbers) 
+    earnings += winnings.get(match_count) 
+    expenses += 2
 
-    elif len(result) == 5:
-        print('there are five matching numbers')
-        money = money + 1000000
-        print(money)
 
-    elif len(result) == 6:
-        print('there are six matching numbers')
-        money = money + 25000000
-        print(money)
-    return matches 
-
-matches()
+final_total = earnings - expenses  
+print(f'Your balance is {final_total}')
 
