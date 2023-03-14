@@ -53,3 +53,5 @@ class Compass:
 
     def __str__(self) -> str:
         ...
+
+while __name__ in "__main__':
