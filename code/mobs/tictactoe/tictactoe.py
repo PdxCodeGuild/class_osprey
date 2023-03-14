@@ -33,14 +33,14 @@ class Game():
 
 
         if row == 0:
-            row = self.row1
+            board_row = self.row1
         elif row == 1:
-            row = self.row2
+            board_row = self.row2
         elif row == 2:
-            row = self.row3
+            board_row = self.row3
 
-        if row[col] == ' ':
-                row[col] = player.token
+        if board_row[col] == ' ':
+                board_row[col] = player.token
         else:
             print('Spot taken!')
             self.row = int(input('Row: '))
@@ -50,20 +50,23 @@ class Game():
         return self.__str__
     
     #calc_winner
-    def calc_winner(self):
+    def calc_winner(self, player):
         row_win = 0
         rows = [self.row1, self.row2, self.row3]
         for row in rows:
-            row_win = row.count('X')
+            row_win = row.count(player.token)
             if row_win == 3:
                 print('Condition met: horizontal win') #for horizontal wins only
         for i in range(len(rows)):
             if self.row1[i] == self.row2[i] == self.row3[i] and self.row1[i] != ' ':
-                
                 print('Condition met: vertical win')
+        if self.row1[0] == self.row2[1] == self.row3[2] and self.row1[0] != ' ':
+            print('diagonal win')
+        if self.row1[2] == self.row2[1] == self.row3[0] and self.row1[2] != ' ':
+            print('diagonal win')
 
-
-        return #f'{self.player} is the winner!'
+    
+        return None
     
     #is_full
     def is_full(self):
@@ -91,21 +94,35 @@ if __name__ == '__main__':
     print(game)
 
     while True:
-        
+        valid_choices = ['0','1','2']
+
         while True:
             print(f'{playername1}\'s turn!')
             row = input('Row: ')
             col = input('Col: ')
+
+                for choice in valid_choices: 
+                    if row and col in valid_choices:
+                            break
+                    else:
+                        print("invalid input")
+                        continue
+                break
             game.move(row, col, playerX)
             print(game)
-            break
+        game.calc_winner(playerX)
 
         while True:
             print(f'{playername2}\'s turn!')
             row = input('Row: ')
             col = input('Col: ')
+
+            for choice in valid_choices:
+                if row and col not in valid_choices:
+                    print("invalid input")
+                    continue
             game.move(row, col, playerO)
             print(game)
             break
 
-        game.calc_winner()
+        game.calc_winner(playerO)
