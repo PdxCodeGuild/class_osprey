@@ -35,27 +35,34 @@ class Compass:
 
     def __add__(self, degrees: int) -> int:
         '''Add two different compass headings together'''
-        degrees = ((new_heading + self.heading)/45)*45
-        if degrees >= 359:
-            degrees = round(heading / 45)* 45%45 
-        return degrees
+        degrees = add_heading + self.heading
+        if degrees >= 0:
+            print(degrees)
+        elif degrees > 359:
+            degrees = round(heading / 45)* 45%45
+        # return degrees
 
     def __sub__(self, degrees: int) -> int:
-        '''Subract one compass heading from another''' #keeps mimicking the first headings degree output
-        degrees = ((new_heading - self.heading)/45)*45
-        if degrees <= 0:
-            degrees = ((new_heading - self.heading)/45)* 45% 45
-        return degrees 
+        '''Subract one compass heading from another''' 
+        degrees = heading - sub_heading
+        if degrees > 0:
+            print(degrees)
+        elif degrees < 0:
+            degrees = round(degrees/ 45)* 45%45  #not working?
+        # return degrees 
 
     def __eq__(self, other) -> bool:
         '''Determine whether two compasses have the same heading'''
         if self.heading == other:
-            print(f'{self.heading} is the same as {other}') #needs to be refined 
-        
+            print(True)
+        else:
+            print(False)
 
 
     def __gt__(self, other):
+
         raise TypeError('Cardinal directions cannot be greater or less than')
+        
 
     def __lt__(self, other):
         raise TypeError('Cardinal directions cannot be greater or less than')
@@ -69,15 +76,20 @@ if __name__ in '__main__':
     heading = int(input('heading: '))
     degrees = round(heading / 45)* 45
     compass = Compass(heading)
-    if heading >= 359:
+    if heading > 359:
         degrees = round(heading / 45)* 45%45  #trying to make the compass cyclical
     degrees = compass.get_direction()
     print(degrees)
 
 
-    new_heading = int(input('New heading: '))
+    add_heading = int(input('Add heading: '))
     compass.__add__(degrees)
+    print(degrees)
+
+    sub_heading = int(input('Subtract heading: '))
+    compass.__sub__(degrees)
     print(degrees)
 
     other = int(input("what is the other heading: "))
     compass.__eq__(other)
+    
