@@ -1,4 +1,4 @@
-# Lab 12: Mini Capstone
+# Mini Capstone
 
 For your final Python project, build a program that solves a problem or accomplishes a task. Your program needs to utilize an external library (not part of the Python standard library -- this needs to be something that you `pip install`).  
 
