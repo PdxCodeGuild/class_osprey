@@ -3,19 +3,20 @@
 
 from lab08_2 import ATM
 import pytest
-from unittest.mock import patch 
 
 def test_ATM_creation():
     atm = ATM(0)
     assert atm.balance == 0
     atm = ATM(-5)
     assert atm.balance == -5
-    atm = ATM(.1)
     assert atm.interest_rate == .1
 
 def test_check_balance():
     atm = ATM(0)
     assert atm.check_balance() == 0
+    atm = ATM(10)
+    assert atm.check_balance() == 10
+    
 
 def test_deposit():
     atm = ATM(50)
@@ -34,4 +35,4 @@ def test_withdraw():
 
 def test_calc_interest():
     atm = ATM(50)
-    assert atm.interest_rate == .1
+    assert atm.calc_interest()
