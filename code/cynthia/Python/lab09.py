@@ -3,10 +3,10 @@
 class Compass:
     def __init__(self, heading) -> None:
         self.heading = heading
-        self.degrees = degrees
         
     def get_direction(self) -> str:
         '''Find the nearest cardinal direction of the current heading'''
+        self.degrees = round(heading /45) * 45
         direction = self.degrees
 
         match direction:
@@ -77,8 +77,6 @@ class Compass:
         '''Determine whether two compasses have the same heading'''
         if self.heading == other:
             print(True)
-        else:
-            print(False)
 
     def __gt__(self, other):
         if other > self.heading:
@@ -95,7 +93,6 @@ class Compass:
 if __name__ == '__main__':
 
     heading = int(input('Enter a heading: '))
-    degrees = round(heading /45) * 45
     compass = Compass(heading)
     degrees = compass.get_direction()
     print(f'Your direction is {degrees}')
@@ -121,5 +118,5 @@ if __name__ == '__main__':
     elif other < heading:
         print(compass.__lt__(other))
     elif other > heading:
-        compass.__gt__(other)
+        print(compass.__gt__(other))
 
