@@ -80,9 +80,10 @@ Presentation Day: June 9, 2023
 | 07    | Contact List           | 25           | Mar 7th       | Mar 13th              | Mar 21st           |
 | 08    | ATM                    | 10           | Mar 9th       | Mar 14th              | Mar 23rd           |
 | 09    | Compass                | 5            | Mar 10th      | Mar 15th              | Mar 24th           |
-| 09    | Dad Joke API           | 5            | Mar 13th      | Mar 16th              | Mar 27th           |
-<!--| 10    | Quotes API             | 20           | Mar 16th      | Mar 23rd              | Mar 30th           |
-| 11    | Mini-Capstone          | 30           | Mar 18th      | Mar 23rd              | Jun 1st            | -->
+| 10    | Dad Joke API           | 5            | Mar 13th      | Mar 16th              | Mar 27th           |
+| 11    | Quotes API             | 20           | Mar 15th      | Mar 20th              | Mar 29th           |
+| 12    | Automated Testing      | 5            | Mar 16th      | Mar 20th              | Mar 30th           |
+| 11    | Mini-Capstone          | 30           | Mar 20th      | Mar 23rd              | Apr 3rd            |
 
 
 ## Student Presentations
