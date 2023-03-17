@@ -26,6 +26,8 @@ def test_deposit():
 def test_check_withdrawal():
     atm = ATM(10)
     assert atm.check_withdrawal(5) == True
+    atm = ATM(5)
+    assert atm.check_withdrawal(0) == True
    
 
 def test_withdraw():
@@ -35,4 +37,6 @@ def test_withdraw():
 
 def test_calc_interest():
     atm = ATM(50)
-    assert atm.calc_interest()
+    assert atm.calc_interest() == 5
+    atm = ATM(10000)
+    assert atm.calc_interest() == 1000
