@@ -35,24 +35,18 @@ class Compass:
             if self.heading < 0:
                 self.degrees = (round(self.heading / 45) * 45) % 360 
                 self.degrees = self.get_direction()
-                    #  print(subtracted_heading)
             else:
                 self.degrees = (round(self.heading /45) * 45)
                 self.degrees = self.get_direction()
-                # print(f'line 43 {self.degrees}')
         elif direction == 'right':
             self.heading = degrees + self.heading
-
             if self.heading > 335:
                 self.degrees = (round(self.heading /45) * 45) %360
                 self.degrees = self.get_direction()
-                print(f'line 50 {self.degrees}')
             else:
                 self.degrees = (round(self.heading /45) * 45)
                 self.degrees = self.get_direction()
-                # print(f'line 53 {self.degrees}')
-
-
+            
         print(f'Turned {degrees} degrees {direction}. New heading is {self.heading}, pointed roughly {self.get_direction()}')
         return self.heading, degrees, self.degrees
 
@@ -86,12 +80,10 @@ class Compass:
         else:
             print(False)
 
-
     def __gt__(self, other):
         if other > self.heading:
             raise TypeError('Cardinal directions cannot be greater or less than')
     
-
     def __lt__(self, other):
         if other < self.heading:
             raise TypeError('Cardinal directions cannot be greater or less than')
@@ -105,8 +97,6 @@ if __name__ == '__main__':
     heading = int(input('Enter a heading: '))
     degrees = round(heading /45) * 45
     compass = Compass(heading)
-    if heading > 335:
-        degrees = round(heading / 45)* 45%45 
     degrees = compass.get_direction()
     print(f'Your direction is {degrees}')
 
