@@ -6,8 +6,8 @@ class Compass:
         
     def get_direction(self) -> str:
         '''Find the nearest cardinal direction of the current heading'''
-        self.degrees = round(heading /45) * 45
-        direction = self.degrees
+
+        direction = int(round(self.heading /45) * 45)
 
         match direction:
             case 0:
@@ -26,52 +26,35 @@ class Compass:
                 return 'W'
             case 315:
                 return 'NW'
-        return direction
+        
 
     def turn(self, degrees, direction) -> None:
         
         if direction == 'left':
-            self.heading = degrees - self.heading      
-            if self.heading < 0:
-                self.degrees = (round(self.heading / 45) * 45) % 360 
-                self.degrees = self.get_direction()
-            else:
-                self.degrees = (round(self.heading /45) * 45)
-                self.degrees = self.get_direction()
+            self.__sub__(degrees)
+
         elif direction == 'right':
-            self.heading = degrees + self.heading
-            if self.heading > 335:
-                self.degrees = (round(self.heading /45) * 45) %360
-                self.degrees = self.get_direction()
-            else:
-                self.degrees = (round(self.heading /45) * 45)
-                self.degrees = self.get_direction()
-            
+            self.__add__(degrees)
+           
         print(f'Turned {degrees} degrees {direction}. New heading is {self.heading}, pointed roughly {self.get_direction()}')
-        return self.heading, degrees, self.degrees
 
     def __add__(self, degrees: int) -> int:
         '''Add two different compass headings together'''
-        combined_heading = add_heading + self.heading
-        if combined_heading > 335:
-            self.degrees = (round(combined_heading /45) * 45) %360
+        self.heading= degrees + self.heading
+        if self.heading> 336:
+            self.heading = (round(self.heading/45) * 45) %336
         else:
-            self.degrees = (round(combined_heading /45) * 45)
-        self.degrees = self.get_direction()
-        print(f'New heading {combined_heading}')
-        return self.degrees
+            self.heading = (round(self.heading/45) * 45)
+        return self.heading
 
     def __sub__(self, degrees: int) -> int:
         '''Subract one compass heading from another''' 
-        subtracted_heading = add_heading - sub_heading           
-        if subtracted_heading < 0:
-            self.degrees = (round(subtracted_heading / 45) * 45) % 360 
+        self.heading = degrees - self.heading           
+        if self.heading < 0:
+            self.heading = (round(self.heading / 45) * 45) % 336 
         else:
-            self.degrees = (round(subtracted_heading /45) * 45)
-
-        self.degrees = self.get_direction()
-        print(f'New heading {self.degrees}')
-        return self.degrees 
+            self.heading = (round(self.heading /45) * 45)
+        return self.heading
 
     def __eq__(self, other) -> bool:
         '''Determine whether two compasses have the same heading'''
@@ -101,15 +84,6 @@ if __name__ == '__main__':
     degrees = int(input('how many degrees do you want to turn? '))
     direction = input('which direction do you want to turn? ').lower() #enter left or right 
     compass.turn(degrees, direction)
-
-    #add
-    add_heading = int(input('Add to heading: '))
-    print(f'New direction is {compass.__add__(add_heading)} ')
-
-    #subtract
-    sub_heading = int(input('Subtract from original heading: '))
-    compass.__sub__(degrees)
-    # print(degrees)
 
     #compare two headings
     other = int(input("what is the heading you want to compare: "))
