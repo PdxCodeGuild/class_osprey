@@ -15,8 +15,8 @@
 # from prettytable import from_csv
 from prettytable import PrettyTable
 from collections import Counter
-import datetime 
-from datetime import date
+# from datetime import datetime
+import datetime
 
 
 #inporting file, this also prints all data in the csv
@@ -44,22 +44,33 @@ for line in lines:
 items_occurance = Counter(activity_type).values()
 items_type = Counter(activity_type).keys()
 
-
 #compiling all distance and time data
-total_distance = []
-time_count = dict.fromkeys(items_type, datetime.timedelta())
-distance_count = dict.fromkeys(items_type, 0)
+activity_and_distance = []
+for line in text[1:]:
+    total_distance = []
+    distance_count = dict.fromkeys(items_type, 0)
 for line in lines:
     text = line.split(',')
     distance_count[text[0]]+= round(float(text[4]))
-    
+
+
+time_count = dict.fromkeys(items_type, datetime.timedelta())
+for line in lines:
+    text = line.split(',')
     (h ,m, s) = text[6].split(':')
     d = datetime.timedelta(hours = int(h), minutes =int(m), seconds= int(s))
-    d = date.strftime(h, m, s)
     time_count[text[0]] += d
-    
 
-print(time_count)
+durations = dict.fromkeys(items_type, '')
+for key in time_count:
+    duration = str(time_count[key])
+    (h ,m, s) = duration[-8:].split(':')
+    days_in_hours = time_count[key].days * 24
+    hours = days_in_hours + int(h)
+    durations[key] = ':'.join((str(hours),m,s))
+    print(durations)
+
+
 
 
 #converting datetime object bask to strings for list, strf 
@@ -75,4 +86,5 @@ x = PrettyTable()
 x.add_column('Activity Type', list(items_type))
 x.add_column('Activity Occurance', list(items_occurance))
 x.add_column('Total Distance', total_distance)
-# print(x)
+# x.add_column('Total Duration', 0)
+print(x)
