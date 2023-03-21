@@ -15,6 +15,8 @@
 # from prettytable import from_csv
 from prettytable import PrettyTable
 from collections import Counter
+import datetime 
+from datetime import date
 
 
 #inporting file, this also prints all data in the csv
@@ -22,49 +24,55 @@ from collections import Counter
 #     mytable = from_csv(fp)
 # print(mytable)
 
+
 #isolating data to print in the table, trying to import csv, select data then put it into pretty print
 with open('code/cynthia/Python/Garmin_activity_data.csv', 'r') as garmin_data:
     text = garmin_data.read().split('\n')
     lines = text[1:]
     keys = text[0].split(',')
 
+
 # isolating key information, creating headers for each key, might not use because pretty print can also intake a key later in the add_column statement
 # key_data = keys[0], keys[1], keys[3], keys[4], keys[6]
 
 
 #compiling activity types and occurances
-activity_occurance = []
 activity_type = []
-total_distance = []
-
 for line in lines:
-    lines = line.split(',')
-    activity_occurance.append(lines[0]) #how many times the activity happened
-    activity_type.append(lines[0]) #what the activity is named with no repeates
-items_occurance = Counter(activity_occurance).values()
+    columns = line.split(',')
+    activity_type.append(columns[0]) #what the activity is named with no repeates
+items_occurance = Counter(activity_type).values()
 items_type = Counter(activity_type).keys()
-# print(activity_type)
 
 
-activity_and_distance = []
-for line in text[1:]:
+#compiling all distance and time data
+total_distance = []
+time_count = dict.fromkeys(items_type, datetime.timedelta())
+distance_count = dict.fromkeys(items_type, 0)
+for line in lines:
     text = line.split(',')
-    items_occurance.update({lines[0]:text[4]})
+    distance_count[text[0]]+= round(float(text[4]))
     
-print(items_occurance)
-
-
-#compiling all distance data
-# for line in text[1:]:
-#     text = line.split(',')
-#     total_distance.append(text[4])
-# print(list(map(float, total_distance)))
+    (h ,m, s) = text[6].split(':')
+    d = datetime.timedelta(hours = int(h), minutes =int(m), seconds= int(s))
+    d = date.strftime(h, m, s)
+    time_count[text[0]] += d
     
 
+print(time_count)
+
+
+#converting datetime object bask to strings for list, strf 
+
+# print(distance_count)
+# print(time_count)
+
+total_distance = []
+total_distance = list(distance_count.values())
 
 #compiling data to be in pretty print terminal display
 x = PrettyTable()
-x.add_column('activity type', list(items_type))
-x.add_column('activity occurance', list(items_occurance))
+x.add_column('Activity Type', list(items_type))
+x.add_column('Activity Occurance', list(items_occurance))
+x.add_column('Total Distance', total_distance)
 # print(x)
-
