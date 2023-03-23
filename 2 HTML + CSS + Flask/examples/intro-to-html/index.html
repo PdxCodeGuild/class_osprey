@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Class Osprey Intro to HTML</title>
+    <!-- <style type="text/css">
+        td {
+            border-style: groove !important;
+        }
+    </style> -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto:ital,wght@1,300&display=swap');
+    </style>
+</head>
+
+<body>
+    <h1>Class Osprey Intro to HTML</h1>
+    <h2>this is h2</h2>
+    <h4>this is h4</h4>
+    <h6>this is h6</h6>
+
+    <!-- p for paragraph, block element with no default styling -->
+    <!-- span is justa  container for text, it's an inline element with no default styling -->
+    what follows is a paragraph with:<p>normal text with a <span>span inside it</span></p>
+
+    <!-- a for anchor tag, makes a link -->
+    Class Osprey's git repo <a href="https://github.com/PdxCodeGuild/class_osprey">is here</a>
+
+    <h3>People in Class Osprey</h3>
+    <!-- ul for unordered list, each li (line-item) has a bullet point -->
+    <ul>
+        this is plain text in a ul, it shouldn't be here
+        <li>Cynthia</li>
+        <li>Liam</li>
+        <li id="instructor" class="red">Danny</li>
+        <li>James</li>
+        <!-- this one won't have a bullet because it's not an li -->
+        <div>
+            <ol>
+                <li>nested??</li>
+                <li>list??</li>
+            </ol>
+        </div>
+    </ul>
+
+    <h3>definitive ranking of breakfast pastries</h3>
+    <!-- ol for ordered list, will automatically be numbered starting at 1 -->
+    <ol>
+        <li class="french">pain au chocolate</li>
+        <li>scone</li>
+        <li class="french">croissant</li>
+        <li class="american">donut</li>
+        <li class="american red">muffin</li>
+    </ol>
+
+    <pre>
+
+        this is pre-formatted text      it preserves whitespace
+
+                any whitespace
+    </pre>
+
+    <!-- spans and images are inline, so if there is room they will appear on the same line -->
+    <span id="before-image">this is text before the image</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/%D7%92%D7%9C%D7%99%D7%A9%D7%AA_%D7%A2%D7%A0%D7%A0%D7%99%D7%9D_%D7%9C%D7%9E%D7%9B%D7%AA%D7%A9_%D7%A8%D7%9E%D7%95%D7%9F.jpg/1024px-%D7%92%D7%9C%D7%99%D7%A9%D7%AA_%D7%A2%D7%A0%D7%A0%D7%99%D7%9D_%D7%9C%D7%9E%D7%9B%D7%AA%D7%A9_%D7%A8%D7%9E%D7%95%D7%9F.jpg"
+        alt="Makhtesh Ramon" />
+    <span>this is text after the image</span>
+
+    <!-- hr for horizontal rule, creates a line across the container -->
+    <hr />
+
+    <h3>HTML table</h3>
+    <table style="border-style:ridge;text-align:right">
+        <!-- tr for table row -->
+        <tr>
+            <!-- th for table header, works like td but by default it's bold and centered -->
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </tr>
+        <tr>
+            <!-- td for table data, each one is a cell in the table -->
+            <td style="border-style:solid;">A</td>
+            <td class="french">Bbbbbbbbbb</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>aaaaaaa</td>
+            <td>b</td>
+            <td>c</td>
+        </tr>
+    </table>
+
+
+    <hr>
+
+    <h3>Backgrounds</h3>
+
+    <div id="outer-box">
+        <div id="inner-box">inner box contents</div>some text
+    </div>
+
+
+
+
+</body>
+
+</html>
