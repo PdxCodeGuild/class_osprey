@@ -1,0 +1,86 @@
+/* this will be applied to everything in the body */
+body {
+    font-family: sans-serif;
+}
+
+/* you can apply any set of rules to multiple selectors,
+comma separated */
+td,
+th {
+    border-style: groove !important;
+}
+
+/* selects every image on the page */
+img {
+    /* if you give both width and height the image will distort to the given shape */
+    height: 250px;
+    /* width: 500px; */
+}
+
+/* selects only images with this specific alt text */
+img[alt="Makhtesh Ramon"] {
+    opacity: 70%;
+}
+
+/* you can change inline elements to block, or vice versa */
+#before-image {
+    display: block;
+}
+
+
+/* this selects only direct children */
+/* use a space instead of > to select any descendent */
+ul>li {
+    color: darkgreen;
+}
+
+/* class selector */
+.french {
+    font-size: 1.3em
+}
+
+.american {
+    font-size: 0.8em;
+}
+
+/* id selector */
+#instructor {
+    font-weight: 600;
+}
+
+.red {
+    color: red;
+}
+
+#outer-box {
+    font-family: 'Delicious Handrawn', cursive;
+    height: 10em;
+    width: 10em;
+    /* border-style: solid;
+    border-width: 4px;
+    border-color: blue; */
+    /* shorthand for style, width, and color */
+    border: 4px solid aquamarine;
+    border-radius: 10%;
+    /* always include background color in case background image doesn't show up*/
+    background-color: aquamarine;
+    background-image: url("https://upload.wikimedia.org/wikipedia/en/3/36/Solo_Jazz_design.jpg");
+}
+
+#inner-box {
+    display: inline-block;
+    /* size */
+    height: 5em;
+    width: 5em;
+    /* border */
+    border: 2px solid #80ffd4;
+    border-radius: 10%;
+    /* shape */
+    background-color: #ee82ee;
+    padding: 1em;
+    margin: 1em;
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+    /* contents */
+    text-align: center;
+}
