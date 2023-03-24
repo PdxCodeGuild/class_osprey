@@ -1,0 +1,136 @@
+html {
+    background: url(https://i.ibb.co/RTsxg13/trees.jpg);
+    background-size: cover;
+    margin: auto;
+}
+
+header div{
+    font-size: x-large;
+    width: 80%;
+    margin: auto;
+    padding: 1em;
+    border-radius: 10%;
+    transform: skew(-10deg);
+}
+
+h1 {
+    max-width: fit-content;
+    height: 200%;
+    padding: 0.5em;
+    border-style: solid;
+    border-color: #E49273;
+    border-radius: 15%;
+    background-color: #EB6534;
+    text-align: center;
+    color: #ACBEA3;
+    font-family: 'Bebas Neue', cursive;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    margin: auto;
+}
+
+h3 {
+    padding: .3em;
+    margin: .3em;
+    text-align: center;
+    transform: skew(10deg);
+    letter-spacing: 1em;
+    text-shadow: 5px 8px #EB6534;
+}
+
+body {
+    margin: auto;
+    font-weight: 300;
+    font-family: 'Play', sans-serif;
+    border-style: solid;
+    padding: 6px;
+    width: 80%;
+    background-color: #3d365a;
+    line-height: 1.5em;
+}
+
+hr {
+    border-style: double;
+    border-width: 1em;
+    height: 1em;
+    color:#3d365a;
+    width: 95%;
+}
+
+span {
+    font-family: 'Fasthand', cursive;
+    text-shadow: 0px 5px 1px #6b7765;
+}
+
+p {
+    padding: 1%;
+    margin-top: 0.3em;
+}
+
+a {
+    color: #EB6534;
+    font-family: 'Comic Neue', cursive;
+}
+
+ul {
+    list-style-image: url(https://i.gyazo.com/f07c97d52dcfc894fd2be1e32ba6b3b8.png);
+    font-family: 'Bebas Neue', cursive;
+}
+
+li:nth-child(even) {
+    font-family: 'Comic Neue', cursive;
+    font-weight: 600;
+}
+
+img[id="cat 1"] {
+    float: left;
+    margin: 3px
+}
+
+img[id="cat 2"] {
+    float: right;
+    margin: 3px
+}
+
+img[alt="nice portrait of Jude"] {
+    height: 350px;
+    float: right;    
+    margin: 0 0 0 10px;
+    color: #EB6534;
+    border-radius: 50%;
+    border-width: 12px;
+    border-style: solid;
+}
+
+img[alt="relaxing cat"] {
+    border-style: ridge;
+    border-color: #6b7765;
+    border-radius: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div {
+    margin: auto;
+    background-color: #ACBEA3;
+    color: #0A2463;
+}
+
+div[class="sliding"] {
+    margin-top: 1.2em;
+    border-style: dotted;
+    border-color: #EB6534;
+    border-radius: 30%;
+    padding: .5em;
+    max-width: min-content;
+    height: 7em;
+    text-align: center;
+    height: 8em;
+    transition: 1s;
+}
+div[class="sliding"]:hover {
+    height: 4em;
+    font-family: 'Comic Neue', cursive;
+    font-size: 2em;
+}
