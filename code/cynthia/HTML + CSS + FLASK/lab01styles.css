@@ -1,0 +1,62 @@
+body {
+    font-family: 'Franklin Gothic Medium';
+}
+
+body { 
+    background-image: url("https://img.freepik.com/free-photo/watercolor-beige-texture_125540-1591.jpg?w=1800&t=st=1679677881~exp=1679678481~hmac=634bb274b57e771f1e316eaf58656776c34195bdd1ac6287cc976bbd94947826");
+    background-color: tan
+}
+
+
+body { 
+ padding: 2em;
+ text-align: center;
+}
+
+hr { 
+    height: 5px;
+    border-width: 0;
+    background-color: black;
+}
+
+.name {
+    font-family:'Alkatra', cursive;
+    font-size: 3em;
+
+}
+
+
+.quote {
+    font-family:'Alkatra', cursive; 
+    color: green;
+}
+
+a { 
+    color: gray;
+    float: left;
+    padding-left: 18em;
+    padding-top: 5em;
+
+}
+
+
+img{
+    float: right;
+    height: 400px;
+    border: 3px;
+    border-radius: 5%;
+    border-color: orange;
+}
+
+img[alt="A photo of Danny Devito holding up a peace sign."] {
+    opacity: 100%;
+}
+
+ul {
+    list-style-type: square ;
+    float: left;
+    padding-left: 10em;
+    padding-top: 5em;
+    font-size: 1.2em;
+    font-weight: 500;
+}
