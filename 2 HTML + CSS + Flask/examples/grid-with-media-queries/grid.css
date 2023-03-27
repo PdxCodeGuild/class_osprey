@@ -47,3 +47,37 @@
 #main {
     grid-area: body
 }
+
+
+/* tablet version */
+
+@media screen and (max-width: 1100px) {
+    #wrapper {
+        /* auto will use all the space it NEEDS and all the space that is LEFTOVER */
+        grid-template-columns: auto 10em;
+        grid-template-rows: 10vh auto 1fr 10vh;
+        grid-template-areas:
+            "head head"
+            "body left"
+            "body right"
+            "foot foot";
+        gap: 0.7em
+    }
+
+    #wrapper>* {
+        background-color: #eee;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 8fr 2fr 2fr 1fr;
+        grid-template-areas:
+            "head"
+            "body"
+            "left"
+            "right"
+            "foot";
+    }
+}
