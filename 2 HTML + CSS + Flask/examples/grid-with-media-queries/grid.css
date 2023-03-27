@@ -1,0 +1,83 @@
+#wrapper {
+    display: grid;
+    grid-template-columns: 10em auto 15em;
+    grid-template-rows: 15vh auto 15vh;
+    height: 95vh;
+    gap: 1em;
+    /* areas are optional */
+    grid-template-areas:
+        "head head head"
+        "left body right"
+        "foot foot foot";
+}
+
+#wrapper>* {
+    /* grid children can be flex containers, or any other display type */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* height: 15vh; */
+    background-color: #ddd;
+}
+
+#header {
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+    grid-area: head
+}
+
+#footer {
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+    /* grid-column: 1 / 4; */
+    grid-area: foot
+}
+
+#right {
+    /* grid-column-start: 2;
+    grid-column-end: 3; */
+    grid-area: right
+}
+
+#left {
+    grid-area: left
+}
+
+#main {
+    grid-area: body
+}
+
+
+/* tablet version */
+
+@media screen and (max-width: 1100px) {
+    #wrapper {
+        /* auto will use all the space it NEEDS and all the space that is LEFTOVER */
+        grid-template-columns: auto 10em;
+        grid-template-rows: 10vh auto 1fr 10vh;
+        grid-template-areas:
+            "head head"
+            "body left"
+            "body right"
+            "foot foot";
+        gap: 0.7em
+    }
+
+    #wrapper>* {
+        background-color: #eee;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 8fr 2fr 2fr 1fr;
+        grid-template-areas:
+            "head"
+            "body"
+            "left"
+            "right"
+            "foot";
+    }
+}

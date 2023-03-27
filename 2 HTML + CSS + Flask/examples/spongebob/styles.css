@@ -1,0 +1,67 @@
+body {
+    background-color: #268ac9;
+    background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1200px-SpongeBob_SquarePants_character.svg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 70vh;
+}
+
+
+header {
+    width: 50vw;
+    border: 3px solid black;
+    padding: 1em;
+    margin: auto;
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+}
+
+article {
+    margin: 2em;
+    padding: 1em;
+}
+
+aside {
+    border: 2px solid black;
+    margin: auto;
+    width: 70vw;
+}
+
+header,
+aside,
+article {
+    background-color: #268ac9d1;
+
+
+}
+
+#patrick {
+    width: 30vw;
+    padding-bottom: 1em;
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2em
+    }
+
+    header {
+        grid-column: 1/3;
+    }
+
+    aside {
+        width: unset;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        background-repeat: repeat;
+        background-position: unset;
+        background-size: 5%;
+    }
+}
