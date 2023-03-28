@@ -1,0 +1,47 @@
+<!-- Lab03 blog html setup -->
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog, She Wrote</title>
+    <link rel="stylesheet" tyoe="text/css" href="{{ url_for('static', filename='lab03styles.css') }}">
+</head>
+
+<body>
+    <header>
+    <h1>Blog, She Wrote</h1>
+    </header>
+
+<!-- creating loops to make tag lines with name,author, date -->
+    <main>
+    {% for post in content.post %}
+    <li>
+        <h3>{{post['title']}}</h3> <h5>Posted {{post['date']}} by {{post['author']}}</h5>
+        <h3>{{post['body']}}</h3><br>
+    </li>
+        {% endfor %}
+    </main>
+
+
+    <aside id="top">
+        <ul>
+            <li>Home</li>
+            <li>Older Posts</li>
+            <li>About</li>
+        </ul>
+    </aside>
+
+
+    <footer>
+        <ul>
+            <li>Contact Us</li>
+            <li>All Rights Reserved</li>
+            <li>Built By Me</li>
+        </ul>
+    </footer>
+</body>
+</html>
