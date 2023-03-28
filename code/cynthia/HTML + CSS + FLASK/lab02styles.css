@@ -1,25 +1,25 @@
-
+.container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 body{ 
     background-color: rgb(186, 214, 237);
     font-family: 'Crimson Text', serif;
 }
-
 #header {
-    /* grid-column: 1/5;
-    grid-row: 1; */
     padding: .5em;
+
     text-align: center;
     font-size: 4em;
     background-repeat: repeat;
-    background-image: url("https://img.freepik.com/free-vector/abstract-earth-relief-map_1217-1747.jpg?w=1480&t=st=1679953650~exp=1679954250~hmac=5a6908d4d9193869d332b406d069d0d17bf4e9b011a08b4a21dc6da78470f4a1");
-    opacity: .8;
-    background-color:rgb(50, 149, 231);
+    background-color:rgba(24, 102, 114, 0.665);
 }
 
 
-/* 
-#first-main {
+
+/* #first-main {
     grid-column: 1/5;
     grid-row: 2; 
     padding: 1em;
@@ -31,41 +31,43 @@ body{
 } */
 
 #second-main {
-    /* grid-column: 2/4;
-    grid-row: 2; */
+
     text-align: center;
     padding: 2em;
     font-size: 1.5em;
-    background-color: rgba(50, 149, 231);
+    background-color: rgba(24, 102, 114, 0.665);
     background-repeat:repeat;
     background-image: url("https://www.treehugger.com/thmb/D7ziCRTeTpe7erLzqwuXmlApgsA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2015__03__paper-towns-map-lies-07877953f1ee43a2bfd80700c6b90729.jpg")
 }
 
 #third-main {
-    /* grid-column: 2 /4;
-    grid-row: 3; */
+
     text-align: center;
     padding: 2em;
     font-size: 1.5em;
-    background-color: rgba(50, 149, 231);
+    background-color: rgba(24, 102, 114, 0.665);
+ 
 }
 
 #right {
-    /* grid-column: 1/2;
-    grid-row: 2/5; */
     text-align: left;
     padding: 1em;
-    background-color: rgba(50, 149, 231);
-    
+    background-color: rgb(25, 26, 28);
+    background-image: url("https://media.istockphoto.com/id/170100543/photo/dark-spruce-wood-silhouette-surrounded-by-fog-on-white.jpg?s=612x612&w=0&k=20&c=qxDtk4PBQT97XSV-AjMh4YXm-j9gFbfwFo7hPkypck4=");
+    background-repeat: repeat-x;
 }
 
-#left {
-    /* grid-column: 4;
-    grid-row: 2/5; */
+/* #left {
+    grid-column: 4;
+    grid-row: 2/5; 
     padding: 1em;
     text-align: left;
-    background-color: rgba(50, 149, 231);
-}
+    background-color:rgba(24, 102, 114, 0.665); 
+    background-image: url("https://cdn.shopify.com/s/files/1/1662/3615/files/10ClassicEssentials_STA_9.19-1.16_2048x2048.png?v=1508821259");
+    background-image: ;
+} */
+
+
 #footer {
     /* grid-column: 1 /5;
     grid-row: auto;
@@ -101,11 +103,6 @@ body{
     }
 
 
-    /* #first-main {
-        grid-column: 1/5;
-        grid-row: 2;
-    } */
-
     #second-main {
         grid-column: 2/4;
         grid-row: 2;
@@ -121,12 +118,6 @@ body{
         grid-column: 1/2;
         grid-row: 2/5;
     }
-
-    #left {
-        grid-column: 4;
-        grid-row: 2/5;
-    }
-
 
     #footer {
         grid-column: 1 /5;
