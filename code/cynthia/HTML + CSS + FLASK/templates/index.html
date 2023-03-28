@@ -7,6 +7,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+    </style>
     <title>Blog, She Wrote</title>
     <link rel="stylesheet" tyoe="text/css" href="{{ url_for('static', filename='lab03styles.css') }}">
 </head>
@@ -15,6 +18,14 @@
     <header>
     <h1>Blog, She Wrote</h1>
     </header>
+
+    <aside id="top">
+        <ul>
+            <li>Home</li>
+            <li>Older Posts</li>
+            <li>About</li>
+        </ul>
+    </aside>
 
 <!-- creating loops to make tag lines with name,author, date -->
     <main>
@@ -27,13 +38,6 @@
     </main>
 
 
-    <aside id="top">
-        <ul>
-            <li>Home</li>
-            <li>Older Posts</li>
-            <li>About</li>
-        </ul>
-    </aside>
 
 
     <footer>

@@ -1,1 +1,19 @@
 /* Lab03 Blog css setup */
+
+.item {
+    order: 5;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-items: center;
+}
+
+body {
+    font-family: 'Lora', serif;
+}
+header {
+    font-size: large;
+    
+
+}
