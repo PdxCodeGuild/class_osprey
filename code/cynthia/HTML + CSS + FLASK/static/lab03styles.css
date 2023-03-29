@@ -11,9 +11,33 @@
 
 body {
     font-family: 'Lora', serif;
+
 }
+
+
 header {
     font-size: large;
-    
+    text-align: center;
+}
 
+#top {
+    background-color: rgb(159, 235, 235);
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+main {
+
+}
+
+
+#bottom {
+    background-color: rgb(159, 235, 235);
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }

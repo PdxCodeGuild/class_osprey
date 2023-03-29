@@ -19,21 +19,17 @@
     <h1>Blog, She Wrote</h1>
     </header>
 
-    <aside id="top">
-        <ul>
-            <li>Home</li>
-            <li>Older Posts</li>
-            <li>About</li>
-        </ul>
-    </aside>
+    <div id="top">
+            <p>Home</p><p>Older Posts</p><p>About</p>
+    </div>
 
 <!-- creating loops to make tag lines with name,author, date -->
     <main>
     {% for post in content.post %}
-    <li>
+    <p>
         <h3>{{post['title']}}</h3> <h5>Posted {{post['date']}} by {{post['author']}}</h5>
         <h3>{{post['body']}}</h3><br>
-    </li>
+    </p>
         {% endfor %}
     </main>
 
@@ -41,11 +37,10 @@
 
 
     <footer>
-        <ul>
-            <li>Contact Us</li>
-            <li>All Rights Reserved</li>
-            <li>Built By Me</li>
-        </ul>
+        <div id="bottom">
+            <p>Contact Us</p><p>All Rights Reserved</p>
+            <p>Built By Me</p>
+        </div>
     </footer>
 </body>
 </html>
