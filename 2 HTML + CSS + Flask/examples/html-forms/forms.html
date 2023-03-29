@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap relies on the meta viewport tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Include Bootstrap via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+
+    <!-- This CSS will overwrite the bootstrap styles -->
+    <link rel="stylesheet" href="my-styles.css">
+
+    <title>Forms</title>
+</head>
+
+<body>
+    <!-- All forms must have an action, a method, and a submit button -->
+
+    <h1 class="display-3">Class Osprey HTML Forms Demo</h1>
+    <form action="https://webhook.site/3fbc7512-7bce-4a10-834a-4a09114b526b" method="post">
+
+        <div>
+            <label class="form-label" for="my-name">My name: </label>
+            <input class="form-control" type="text" name="my-name" placeholder="wheeee!" />
+            <span class="form-text">You don't have to tell me your legal name if you don't want to :)</span>
+        </div>
+
+        <h3>My favorite languages</h3>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="python" name="language">
+            <label class="form-check-label" for=" python">python</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="html" name="language">
+            <label class="form-check-label" for="html">html</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="css" name="language">
+            <label class="form-check-label" for="css">css</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="pig latin" name="language" checked>
+            <label class="form-check-label" for="pig latin">pig latin</label>
+        </div>
+        <br>
+
+        <label for="age">My age:</label>
+        <input type="number" name="age" placeholder="type a number here">
+
+
+        <h3>Cat person or dog person?</h3>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="pets" value="cat">
+            <label class="form-check-label" for="cat">Cat person</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="pets" value="dog">
+            <label class="form-check-label" for="dog">Dog person</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="pets" value="both">
+            <label class="form-check-label" for="both">Both</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="pets" value="ew" disabled>
+            <label class="form-check-label" for="ew">Ew</label>
+        </div>
+        <br>
+
+        <label for="feeling">How are you feeling today?</label>
+        <input type="range" name="feeling" min="1" max="100" value="75">
+        <br><br>
+
+        <label for="say-more">Hmmm, tell me more about that</label><br>
+        <textarea name="say-more" cols="50" rows="5"></textarea>
+        <br><br>
+
+        <label for="date">What is your ideal date?</label>
+        <input type="date" name="date">
+        <br><br>
+
+        <label class="form-label" for="color">What is your favorite color?</label>
+        <input class="form-control form-control-color form-control-lg" type="color" name="color" value="#aaaaaa">
+        <br><br>
+
+        <label for="superpower">Pick a superpower</label>
+        <select class="form-select" name="superpower" id="">
+            <option value="flight">Flight</option>
+            <option value="invisibility" disabled>Invisibility</option>
+            <option value="programming">Programming</option>
+        </select>
+        <br><br>
+
+        <input type="button" value="I'm a useless button">
+        <button disabled>I'm another useless button</button>
+
+        <input class="btn btn-warning btn-lg" type="submit" value="Submit button">
+    </form>
+
+</body>
+
+</html>
