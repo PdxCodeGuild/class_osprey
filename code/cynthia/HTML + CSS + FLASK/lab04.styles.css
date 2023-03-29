@@ -1,2 +1,17 @@
 /* lab04 burrito order form */
 
+
+
+header {
+    font-size: 25px;
+    font-family:'Tillana', cursive;
+    align-items: center;
+    background-color: bisque;
+    text-align: center;
+}
+
+#subheading {
+    font-size: 25px;
+    font-family:'Tillana', cursive;
+}
+
