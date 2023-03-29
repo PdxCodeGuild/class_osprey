@@ -27,12 +27,16 @@
     <main>
     {% for post in content.post %}
     <p>
-        <h3>{{post['title']}}</h3> <h5>Posted {{post['date']}} by {{post['author']}}</h5>
-        <h3>{{post['body']}}</h3><br>
+        <h3 id="post-title">{{post['title']}}</h3> <h5>Posted {{post['date']}} by {{post['author']}}</h5>
+        <h3 id="text-body">{{post['body']}}</h3><br>
     </p>
         {% endfor %}
     </main>
 
+    <div>
+        <img src="https://d3ftabzjnxfdg6.cloudfront.net/app/uploads/2021/02/18-04-08_5537-VS-copy-web-1536x823.jpg" alt="a few seals on a rock">
+        <p id="blurb"> Blog, She Wrote is a writters collective from around the U.S.</p>
+    </div>
 
 
 
@@ -40,6 +44,7 @@
         <div id="bottom">
             <p>Contact Us</p><p>All Rights Reserved</p>
             <p>Built By Me</p>
+            
         </div>
     </footer>
 </body>
