@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>To-Do List</title>
 </head>
 <body>
@@ -26,9 +27,21 @@
     </div>
     <div>
         {% for todo in todos %}
-        <p>Todo: {{ todo.task }}</p>
-        <p>Priority: {{ todo.priority }}</p>
+        {% if todo['is-done'] == 'yes': %}
+        <p class="done-item">Todo: {{ todo.task }}</p>
+        <p class="done-item">Priority: {{ todo.priority }}</p>
+        {% else %}
+        <p class="task-item">Todo: {{ todo.task }}</p>
+        <p class="task-item">Priority: {{ todo.priority }}</p>
+
+        <form action="/finished/{{todo.id}}" method="post">
+        <button class="is-done" type="submit">Done!</button>
+        </form>
+
+        {% endif %}
         {% endfor %}
+
     </div>
+
 </body>
 </html>
