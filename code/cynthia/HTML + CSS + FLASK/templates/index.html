@@ -11,19 +11,15 @@
     <title>Number Conversion</title>
 </head>
 <body>
-    <form action="/submit-number/" method="post">
+    <form action="/" method="post">
         <div>
             <label for="enter-number">Enter a Number 0-999: </label>
             <input type="text" name="enter-number">
         </div>
-        <div>
-            <input type="submit" value="Convert Number!">
-        </div>
+            <input type="submit" value="convert-number">
     </form>
     <div>
-        {% for number in enter_number}
-        <p>{{number['number']}}</p>
-        {% endfor %}
+        {{phrase}}
     </div>
 </body>
 </html>
