@@ -60,12 +60,9 @@ Presentation Day: June 9, 2023
 | 01    | Bio                    | 10           | Mar 23rd      | Mar 28th              | Apr 6th            |
 | 02    | Company Landing Page   | 10           | Mar 27th      | Mar 30th              | Apr 10th           |
 | 03    | Blog                   | 20           | Mar 28th      | Mar 31st              | Apr 11th           |
- <!--
-| 04    | Burrito Order Form     | 10           | May 31st      | Jun 6th               | Jun 14th           |
-| Group | Flask Todos            | 10           | Jun 1st       | Jun 1st               | Jun 15th           |
-| 05    | Flask Redo             | 10           | Jun 2nd       | Jun 6th               | Jun 16th           |
-| 06    | Personal Portfolio     | 20           | Jun 3rd       | Jun 7th               | Jun 17th           |
- -->
+| 04    | Burrito Order Form     | 10           | Mar 29th      | Apr 3rd               | Apr 12th           |
+| 05    | Flask Redo             | 10           | Mar 30th      | Apr 4th               | Apr 13th           |
+| 06    | Personal Portfolio     | 20           | Mar 31st      | Apr 4th               | Apr 14th           |
 
 ## Python Labs Assigned:
 
