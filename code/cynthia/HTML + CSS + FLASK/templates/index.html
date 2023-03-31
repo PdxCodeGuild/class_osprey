@@ -19,24 +19,25 @@
     <h1>Blog, She Wrote</h1>
     </header>
 
-    <div id="top">
+    <nav>
+        <div id="top">
             <p>Home</p><p>Older Posts</p><p>About</p>
-    </div>
-
+        </div>
+    </nav>
 <!-- creating loops to make tag lines with name,author, date -->
     <main>
     {% for post in content.post %}
-    <p>
+    <section>
         <h3 id="post-title">{{post['title']}}</h3> <h5>Posted {{post['date']}} by {{post['author']}}</h5>
         <h3 id="text-body">{{post['body']}}</h3><br>
-    </p>
+    </section>
         {% endfor %}
     </main>
 
-    <div>
+    <section>
         <img src="https://d3ftabzjnxfdg6.cloudfront.net/app/uploads/2021/02/18-04-08_5537-VS-copy-web-1536x823.jpg" alt="a few seals on a rock">
         <p id="blurb"> Blog, She Wrote is a writters collective from around the U.S.</p>
-    </div>
+    </section>
 
 
 
