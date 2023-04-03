@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Get you a BURRITO! Today!</title>
+</head>
+<body>
+<div class="wrapper">
+    <header class="header bg-warning-subtle border border-warning rounded">
+        <img src='https://media.tenor.com/-CDw1tNTI7IAAAAC/happy-burrito.gif' class="rounded float-start" alt='cool burrito guy' id="burritogif"/>
+        <img src='https://media.tenor.com/-CDw1tNTI7IAAAAC/happy-burrito.gif' class="rounded float-end" alt='cool burrito guy' id="burritogif"/>
+        <h2>TIME TO EAT</h2>
+    </header>
+    <aside class="left">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Burrito.JPG" alt="a burrito" class="img-fluid">
+    </aside>
+    <div class="main">
+        <h3>Burrito time.</h3>
+        <form action="https://webhook.site/20b5f7ff-c56b-4d53-a0a2-68c9ecbe5cc7" method="post">
+            <div class="input-section">
+                <div class="input-section">
+                    <label for="name" class="form-label">Your name: <span>*</span></label>
+                    <input type="text" class="form-control" name="name" 
+                    placeholder="Your name here." required autofocus
+                    title="It's your name. You know it better than I do."/>
+                </div>
+                <div class="input-section">
+                    <label for="phone-number" class="form-label">Phone Number: <span>*</span></label>
+                    <input type="tel" class="form-control" name="phone-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                    placeholder="format: xxx-xxx-xxxx" required
+                    title="If you don't have a phone number, this is going to be a difficult order."/>
+                </div>
+            </div>
+            <div class="input-section">
+                <label for="passcode" class="form-label">Secret code: </label>
+                <input type="password" class="form-control" name="passcode"
+                title="You don't need to enter a passcode, but if you enter something funny, you'll get a little extra food.">
+            </div>
+            <div class="input-section">
+                <label for="hunger" class="form-label">How hungry are you?</label>
+                <input type="range" class="form-range" name="hunger" min="0" max="100" step="10" value="0"
+                title="If you leave this at zero, I swear."/>
+            </div>
+            <div class="input-section">
+                <label for="tortilla" class="form-label">Tortilla type: </label>
+                    <div class="choices">
+                        <input type="radio" class="form-check-input" name="tortilla" value="white">
+                        <label for="white">White</label>
+                    </div>
+                    <div class="choices">
+                        <input type="radio" class="form-check-input" name="tortilla" value="wheat">
+                        <label for="wheat">Wheat</label>
+                    </div>
+                    <div class="choices">
+                        <input type="radio" class="form-check-input" name="tortilla" value="corn">
+                        <label for="corn">Corn</label>
+                    </div>
+                    <div class="choices">
+                        <input type="radio" class="form-check-input" name="tortilla" value="spinach">
+                        <label for="spinach">Spinach</label>
+                    </div>
+                    <div class="choices">
+                        <input type="radio" class="form-check-input" name="tortilla" value="no-tortilla"
+                        title="You might be thinking of a burrito bowl,
+but this means you get loose ingredients in a paper bag.">
+                        <label for="no-tortilla">None</label>
+                    </div>
+            </div>
+            <div class="input-section">
+                <label for="rice" class="form-label">Rice: </label>
+                <div class="choices">
+                    <input type="radio" class="form-check-input" name="rice" value="white">
+                    <label for="white">White</label>
+                </div>
+                <div class="choices">
+                    <input type="radio" class="form-check-input" name="rice" value="brown">
+                    <label for="brown">Brown</label>
+                </div>
+                <div class="choices">
+                    <input type="radio" class="form-check-input" name="rice" value="no-rice">
+                    <label for="no-rice">None</label>
+                </div>
+            </div>
+            <div class="input-section">
+                <label for="beans" class="form-label">Beans: </label>
+                <div class="choices">
+                    <input type="radio" class="form-check-input" name="beans" value="black">
+                    <label for="black">Black beans</label>
+                </div>
+                <div class="choices">
+                    <input type="radio" class="form-check-input" name="beans" value="pinto">
+                    <label for="pinto">Pinto beans</label>
+                </div>
+                <div class="choices">
+                    <input type="radio" class="form-check-input" name="beans" value="no-beans">
+                    <label for="no-beans">None</label>
+                </div>
+            </div>
+            <div class="input-section">
+                <label for="protein" class="form-label">Protein: </label>
+                <div class="choices">
+                    <input type="radio" class="form-check-input" name="protein" value="chicken"
+                    title="Chickens are omnivores, which is a little unpleasant to think about.">
+                    <label for="chicken">Chicken</label>
+                </div>
+                <div class="choices">
+                    <input type="radio" class="form-check-input" name="protein" value="carnitas">
+                    <label for="carnitas">Carnitas</label>
+                </div>
+                <div class="choices">
+                    <input type="radio" class="form-check-input" name="protein" value="sofritas">
+                    <label for="sofritas">Sofritas</label>
+                </div>
+                <div class="choices">
+                    <input type="radio" class="form-check-input" name="protein" value="soy-curls">
+                    <label for="soy-curls" class="form-check-label">Soy Curls</label>
+                </div>
+                <div class="choices">
+                    <input type="radio" class="form-check-input" name="protein" value="no-protein">
+                    <label for="no-protein">None</label>
+                </div>
+            </div>
+            <div class="input-section">
+                <label for="add-ons" class="form-label">Add-Ons: </label>
+                <div class="choices">
+                    <input type="checkbox" class="form-check-input" name="add-ons" value="dbl-meat"
+                    title="Go ahead, check this after you put none for protein.">
+                    <label for="dbl-meat">Double Meat</label>
+                </div>
+                <div class="choices">
+                    <input type="checkbox" class="form-check-input" name="add-ons" value="cheese">
+                    <label for="cheese">Cheese</label>
+                </div>
+                <div class="choices">
+                    <input type="checkbox" class="form-check-input" name="add-ons" value="guacamole">
+                    <label for="guacamole">Guacamole</label>
+                </div>
+                <div class="choices">
+                    <input type="checkbox" class="form-check-input" name="add-ons" value="mild-salsa">
+                    <label for="mild-salsa">Mild Salsa</label>
+                </div>
+                <div class="choices">
+                    <input type="checkbox" class="form-check-input" name="add-ons" value="med-salsa"
+                    title="Is this medium spice level or medium amount?">
+                    <label for="med-salsa">Medium Salsa</label>
+                </div>
+                <div class="choices">
+                    <input type="checkbox" class="form-check-input" name="add-ons" value="hot-salsa">
+                    <label for="hot-salsa" class="form-check-label">Hot Salsa</label>
+                </div>
+                <div class="choices">
+                    <input type="checkbox" class="form-check-input" name="add-ons" value="veggies">
+                    <label for="veggies" class="form-check-label">Veggies</label>
+                </div>
+            </div>
+            <div class="input-section">
+                <label for="delivery-instructions" class="form-label">Delivery Instructions: </label><span>*</span>
+                <div class="choices">
+                    <textarea name="delivery-instructions" class="form-control" rows="5" cols="30" 
+                    placeholder="Please include preferred drop off method as well." required
+                    title="It's just how to get the burrito to you. You don't need to tell us anything extra."></textarea>
+                </div>
+            </div>
+            <p>Sections marked with a <span>*</span> are required fields.</p>
+            <div class="input-section" id="reset-button">
+                <input type="reset" value="Start Over" class="btn btn-outline-warning"
+                title="Feeling indecisive?"/>
+            </div>
+
+            <div class="input-section" id="submit-button">
+                <input type="submit" value="Submit order!" class="btn btn-outline-warning"
+                title="It is, in fact, Burrito Time."/>
+            </div>
+        </form>
+    </div>
+    <footer class="footer bg-warning-subtle border border-warning rounded">
+        <div id="burritoparty" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Breakfast_burritos.jpg/640px-Breakfast_burritos.jpg" class="d-block w-100" alt="it's a burrito">
+              </div>
+              <div class="carousel-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Burrito_at_Redi.jpg/640px-Burrito_at_Redi.jpg" class="d-block w-100" alt="another burrito">
+              </div>
+              <div class="carousel-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Burrito_and_Coke.jpg/640px-Burrito_and_Coke.jpg" class="d-block w-100" alt="yet another burrito">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#burritoparty" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#burritoparty" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        Thank you!</footer>
+</div>
+</body>
+</html>
