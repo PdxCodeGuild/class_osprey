@@ -1,0 +1,52 @@
+<!-- Lab03 blog html setup -->
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+    </style>
+    <title>Blog, She Wrote</title>
+    <link rel="stylesheet" tyoe="text/css" href="{{ url_for('static', filename='lab03styles.css') }}">
+</head>
+
+<body>
+    <header>
+    <h1>Blog, She Wrote</h1>
+    </header>
+
+    <nav>
+        <div id="top">
+            <p>Home</p><p>Older Posts</p><p>About</p>
+        </div>
+    </nav>
+<!-- creating loops to make tag lines with name,author, date -->
+    <main>
+    {% for post in content.post %}
+    <section>
+        <h3 id="post-title">{{post['title']}}</h3> <h5>Posted {{post['date']}} by {{post['author']}}</h5>
+        <h3 id="text-body">{{post['body']}}</h3><br>
+    </section>
+        {% endfor %}
+    </main>
+
+    <section>
+        <img src="https://d3ftabzjnxfdg6.cloudfront.net/app/uploads/2021/02/18-04-08_5537-VS-copy-web-1536x823.jpg" alt="a few seals on a rock">
+        <p id="blurb"> Blog, She Wrote is a writters collective from around the U.S.</p>
+    </section>
+
+
+
+    <footer>
+        <div id="bottom">
+            <p>Contact Us</p><p>All Rights Reserved</p>
+            <p>Built By Me</p>
+            
+        </div>
+    </footer>
+</body>
+</html>
