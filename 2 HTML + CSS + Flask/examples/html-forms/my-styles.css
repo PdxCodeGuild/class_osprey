@@ -9,3 +9,19 @@ input {
 body {
     background-color: #eee;
 }
+
+
+/* Styling for the FontAwesome icons */
+i {
+    font-size: 3em;
+    color: rgb(43, 106, 77);
+}
+
+#css {
+    --fa-animation-duration: 15s
+}
+
+
+#css:hover {
+    --fa-animation-duration: 0.5s
+}

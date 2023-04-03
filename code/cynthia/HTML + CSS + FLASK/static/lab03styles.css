@@ -1,0 +1,110 @@
+/* Lab03 Blog css setup */
+
+.item {
+    order: 5;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-items: center;
+}
+
+body {
+    font-family: 'Lora', serif;
+
+}
+
+
+header {
+    font-size: large;
+    text-align: center;
+    height: fit-content;
+}
+
+#top {
+    background-color: rgb(159, 235, 235);
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+#post-title {
+    font-weight: bold;
+    height: fit-content
+}
+ main {
+    height: inherit;
+    width: auto;
+
+ }
+
+#bottom {
+    background-color: rgb(159, 235, 235);
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+img {
+    width:60vw;
+    padding: 2em;
+    border-radius: 80%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#blurb {
+    text-align: center;
+}
+@media screen and (min-width: 700px)    {
+    main {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+   
+}
+
+@media screen and (min-width: 1000px) {
+
+    header {
+        font-size: 30px;
+        text-align: center;
+        height: fit-content;
+    }
+
+    #post-title {
+        font-size: 30px;
+        font-weight: 30;
+        height: fit-content
+    }
+
+    #text-body {
+        font-size: 25px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 800px;
+    }
+    img {
+        width:45vw;
+        padding: 2em;
+        border-radius: 80%;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    p {
+        font-size: 25px;
+    }
+    #top,
+    #bottom {
+        font-size: 20px;
+    }
+   
+}

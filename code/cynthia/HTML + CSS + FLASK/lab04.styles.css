@@ -1,0 +1,94 @@
+/* lab04 burrito order form */
+
+
+.main {
+    display: flex;
+}
+
+
+header {
+    font-size: 80px;
+    font-family:'Tillana', cursive;
+    align-items: center;
+    background-color: rgb(167, 94, 30);
+    text-align: center;
+}
+img {
+    width: 10vw;
+}
+
+
+#subheading {
+    font-size: 50px;
+    font-family:'Tillana', cursive;
+    text-align: center;
+}
+
+.input-name {
+    font-size: 20px;
+    padding: .5em;
+}
+
+.form-control {
+    padding: 2em;
+}
+
+
+#tortilla {
+    align-items: center;
+    padding:.5em;
+} 
+
+.tortilla {
+    display: inline;
+    padding: 1em;
+}
+
+#rice {
+    padding:.5em;
+}
+
+.rice {
+    display: inline;
+    padding: 1em;
+}
+
+
+ #beans {
+    padding:.5em;
+ }
+.beans{
+    display: inline;
+    padding: 1em;
+}
+
+#protein {
+    padding:.5em;
+}
+
+.protein {
+    display: inline;
+   padding: 1em;
+}
+
+#additions {
+    padding:.5em;
+}
+
+.additions {
+    display: inline;
+    padding: 1em;
+}
+
+
+#button {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+
+.mb-3 {
+    width: 500px;
+
+}
