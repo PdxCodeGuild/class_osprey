@@ -49,12 +49,10 @@ tenteens_table = {
 def num_to_phrase():
     return render_template('index.html')
 
-@app.route('/phrase/', methods=['GET', 'POST'])
+@app.route('/phrase/', methods=['POST'])
 def phrase_post():
-    time = '1:11'
-    if request.method == 'POST':
-        time = request.form['numtime']
 
+    time = request.form['numtime']
     if len(time) == 4:
         hour = time[0]
         minutes = time[2] + time[3]
