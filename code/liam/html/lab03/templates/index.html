@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Very Cool Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Roboto+Condensed:wght@300&display=swap');
+    </style>
+</head>
+<body class="content">
+    <header class="head">
+    Engaging Content<br> Ahead
+    </header>
+
+    <nav class="nav">
+    {% for topic in menu %}
+        |<a href='#void'>{{topic}}</a>| <br>
+    {% endfor %}
+
+    <div class="mini-bio">
+        <img src="{{ url_for('static', filename='portrait.png') }}" id="author-photo" alt="detailed photo of blog author"/>
+        <p>Firstname Lastname is an avid blogger with hundreds of posts. You will only ever see three of them, however.</p>
+    </div>
+    </nav>
+
+    <section class="main">
+    {% for post in posts %}
+    <div class='post'>
+        <h2>{{post.title}}</h2>
+        <h3>{{post.author}}</h3>
+        <h3>{{post.date}}</h3>
+        <p class="blog-contents">{{post.body}}</p>
+    </div>
+    {% endfor %}
+    </section>
+
+    <footer class="footer">
+        
+    </footer>
+</body>
+</html>
