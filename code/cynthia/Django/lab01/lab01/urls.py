@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 
+
 app_name = 'grocerylist'
 urlpatterns = [
     path('grocerylist/', include('grocerylist.urls')),

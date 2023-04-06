@@ -1,0 +1,30 @@
+
+
+
+<form action='{% url "grocerylist:add" %}' method="post">
+    {% csrf_token %}
+    <label for="add_item">Add Item: </label>
+    <input type="text" name="add_item" >
+    <input type="submit" value="save">
+</form>
+
+
+
+
+
+{% if latest_list %}
+        <p>Here is your list:</p>
+        <ul>
+            {% for item in latest_list%}
+            <!-- took out href do each itme is not a link, only a list -->
+                
+                <li><strong>{{item.item_description}}</strong>, added on: {{item.created_date}}</li>
+
+            {% endfor %}
+        </ul>
+    {%else%}
+    <p>{{purchased_item}}
+        There's nothing left to buy!</p>
+{%endif%}
+
+<!-- #add button instead, pass the itme id in with url in a form -->

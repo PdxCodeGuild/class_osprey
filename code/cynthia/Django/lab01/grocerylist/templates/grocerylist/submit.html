@@ -1,0 +1,13 @@
+<form action="{% url 'grocerylist:submit' item.id%}" method="post">
+    {%csrf_token%}
+        <fieldset>
+            {% for item in item.item_description.all%}
+                <input type="checkbox" name="done" id="done">
+                <label for="done">Done!</label>
+            {%endfor%}
+        </fieldset>
+    <input type="submit" value="done">
+</form>
+
+
+
