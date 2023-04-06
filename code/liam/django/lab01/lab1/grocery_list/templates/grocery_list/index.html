@@ -5,35 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+    </style>
     <link rel="stylesheet" href="{% static 'grocery_list/style.css' %}">
     
     <title>Grocery List</title>
 </head>
 <body>
-    <div id="list-display">
+    <div id="list-display" class="display">
         {% if grocery_list %}
             <h2>My grocery list:</h2>
+            <p>***************************</p>
             <ul class="full-list">
             {% for item in grocery_list %}
                 <li>{{ item.text_description }}</li>
                 <div class="item-conditions">
                     <p class="detail">added {{item.create_date}}</p>
                     {% if item.complete == False %}
-                    <form action="{% url 'complete' item.id %}" method="post">
+                    <form action="{% url 'grocery_list:complete' item.id %}" method="post">
                         {% csrf_token %}
                         <input type="submit" value="Retrieved"/>
                     </form>
                     {% else %}
                     <p class="detail">completed {{item.complete_date}}</p>
+                    <form action="{% url 'grocery_list:remove' item.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Remove"/>
                     {% endif %}
                 </div>
             {% endfor %}
             </ul>
+            <p>Total Items: {{ grocery_list|length }}</p>
         {% else %}
         <p>Nothing on the grocery list.</p>
         {% endif %}
     </div>
-    <div id="list-add">
+    <div id="list-add" class="display">
         <h3>Add item:</h3>
         <form action="add_item/" method="post">
             {% csrf_token %}

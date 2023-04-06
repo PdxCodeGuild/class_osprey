@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.http import HttpResponse
 from django.urls import reverse
 from django.template import loader
+from django.utils import timezone
 
 from .models import GroceryItem
 
@@ -16,12 +17,21 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def add(request):
-    return HttpResponseRedirect(reverse)
+    new_item = request.POST['new-item']
+    item_name = new_item
+    new_item = GroceryItem()
+    new_item.text_description = item_name
+    new_item.create_date = timezone.now()
+    new_item.save()
+    return HttpResponseRedirect(reverse('grocery_list:index'))
 
 def complete(request, item_id):
     grocery_item = get_object_or_404(GroceryItem, pk=item_id)
+    grocery_item.complete = True
+    grocery_item.save()
     return HttpResponseRedirect(reverse('grocery_list:index'))
 
-def delete(request, item_id):
+def remove(request, item_id):
     grocery_item = get_object_or_404(GroceryItem, pk=item_id)
+    grocery_item.delete()
     return HttpResponseRedirect(reverse('grocery_list:index'))
