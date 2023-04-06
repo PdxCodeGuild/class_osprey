@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+    color: #333;
+    background-color: #bbb;
+    margin-top: 2em;
+    margin-left: 4em;
+}
+
+li {
+    margin-top: 1em;
+}
+
+p {
+    margin: 0.2em;
+}
