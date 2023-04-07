@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Phrase</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="main">
+    <form action="/phrase/" method="post">
+        <div class="intake">
+            <label for="numtime">Time: </label>
+            <input type="text" name="numtime" pattern="^(([1-9])|(1[0-2])):[0-5]{1}[0-9]{1}" required
+            placeholder="ex. 1:11"/>
+        </div>
+        <div class="reqs">
+        <h4>Please use twelve hour format only.</h4>
+        </div>
+        <input type="submit" value="Convert"/>
+    </form>
+</body>
+</html>
