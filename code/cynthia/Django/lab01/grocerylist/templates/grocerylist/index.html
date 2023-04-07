@@ -12,19 +12,18 @@
 
 
 
-{% if latest_list %}
+{% if item in latest_list %}
         <p>Here is your list:</p>
         <ul>
             {% for item in latest_list%}
             <!-- took out href do each itme is not a link, only a list -->
                 
-                <li><strong>{{item.item_description}}</strong>, added on: {{item.created_date}}</li>
+                <li><strong><input type="checkbox" name="done" id="done">{{item.item_description}}</strong>, added on: {{item.created_date}}</li>
 
             {% endfor %}
         </ul>
     {%else%}
-    <p>{{purchased_item}}
-        There's nothing left to buy!</p>
+    <p>There's nothing on the list!</p>
 {%endif%}
 
 <!-- #add button instead, pass the itme id in with url in a form -->

@@ -2,8 +2,7 @@
     {%csrf_token%}
         <fieldset>
             {% for item in item.item_description.all%}
-                <input type="checkbox" name="done" id="done">
-                <label for="done">Done!</label>
+                <button type="button" name="done" id="done">Done!</button>
             {%endfor%}
         </fieldset>
     <input type="submit" value="done">
