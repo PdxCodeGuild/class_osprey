@@ -1,0 +1,16 @@
+#body {
+    background-color: #e4f1eb;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#header {
+    font-family: 'Rubik Mono One', sans-serif;
+    color: #e4f1eb;
+    padding: 0.4em;
+    background-color: #35b982;
+}

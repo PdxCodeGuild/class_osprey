@@ -1,24 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+    </style>
+    <link rel="stylesheet" href="{% static 'urlshort/style.css' %}">
+    
     <title>URL Shortener</title>
 </head>
 <body>
-    <h3> url form</h3>
-    <form action="shorten/" method="post">
-        <input type="text" name="full-url-entry" placeholder="Enter URL here">
-        <input type="submit" value="Submit"/>
-    </form>
-    <div class="most-recent-output">
-    <p> Your short url is: (placeholder)</p>
+<div id="wrapper">
+    <header id="header">
+    <h3>URL SHORTENER</h3>
+    </header>
+    <div id="entry">
+        <form action="shorten/" method="post">
+            {% csrf_token %}
+            <input type="text" name="full-url-entry" placeholder="Enter URL here">
+            <input type="submit" value="Submit"/>
+        </form>
     </div>
-    <div class="test-field">
-        {% for url in urls %}
-            {{ url.short_url }}
-        {% endfor %}
+    <div id="most-recent-output">
+    <p> Your short url is: </p>
+        <div id="details">
+            {% for url in urls %}
+            <div id="urlshow">
+            <a href='http://localhost:8000/urlshort/{{ url.short_url }}'>localhost:8000/urlshort/{{ url.short_url }}</a>
+            </div>
+            You went from {{url.full_url|length}} characters to just 30!
+            {% endfor %}
+        </div>
     </div>
+</div>
 </body>
 </html>
