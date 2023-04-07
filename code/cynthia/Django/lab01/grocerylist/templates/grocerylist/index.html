@@ -10,16 +10,20 @@
 
 
 
-
-
 {% if latest_list %}
         <p>Here is your list:</p>
         <ul>
-            {% for item in latest_list%}
-            <!-- took out href do each itme is not a link, only a list -->
-                
-                <li><strong><input type="checkbox" name="done" id="done">{{item.item_description}}</strong>, added on: {{item.created_date}}</li>
+            {% for item in latest_list %}
+            {% if item['purchased_item'] == True: %}
+                <li><strong>{{item.item_description}}</strong>, added on: {{item.created_date}}</li>
 
+            {% else %}
+                <li><strong>{{item.item_description}}</strong>, added on: {{item.created_date}}</li>
+                <form action='{% url "grocerylist:add" %}' method="post">
+                <button class="purchased" type="submit">Done!</button>
+            </form>
+        
+            {% endif %}
             {% endfor %}
         </ul>
     {%else%}
@@ -27,3 +31,4 @@
 {%endif%}
 
 <!-- #add button instead, pass the itme id in with url in a form -->
+

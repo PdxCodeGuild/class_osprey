@@ -22,10 +22,11 @@ def add(request):
 
 #checks for things done
 def done(request,item_id):
-    # purchased_item = GroceryItem.get(pk=item_id)
-    # if purchased_item == True:
-    #     purchased_item.save()
-    #purchased item.completed = true, then save
+    purchased_item = GroceryItem.get(pk=item_id)
+    
+    if purchased_item == True:
+        purchased_item.save()
+    # purchased item.completed = true, then save
     return HttpResponseRedirect(reverse('grocerylist:index'))
 
 
