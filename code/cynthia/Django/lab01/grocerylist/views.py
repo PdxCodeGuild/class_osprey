@@ -7,7 +7,7 @@ from .models import GroceryItem
 #returns list
 def index(request):
     latest_list = GroceryItem.objects.order_by('-created_date')
-    context = {'latest_list': latest_list,}
+    context = {'latest_list': latest_list}
     return render(request, 'grocerylist/index.html', context)
 
 
