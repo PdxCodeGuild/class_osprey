@@ -23,6 +23,15 @@
     <p>No polls are available.</p>
     {% endif %}
 
+    <hr>
+    <form action="{% url 'polls:add' %}" method="post">
+        {% csrf_token %}
+        <label for="q-input">New question text:</label>
+        <input type="text" name="question" id="q-input">
+        <br>
+        <input type="submit" value="Add new question">
+    </form>
+
 </body>
 
 </html>

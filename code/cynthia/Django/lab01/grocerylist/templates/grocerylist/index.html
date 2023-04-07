@@ -1,0 +1,44 @@
+
+
+
+<form action='{% url "grocerylist:add" %}' method="post">
+    {% csrf_token %}
+    <strong><label for="add_item">Add Item: </label></strong>
+    <input type="text" name="add_item" >
+    <input type="submit" value="save">
+</form>
+
+
+
+{% if latest_list %}
+        <p>Here is your list:</p>
+        <ul>
+            {% for item in latest_list %}
+            {% if item.is_completed == True %}
+           
+                <li><s><strong>{{item.item_description}}</strong>, added on: {{item.created_date}}</s></li>
+                    <form action='{% url "grocerylist:delete" item.id %}' method="post">
+                    {% csrf_token %}
+                    <button class="delete" type="submit">Delete</button>
+                    </form>
+            {% else %}
+                <li><strong>{{item.item_description}}</strong>, added on: {{item.created_date}}</li>
+
+                <form action='{% url "grocerylist:done" item.id %}' method="post">
+                {% csrf_token %}
+                <button class="purchased" type="submit">Purchased</button>
+                </form>
+
+                <form action='{% url "grocerylist:delete" item.id %}' method="post">
+                {% csrf_token %}
+                <button class="delete" type="submit">Delete</button>
+                </form>
+
+            {% endif %}
+            {% endfor %}
+        </ul>
+    {%else%}
+    <p>There's nothing on the list!</p>
+{%endif%}
+
+

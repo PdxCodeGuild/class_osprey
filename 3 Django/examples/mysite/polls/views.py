@@ -51,7 +51,7 @@ def vote(request, question_id):
         choice_id = request.POST['choice']
         selected_choice = question.choice_set.get(pk=choice_id)
     except (KeyError, Choice.DoesNotExist):
-        return render(request, 'polls:detail.html', {
+        return render(request, 'polls/detail.html', {
             'question': question,
             'error_message': "You didn't select a choice"
         })
@@ -59,3 +59,32 @@ def vote(request, question_id):
     selected_choice.save()
 
     return HttpResponseRedirect(reverse('polls:results', args=(question_id,)))
+
+
+def add_question(request):
+    new_q = Question(question_text=request.POST['question'])
+    new_q.save()
+    return HttpResponseRedirect(reverse('polls:index'))
+
+
+def edit_question(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    if request.method == 'POST':
+        # choice_text = request.POST['new_choice']
+        # new_choice = Choice(question=question, choice_text=choice_text)
+        # new_choice.save()
+
+        try:
+            if request.POST['new_q_text'] != question.question_text:
+                question.question_text = request.POST['new_q_text']
+                question.save()
+        except KeyError:
+            pass
+        try:
+            if request.POST['new_choice']:
+                question.choice_set.create(
+                    choice_text=request.POST['new_choice'])
+        except KeyError:
+            pass
+
+    return render(request, 'polls/edit.html', {'question': question})

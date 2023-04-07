@@ -1,0 +1,33 @@
+body {
+    font-family: 'Kosugi Maru', sans-serif;
+    color: #333;
+    background-color: #bbb;
+    margin-top: 2em;
+}
+
+.display {
+    padding: 2em;
+    width: fit-content;
+    margin: auto;
+}
+
+#list-display {
+    background-image: linear-gradient(#fff, #ebe7e0);
+}
+
+.detail {
+    font-size: 80%;
+}
+
+#list-add {
+    border-style: dashed none dashed none;
+    margin-top: 2em;
+}
+
+li {
+    margin-top: 1em;
+}
+
+p {
+    margin: 0.2em;
+}

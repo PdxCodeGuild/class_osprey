@@ -19,3 +19,7 @@
     </fieldset>
     <input type="submit" value="Vote">
 </form>
+
+<a href="{% url 'polls:edit' question.id %}">
+    <button>Edit question</button>
+</a>
