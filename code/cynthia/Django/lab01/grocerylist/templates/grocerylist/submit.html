@@ -1,0 +1,12 @@
+<form action="{% url 'grocerylist:submit' item.id%}" method="post">
+    {%csrf_token%}
+        <fieldset>
+            {% for item in item.item_description.all%}
+                <button type="button" name="done" id="done">Done!</button>
+            {%endfor%}
+        </fieldset>
+    <input type="submit" value="done">
+</form>
+
+
+
