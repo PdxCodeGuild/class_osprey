@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Rubik+Mono+One&display=swap');
+    </style>
+    <link rel="stylesheet" href="{% static 'urlshort/style.css' %}">
+    
+    <title>URL Shortener</title>
+</head>
+<body>
+<div id="wrapper">
+    <header id="header">
+    <h1>URL SHORTENER</h1>
+    </header>
+<div id="contents">
+    <div id="entry">
+        <form action="shorten/" method="post">
+            {% csrf_token %}
+            <input type="text" name="full-url-entry" placeholder="Enter URL here" required>
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
+    <div id="most-recent-output">
+    <h4> Your short url is: </h4>
+        {% for url in urls %}
+        <h2>{{ url.short_url }}</h2>
+        <div id="urlshow">
+        <a href='http://localhost:8000/urlshort/{{ url.short_url }}'>localhost:8000/urlshort/{{ url.short_url }}</a>
+        </div>
+        You went from {{url.full_url|length}} characters to just 30!
+        <div id="extra-stats">
+            {% if url.click_set %}
+            <h4>Clicks for this link: </h4>
+            {{ url.click_set.all|length }}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
