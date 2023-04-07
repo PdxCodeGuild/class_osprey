@@ -3,7 +3,7 @@
 
 <form action='{% url "grocerylist:add" %}' method="post">
     {% csrf_token %}
-    <label for="add_item">Add Item: </label>
+    <strong><label for="add_item">Add Item: </label></strong>
     <input type="text" name="add_item" >
     <input type="submit" value="save">
 </form>
