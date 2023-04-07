@@ -28,13 +28,21 @@
     <div id="most-recent-output">
     <h4> Your short url is: </h4>
         {% for url in urls %}
+        <h2>{{ url.short_url }}</h2>
         <div id="urlshow">
         <a href='http://localhost:8000/urlshort/{{ url.short_url }}'>localhost:8000/urlshort/{{ url.short_url }}</a>
         </div>
         You went from {{url.full_url|length}} characters to just 30!
-        {% endfor %}
+        <div id="extra-stats">
+            {% if url.click_set %}
+            <h4>Clicks for this link: </h4>
+            {{ url.click_set.all|length }}
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </div>
+
 </div>
 </body>
 </html>

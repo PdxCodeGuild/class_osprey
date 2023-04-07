@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRedirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from django.template import loader
 from django.urls import reverse
 
-from .models import UrlShorten
+from .models import UrlShorten, Click
 
 from string import ascii_letters, digits
 import random
@@ -26,7 +26,14 @@ def shorten(request):
     return HttpResponseRedirect(reverse('urlshort:index'))
 
 def refer(request, short_url):
+    last_accessed_user = request.META['USERNAME']
     entry = get_object_or_404(UrlShorten, short_url=short_url)
     refer = entry.full_url
-    # redirect of localhost/<str:shorturl>/ to full url assigned to it
-    return redirect(refer)
+    entry.last_user = last_accessed_user
+    entry.save()
+    clicked = Click()
+    clicked.url = entry
+    clicked.accessed_by = last_accessed_user
+    clicked.save()
+
+    return HttpResponseRedirect(refer)

@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 3px;
-    align-items: center;
+    /* align-items: center; */
 }
 
 #header {
@@ -36,6 +36,14 @@ body {
 
 #most-recent-output {
     padding: 2em;
+}
+
+#extra-stats {
+    margin-top: 3em;
+}
+
+h4 {
+    margin-bottom: 0;
 }
 
 a {
