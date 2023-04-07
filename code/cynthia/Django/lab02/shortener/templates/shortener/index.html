@@ -11,11 +11,9 @@
 {% if url_database %}
         <p>Here is your new URL:</p>
         <ul>
-            <!-- wrong thing in context for showing just the most recent item, maybe try slicing off other info -->
             {% for item in url_database %}
             <li><strong>{{item.long_url}}</strong></li>
                 <li><strong>{{item.short_code}}</strong></li>
-   
         {%endfor %}
     {% else %}
     <p>You have no new URLs!</p>
