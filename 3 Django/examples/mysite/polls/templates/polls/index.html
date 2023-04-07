@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polls Home Page</title>
+    <link rel="stylesheet" href="{% static 'polls/styles.css' %}">
+</head>
+
+<body>
+
+    {% if question_list %}
+    <ul>
+        {% for question in question_list %}
+        <li><a href='{% url "polls:detail" question.id %}'>{{ question.question_text }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No polls are available.</p>
+    {% endif %}
+
+    <hr>
+    <form action="{% url 'polls:add' %}" method="post">
+        {% csrf_token %}
+        <label for="q-input">New question text:</label>
+        <input type="text" name="question" id="q-input">
+        <br>
+        <input type="submit" value="Add new question">
+    </form>
+
+</body>
+
+</html>
