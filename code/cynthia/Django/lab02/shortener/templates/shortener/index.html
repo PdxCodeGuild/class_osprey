@@ -13,7 +13,7 @@
         <ul>
             {% for item in url_database %}
             <li><strong>{{item.long_url}}</strong></li>
-                <li><strong>{{item.short_code}}</strong></li>
+                <a target= "_blank" href="{{item.long_url}}"> {{item.short_code}}</a>
         {%endfor %}
     {% else %}
     <p>You have no new URLs!</p>

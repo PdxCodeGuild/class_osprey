@@ -12,24 +12,20 @@ punctuation = string.punctuation
 digits = string.digits 
 choices = letter + punctuation + digits 
 
-# wrong thing in context for showing just the most recent item, maybe try slicing off other info
+
 def index(request):
-    url_database = Conversion.objects.order_by('id')
+    url_database = Conversion.objects.all()
     context = {'url_database':url_database}
     return render(request, 'shortener/index.html', context)
 
 #submit a url
 def submit_url(request):
-    short_code = ''
-    while len(short_code) < 10:
+    short_code = 'shorturl.'
+    while len(short_code) < 18:
         short_code += random.choice(choices) 
     long_url = request.POST['long_url']
     user_submission = Conversion(long_url = long_url, short_code = short_code)
     user_submission.save()
     return HttpResponseRedirect(reverse('shortener:index'))
 
-#new view for clickale
-#url with variable in it, then redirect form the associated version
-def new_url(request):
-    
-    return HttpResponseRedirect(reverse('shortener:index'))
+
