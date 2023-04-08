@@ -1,0 +1,70 @@
+body {
+    background-color: #c6e6d7;
+    margin: 0%;
+    height: 100%;
+}
+
+#wrapper {
+    font-family: 'Mukta', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    /* align-items: center; */
+}
+
+#header {
+    font-family: 'Rubik Mono One', sans-serif;
+    color: #e4f1eb;
+    font-size: 3vh;
+    padding: 1em;
+    text-align: center;
+    background-color: #35b982;
+    align-self: stretch;
+    border-radius: 10px;
+}
+
+#contents {
+    align-self: stretch;
+    text-align: center;
+    background-color: #e4f1eb;
+    border-radius: 10px;
+}
+
+#entry {
+    padding: 4em;
+}
+
+#most-recent-output {
+    padding: 2em;
+}
+
+#extra-stats {
+    margin-top: 3em;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #005e37;
+}
+
+input{
+    border-color: #005e37;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+input[type='text']{
+    width: 60vw;
+}
+
+input[type='submit']{
+    color: #005e37;
+    font-weight: bolder;
+    background-color: #e4f1eb;
+}
