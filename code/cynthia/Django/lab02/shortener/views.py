@@ -29,3 +29,9 @@ def submit_url(request):
     return HttpResponseRedirect(reverse('shortener:index'))
 
 
+
+def delete(request, item_id):
+    delete_item = Conversion.objects.get(pk=item_id)
+
+    delete_item.delete()
+    return HttpResponseRedirect(reverse('shortener:index'))

@@ -9,11 +9,16 @@
 
 
 {% if url_database %}
-        <p>Here is your new URL:</p>
+        <p>Here are your short URLs:</p>
         <ul>
             {% for item in url_database %}
             <li><strong>{{item.long_url}}</strong></li>
                 <a target= "_blank" href="{{item.long_url}}"> {{item.short_code}}</a>
+                <form action='{% url "shortener:delete" item.id %}' method="post">
+                    {% csrf_token %}
+                    <button class="delete" type="submit">Delete</button>
+                    </form>
+    
         {%endfor %}
     {% else %}
     <p>You have no new URLs!</p>
