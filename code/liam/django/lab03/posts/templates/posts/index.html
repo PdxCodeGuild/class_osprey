@@ -3,9 +3,9 @@
 {% block title %}Chirp - Main Page{% endblock %}
 
 {% block chirpform %}
-<form action="{% url 'posts:index' %}" method="post">
-
-    <input type="text" name="new_post" maxlength="128" placeholder="How's it going?" required/>
+<form action="{% url 'posts:post' %}" method="post">
+{% csrf_token %}
+    <input type="text" name="new_post" minlength="1" maxlength="128" placeholder="How's it going?" required/>
     <input type="submit" value="Chirp"/>
 </form>
 {% endblock %}
@@ -16,7 +16,8 @@
     <div class="post-info">
         <span class="post-date">{{ post.post_date }} - </span>
         <span class="author">
-            <a href="#">{{ post.author }}</a>:
+            <a href="{% url 'posts:profile' post.author %}">
+                {{ post.author }}</a>:
         </span>
     </div>
     <div class="post-contents">

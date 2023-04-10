@@ -11,6 +11,7 @@ body {
     display: flex;
     gap: 3px;
     justify-content: space-between;
+    padding: 3px;
 }
 
 a {
@@ -34,4 +35,5 @@ a {
 
 .post-contents {
     padding-left: 3em;
+    overflow-wrap: break-word;
 }

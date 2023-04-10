@@ -27,16 +27,19 @@
         </div>
             {% else %}
         <div id='auth-login' class='nav-section'>
-            <a href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'login' %}">Log In</a> /
+            <a href="{% url 'users:signup' %}">Sign Up</a>
         </div>
         {% endif %}
     </nav>
     {% if user.is_authenticated %}
     <div id="make-posts">
         {% block chirpform %}
-        section to submit posts
+        
         {% endblock %}
     </div>
+    {% else %}
+        <br>
     {% endif %}
     <div class="posts">
             {% block content %}

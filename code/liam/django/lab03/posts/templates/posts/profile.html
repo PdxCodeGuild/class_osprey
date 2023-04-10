@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Chirp - {{ username }}{% endblock %}
+
+{% block content %}
+<div class="bio">
+    Welcome to {{ username }}'s page.
+</div>
+
+{% for post in posts %}
+<div class="post">
+    <div class="post-info">
+        <span class="post-date">{{ post.post_date }} - </span>
+        <span class="author">
+            <a href="#">{{ post.author }}</a>:
+        </span>
+    </div>
+    <div class="post-contents">
+    {{ post.content }}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
