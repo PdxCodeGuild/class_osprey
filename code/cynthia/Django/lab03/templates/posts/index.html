@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+
+{% block content %}
+<form action="{% url 'posts:submit' %}" method="post">
+    {% csrf_token %}
+    <label for="post-input">Write a New Chirp:</label>
+    <input type="text" name="new_post" id="post-input">
+    <br>
+    <input type="submit" value="Post!">
+</form>
+
+
+
+<div id="latest_posts">
+    {% if latest_post_list%}
+        <p>See what people are saying!</p>
+            {%for post in latest_post_list%}
+                <li>{{ post.post_text}}, {{post.user_name}}, {{post.pub_date}}</li>
+            {%endfor%}
+        {% else %}
+        <p>There are no chirps! </p>
+    {%endif%}
+</div>
+
+{% endblock %}
