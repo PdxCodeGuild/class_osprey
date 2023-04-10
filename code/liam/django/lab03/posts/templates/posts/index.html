@@ -2,6 +2,14 @@
 
 {% block title %}Chirp - Main Page{% endblock %}
 
+{% block chirpform %}
+<form action="{% url 'posts:index' %}" method="post">
+
+    <input type="text" name="new_post" maxlength="128" placeholder="How's it going?" required/>
+    <input type="submit" value="Chirp"/>
+</form>
+{% endblock %}
+
 {% block content %}
 {% for post in posts %}
 <div class="post">

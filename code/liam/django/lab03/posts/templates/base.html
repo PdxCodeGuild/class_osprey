@@ -31,6 +31,13 @@
         </div>
         {% endif %}
     </nav>
+    {% if user.is_authenticated %}
+    <div id="make-posts">
+        {% block chirpform %}
+        section to submit posts
+        {% endblock %}
+    </div>
+    {% endif %}
     <div class="posts">
             {% block content %}
             posts line up here
