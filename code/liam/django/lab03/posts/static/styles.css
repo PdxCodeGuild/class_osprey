@@ -1,0 +1,37 @@
+body {
+    background-color: #ccccc5;
+
+    font-family: 'Inconsolata', monospace;
+    color: #442900;
+}
+
+#navbar {
+    border-style: solid;
+    border-color: #442900;
+    display: flex;
+    gap: 3px;
+    justify-content: space-between;
+}
+
+a {
+    font-weight: 800;
+    text-decoration: none;
+    color: #000c44;
+}
+
+.post {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+
+    margin: 2px;
+    padding: 3px;   
+}
+
+.post-date {
+    font-size: 0.8em;
+}
+
+.post-contents {
+    padding-left: 3em;
+}
