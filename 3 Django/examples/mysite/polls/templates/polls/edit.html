@@ -1,0 +1,34 @@
+{% extends 'polls/wrapper.html' %}
+{% block title %}Poll Edit{% endblock%}
+
+{% block content %}
+
+<h3>{{ question.question_text }}</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="new_q_text" value="{{question.question_text}}">
+    <input type="submit" value="Change question text">
+</form>
+
+
+<h4>Choices:</h4>
+<ul>
+    {% for choice in question.choice_set.all %}
+    <li>{{choice.choice_text}}</li>
+    {% endfor %}
+</ul>
+<hr>
+<h4>Add a new choice:</h4>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="c_text">Choice text: </label>
+    <input type="text" name="new_choice" id="c_text">
+    <br>
+    <input type="submit" value="Save choice">
+</form>
+
+<a href="{% url 'polls:detail' question.id %}">
+    <button>Go back to question page</button>
+</a>
+
+{% endblock %}

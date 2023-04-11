@@ -1,0 +1,14 @@
+{% extends 'polls/wrapper.html' %}
+
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+
+<h2>Sign up</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Sign up">
+</form>
+
+{% endblock %}

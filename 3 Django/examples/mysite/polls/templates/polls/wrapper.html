@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}This is the wrapper{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'polls/styles.css' %}">
+    <!-- {% block extra_styles %}{%endblock%} -->
+</head>
+
+<body>
+    <nav>
+        {% if user.is_authenticated %}
+        <div><a href="{% url 'logout' %}">Logout</a></div>
+        {% else %}
+        <div><a href="{% url 'login' %}">Login</a></div>
+        {% endif %}
+        <div class="bold"><a href="{% url 'polls:index' %}">Home</a></div>
+
+    </nav>
+
+    {% block content %}
+    There can be stuff in here, it will be used
+    if no content is defined on a template that extends this one,
+    or if this page is rendered
+    {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{% extends 'polls/wrapper.html' %}
+{% block title %}Poll Results{% endblock%}
+
+{% block content %}
+
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+    {% for c in question.choice_set.all %}
+    <li>{{c.choice_text}}: {{ c.vote_set.count }} vote{{c.vote_set.count|pluralize}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

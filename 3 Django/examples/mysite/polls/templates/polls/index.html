@@ -1,0 +1,30 @@
+{% extends 'polls/wrapper.html' %}
+{% block title %}Polls Home Page{% endblock%}
+
+{% block content %}
+
+
+{% if question_list %}
+<ul>
+    {% for question in question_list %}
+    {% if not user.is_authenticated %}
+    <li><a href='{% url "polls:results" question.id %}'>{{ question.question_text }}</a></li>
+    {% else %}
+    <li><a href='{% url "polls:detail" question.id %}'>{{ question.question_text }}</a></li>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
+
+<hr>
+<form action="{% url 'polls:add' %}" method="post">
+    {% csrf_token %}
+    <label for="q-input">New question text:</label>
+    <input type="text" name="question" id="q-input">
+    <br>
+    <input type="submit" value="Add new question">
+</form>
+
+{% endblock %}
