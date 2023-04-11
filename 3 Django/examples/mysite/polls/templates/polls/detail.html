@@ -1,3 +1,8 @@
+{% extends 'polls/wrapper.html' %}
+{% block title %}Poll Detail{% endblock%}
+
+{% block content %}
+
 <form action="{% url 'polls:vote' question.id %}" method="post">
     {% csrf_token %}
     <fieldset>
@@ -23,3 +28,5 @@
 <a href="{% url 'polls:edit' question.id %}">
     <button>Edit question</button>
 </a>
+
+{% endblock %}

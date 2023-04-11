@@ -1,3 +1,8 @@
+{% extends 'polls/wrapper.html' %}
+{% block title %}Poll Edit{% endblock%}
+
+{% block content %}
+
 <h3>{{ question.question_text }}</h3>
 <form action="" method="post">
     {% csrf_token %}
@@ -25,3 +30,5 @@
 <a href="{% url 'polls:detail' question.id %}">
     <button>Go back to question page</button>
 </a>
+
+{% endblock %}
