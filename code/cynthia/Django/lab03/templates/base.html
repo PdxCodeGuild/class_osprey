@@ -16,9 +16,13 @@
         Hi {{ user.username }}!
         {% else %}
         <div><a href="{% url 'login' %}">Login</a></div>
+    
         <p>You are not logged in</p>
+  
         {% endif %}
-       
+        <div class="bold"><a href="{% url 'posts:index' %}">Home</a></div>
+  
+        
   </nav>
 </div>
 

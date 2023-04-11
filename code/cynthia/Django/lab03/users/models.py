@@ -1,5 +1,3 @@
 from django.db import models
 
-def users():
-    ...
-    return
+# Create your models here.
