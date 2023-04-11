@@ -1,3 +1,17 @@
 body {
-    background-color: rgb(190, 219, 245);
+    background-color: rgb(114, 180, 239);
+
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(89, 163, 227);
+    padding: 1em;
+    gap: 0.5em;
+
+}
+
+.bold {
+    font-weight: 900;
 }

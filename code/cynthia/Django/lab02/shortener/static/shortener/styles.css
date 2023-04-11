@@ -1,0 +1,32 @@
+
+
+body {
+    background-color: rgba(238, 228, 241, 0.587);
+    font-size: 1em;
+
+}
+header {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    flex-direction: column;
+    padding: 1.5em;
+    font-style: bold;
+}
+
+#submit {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    flex-direction: column;
+    padding: 1.5em;
+
+}
+
+.list {
+    flex-direction: column;
+    grid-row: 2;
+    grid-column: 2;
+    font-size: 1.5em;
+    padding: 1em;
+}
