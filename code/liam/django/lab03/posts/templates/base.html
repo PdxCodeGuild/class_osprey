@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+    </style>
+    <script src="https://kit.fontawesome.com/03c91ce9d4.js" crossorigin="anonymous"></script>
+
+    <title>{% block title %} Chirp {% endblock %}</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div id='home' class='nav-section'>
+            <a href="{% url 'posts:index' %}"><i class="fa-solid fa-crow fa-lg"></i></a>
+        </div>
+        
+        {% if user.is_authenticated %}
+        <div id='auth-name' class='nav-section'>
+            Welcome, {{ user.username }}. <a href="{% url 'posts:profile' user.username %}"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <div id='auth-logout' class='nav-section'>
+            <a href="{% url 'logout' %}">Log Out</a>
+        </div>
+            {% else %}
+        <div id='auth-login' class='nav-section'>
+            <a href="{% url 'login' %}">Log In</a> /
+            <a href="{% url 'users:signup' %}">Sign Up</a>
+        </div>
+        {% endif %}
+    </nav>
+    {% if user.is_authenticated %}
+        {% block chirpform %}
+        
+        {% endblock %}
+    {% else %}
+        <br>
+    {% endif %}
+    <div class="posts">
+            {% block content %}
+            posts line up here
+            {% endblock %}
+    </div>
+
+    <footer id="footer">
+        <p>Thanks for using Chirp. <i class="fa-solid fa-crow fa-flip-horizontal"></i></p>
+    </footer>
+</body>
+</html>
