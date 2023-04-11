@@ -14,7 +14,11 @@
 
 <body>
     <nav>
-        <div><a href="/">Login</a></div>
+        {% if user.is_authenticated %}
+        <div><a href="{% url 'logout' %}">Logout</a></div>
+        {% else %}
+        <div><a href="{% url 'login' %}">Login</a></div>
+        {% endif %}
         <div class="bold"><a href="{% url 'polls:index' %}">Home</a></div>
 
     </nav>

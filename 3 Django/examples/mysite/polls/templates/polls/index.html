@@ -3,10 +3,15 @@
 
 {% block content %}
 
+
 {% if question_list %}
 <ul>
     {% for question in question_list %}
+    {% if not user.is_authenticated %}
+    <li><a href='{% url "polls:results" question.id %}'>{{ question.question_text }}</a></li>
+    {% else %}
     <li><a href='{% url "polls:detail" question.id %}'>{{ question.question_text }}</a></li>
+    {% endif %}
     {% endfor %}
 </ul>
 {% else %}

@@ -15,7 +15,11 @@
 
 
         {% for c in question.choice_set.all %}
+        {% if user_vote.choice == c %}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ c.id }}" checked>
+        {% else %}
         <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ c.id }}">
+        {%endif%}
         <label for="choice{{ forloop.counter }}" value="{{ c.id }}">
             {{c.choice_text}}
         </label>
@@ -25,8 +29,10 @@
     <input type="submit" value="Vote">
 </form>
 
+{% if user == question.created_by %}
 <a href="{% url 'polls:edit' question.id %}">
     <button>Edit question</button>
 </a>
+{% endif %}
 
 {% endblock %}
