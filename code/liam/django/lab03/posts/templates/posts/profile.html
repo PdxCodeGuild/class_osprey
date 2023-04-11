@@ -16,6 +16,9 @@
         </span>
     </div>
     <div class="post-contents">
+    {% if post.image %}
+    <img src="{{ post.image.url }}" alt="user uploaded image" class="post-image"/>
+    {% endif %}
     {{ post.content }}
     </div>
 </div>

@@ -4,9 +4,13 @@
 
 {% block chirpform %}
 <div id="make-posts">
-<form action="{% url 'posts:post' %}" method="post">
+<form action="{% url 'posts:post' %}" method="post" enctype="multipart/form-data">
 {% csrf_token %}
     <input type="text" name="new_post" minlength="1" maxlength="128" placeholder="How's it going?" required/>
+    <label for="image-upload" class="file-upload">
+        <i class="fa-solid fa-camera-retro"></i>
+    </label>
+    <input type="file" id="image-upload" name="image_post"/>
     <input type="submit" value="Chirp"/>
 </form>
 </div>
@@ -23,6 +27,9 @@
         </span>
     </div>
     <div class="post-contents">
+    {% if post.image %}
+    <img src="{{ post.image.url }}" alt="user uploaded image" class="post-image"/>
+    {% endif %}
     {{ post.content }}
     </div>
 </div>

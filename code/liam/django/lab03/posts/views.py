@@ -12,10 +12,14 @@ def index(request):
 
 def make_post(request):
     new_post = Post()
+    
+    try:
+        new_post.image = request.FILES['image_post']
+    except KeyError:
+        pass
     new_post.content = request.POST['new_post']
     new_post.author = request.user
     new_post.save()
-    print(request.user)
     return HttpResponseRedirect(reverse("posts:index"))
 
 def profile_view(request, username):
