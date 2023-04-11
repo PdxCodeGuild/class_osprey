@@ -4,7 +4,7 @@ from users import views
 
 app_name = 'users'
 urlpatterns = [
-    path("", views.index, name="users"),
+    path("users/", views.users, name="users"),
 ]
 
 #url nmes must be unique
