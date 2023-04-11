@@ -9,18 +9,19 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
     </style>
+    <script src="https://kit.fontawesome.com/03c91ce9d4.js" crossorigin="anonymous"></script>
 
     <title>{% block title %} Chirp {% endblock %}</title>
 </head>
 <body>
     <nav id="navbar">
         <div id='home' class='nav-section'>
-            <a href="{% url 'posts:index' %}">Home</a>
+            <a href="{% url 'posts:index' %}"><i class="fa-solid fa-crow fa-lg"></i></a>
         </div>
         
         {% if user.is_authenticated %}
         <div id='auth-name' class='nav-section'>
-            Welcome, {{ user.username }}.
+            Welcome, {{ user.username }}. <a href="{% url 'posts:profile' user.username %}"><i class="fa-solid fa-user"></i></a>
         </div>
         <div id='auth-logout' class='nav-section'>
             <a href="{% url 'logout' %}">Log Out</a>
@@ -33,11 +34,9 @@
         {% endif %}
     </nav>
     {% if user.is_authenticated %}
-    <div id="make-posts">
         {% block chirpform %}
         
         {% endblock %}
-    </div>
     {% else %}
         <br>
     {% endif %}
@@ -46,5 +45,9 @@
             posts line up here
             {% endblock %}
     </div>
+
+    <footer id="footer">
+        <p>Thanks for using Chirp. <i class="fa-solid fa-crow fa-flip-horizontal"></i></p>
+    </footer>
 </body>
 </html>

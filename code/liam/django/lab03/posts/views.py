@@ -4,7 +4,7 @@ from .models import Post
 from django.contrib.auth.models import User
   
 def index(request):
-    posts = Post.objects.order_by("-post_date")
+    posts = Post.objects.order_by("-post_date")[:15]
     context = {
         "posts": posts,
     }

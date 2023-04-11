@@ -3,11 +3,13 @@
 {% block title %}Chirp - Main Page{% endblock %}
 
 {% block chirpform %}
+<div id="make-posts">
 <form action="{% url 'posts:post' %}" method="post">
 {% csrf_token %}
     <input type="text" name="new_post" minlength="1" maxlength="128" placeholder="How's it going?" required/>
     <input type="submit" value="Chirp"/>
 </form>
+</div>
 {% endblock %}
 
 {% block content %}

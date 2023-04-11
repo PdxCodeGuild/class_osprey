@@ -12,7 +12,7 @@
     <div class="post-info">
         <span class="post-date">{{ post.post_date }} - </span>
         <span class="author">
-            <a href="#">{{ post.author }}</a>:
+            <a href="{% url 'posts:profile' post.author %}">{{ post.author }}</a>:
         </span>
     </div>
     <div class="post-contents">
