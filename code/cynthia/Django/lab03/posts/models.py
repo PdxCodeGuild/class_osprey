@@ -11,3 +11,4 @@ class Post(models.Model):
     user_name = models.ForeignKey(User, on_delete=models.CASCADE)
     def __str__(self):
         return self.post_text
+

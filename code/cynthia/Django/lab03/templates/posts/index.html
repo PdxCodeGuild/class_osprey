@@ -17,7 +17,7 @@
         <br>
             {%for post in latest_post_list%}
                 <h4>{{post.post_text}}</h4>
-                    <h6>{{post.user_name}}, {{post.pub_date}}</h6>
+                    <a href="{% url 'posts:profile' user.id %}">{{post.user_name}}</a>, <h6>{{post.pub_date}}</h6>
             {%endfor%}
         {% else %}
         <p>There are no chirps! </p>
