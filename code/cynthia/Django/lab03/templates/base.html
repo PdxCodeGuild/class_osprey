@@ -12,15 +12,18 @@
 </head>
 <body>
   <div>
-  <nav>
-    <img src="https://icons.iconarchive.com/icons/mysitemyway/blue-jeans-social-media/256/twitter-bird3-square-icon.png" alt="a bid silhouette">
+      <div class="logo">
+      <p id="logo">Chirp!</p>
+      <img id="image" src="https://icons.iconarchive.com/icons/iconhive/black-twitter/256/bird-2-icon.png" alt="a bid silhouette">
+      </div>
+    <nav>
     {% if user.is_authenticated %}
-        Welcome, {{ user.username }}!
+        <div class= "welcome"> Welcome, {{ user.username }}!</div>
         <div id="logout-button"><a href="{% url 'logout' %}">Logout</a></div>
         {% else %}
         <div id = 'login-button'><a href="{% url 'login' %}">Login</a></div>
     
-        <p>You are not logged in</p>
+     
   
         {% endif %}
         <div id="home-button" class="bold"><a href="{% url 'posts:index' %}">Home</a></div>

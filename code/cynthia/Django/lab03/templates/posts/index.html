@@ -6,19 +6,23 @@
     <label for="post-input">Write a New Chirp: </label>
     <input type="text" name="new_post" id="post-input">
     <br>
-    <input type="submit" value="Post!">
+    <input id="post-button" type="submit" value="Post!">
 </form>
 
 
 
 <div id="latest_posts">
     {% if latest_post_list%}
-        <p id="todays_chirps">Today's Chirps</p>
+        <p id="todays_chirps">Today's Chirps!</p>
         <br>
+            
             {%for post in latest_post_list%}
-                <p class="post">{{post.post_text}}</p>
-                <p class="post"><a href="{% url 'posts:profile' user.id %}">{{post.user_name}}</a>, {{post.pub_date}}</p>
-            {%endfor%}
+            <div class="post">
+                <p >{{post.post_text}}</p>
+                <p >posted by:<a href="{% url 'posts:profile' user.id %}">{{post.user_name}}</a>, {{post.pub_date}}</p>
+            </div>
+                {%endfor%}
+        
         {% else %}
         <p>There are no chirps! </p>
     {%endif%}

@@ -1,31 +1,169 @@
 
 
 body {
-    background-color: #b2d3d3;
+    background-color: #80aadb;
 }
 
 nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     background-color: rgba(172, 197, 219, 0.475);
-    padding: 2em;
+    padding: 1em;
     gap: 0.5em;
     font-size: 1em;
 
 }
 
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3em;
+    font-style: italic;
+    font-weight: 800;
+}
+
 #write-chirp {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 2em;
+   
 }
 
 #latest_posts {
-    border: 3px solid gray;
+    border: 3px solid rgb(132, 129, 129);
+    border-radius: 10px;
     padding:1em;
 }
 
 .post {
+
     border: 3px solid gray;
     padding:1em;
+    border-radius: 10px;
+    margin: .5em;
+    background-color: azure;
+}
+
+#post-input {
+    width: 300px;
+    height:150px;
+    font-size:15px;
+}
+#post-button {
+    width: 300px;
+    height:150px;
+    font-size: 4em;
+}
+
+#profile {
+
+    border: 3px solid gray;
+    padding:1em;
+    border-radius: 10px;
+    margin: .5em;
+    background-color: azure;
+}
+
+
+
+@media screen and (min-width:650px) {
+    nav {
+        display: flex ;
+        justify-content: flex-end;
+        padding: 2em;
+        gap: 0.5em;
+        font-size: 1em;
+    }
+
+
+    .welcome {
+        display: flex;
+        justify-content: center;
+        justify-content: flex-start;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 1em;
+        font-size: 4em;
+    }
+
+    #todays_chirps {
+        font-size: 2em;
+    }
+    #write_chirp{
+        display: flex;
+        justify-content: center;
+        font-size: 3em;
+        align-items: center;
+        padding: 2em;
+        font-size: 4em;
+    }
+    #profile,
+    .post {
+        font-size: 1.5em;
+        margin: 1em;
+    }
+    #latest_posts {
+        padding: 2em;
+    }
+
+    #post-input {
+        width: 600px;
+        height:200px;
+        font-size:20pt;
+    }
+    #post-button {
+        width: 600px;
+        height:200px;
+        font-size: 15em;
+    }
+
+}
+
+@media screen and (min-width:1000px) {
+    nav{
+        font-size: 3em;
+    }
+    #post_button {
+        display: flex;
+        justify-items: center;
+        font-size: 25em;
+    }
+    #write-chirp {
+        align-items: center;
+        padding: 2em;
+        font-size: 4em;
+    }
+    
+    .logo {
+        font-size: 8em;
+    }
+    #todays_chirps {
+        font-size: 4em;
+    }
+    #profile,
+    .post {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        padding: 3em;
+        font-size: 4em;
+        margin: 2em;
+
+    }
+    #post-input {
+        width: 900px;
+        height:300px;
+        font-size:30pt;
+    }
+    #latest_posts {
+        padding: 3em;
+    }
+
 }

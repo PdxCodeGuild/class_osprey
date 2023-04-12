@@ -4,11 +4,14 @@
 
 
 
-{%if all_posts%}
-    {%for post in all_posts%}
-    <p>{{post}} -  {{post.user_name}} </p>
-    {%endfor%}
-{%endif%}
+    {%if all_posts%}
+        {%for post in all_posts%}
+        <div id="profile">
+            <p>{{post}} </p>
+            <p>posted by: {{post.user_name}} </p>
+        </div>
+        {%endfor%}
+    {%endif%}
 
 
 
