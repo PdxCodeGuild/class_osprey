@@ -1,9 +1,9 @@
 {% extends "home.html" %}
-
+{% load static%}
 {% block content %}
 <form id="write-chirp" action="{% url 'posts:submit' %}" method="post">
     {% csrf_token %}
-    <label for="post-input">Write a New Chirp:</label>
+    <label for="post-input">Write a New Chirp: </label>
     <input type="text" name="new_post" id="post-input">
     <br>
     <input type="submit" value="Post!">
@@ -13,11 +13,11 @@
 
 <div id="latest_posts">
     {% if latest_post_list%}
-        <p>Today's Chirps</p>
+        <p id="todays_chirps">Today's Chirps</p>
         <br>
             {%for post in latest_post_list%}
-                <h4>{{post.post_text}}</h4>
-                    <a href="{% url 'posts:profile' user.id %}">{{post.user_name}}</a>, <h6>{{post.pub_date}}</h6>
+                <p class="post">{{post.post_text}}</p>
+                <p class="post"><a href="{% url 'posts:profile' user.id %}">{{post.user_name}}</a>, {{post.pub_date}}</p>
             {%endfor%}
         {% else %}
         <p>There are no chirps! </p>
