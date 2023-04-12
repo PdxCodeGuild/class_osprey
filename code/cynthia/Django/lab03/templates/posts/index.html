@@ -1,7 +1,7 @@
 {% extends "home.html" %}
 
 {% block content %}
-<form action="{% url 'posts:submit' %}" method="post">
+<form id="write-chirp" action="{% url 'posts:submit' %}" method="post">
     {% csrf_token %}
     <label for="post-input">Write a New Chirp:</label>
     <input type="text" name="new_post" id="post-input">
@@ -13,7 +13,7 @@
 
 <div id="latest_posts">
     {% if latest_post_list%}
-        <p>See what people are saying!</p>
+        <p>Today's Chirps</p>
         <br>
             {%for post in latest_post_list%}
                 <h4>{{post.post_text}}</h4>

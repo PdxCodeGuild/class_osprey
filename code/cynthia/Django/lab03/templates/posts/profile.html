@@ -1,8 +1,15 @@
-<h1>See your friends!</h1>
+{% extends "home.html" %}
+
+{% block content %}
+
 
 
 {%if all_posts%}
-
-    <h4>{{selected_user}} ....</h4>
-    
+    {%for post in all_posts%}
+    <p>{{post}} -  {{post.user_name}} </p>
+    {%endfor%}
 {%endif%}
+
+
+
+{% endblock %}

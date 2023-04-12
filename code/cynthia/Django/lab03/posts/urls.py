@@ -2,7 +2,6 @@ from django.urls import path
 from . import views
 
 
-
 app_name = 'posts'
 
 urlpatterns = [
@@ -11,3 +10,4 @@ urlpatterns = [
     path("profile/<int:user_name_id>", views.profile , name="profile"),
 
 ]
+

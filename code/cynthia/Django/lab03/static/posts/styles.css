@@ -1,0 +1,19 @@
+
+
+body {
+    background-color: rgb(183, 240, 240);
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(172, 197, 219, 0.475);
+    padding: 1em;
+    gap: 0.5em;
+    font-size: 1.5em;
+
+}
+
+#write-chirp{
+
+}

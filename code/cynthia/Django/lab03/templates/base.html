@@ -7,20 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Chirp!{% endblock %}</title>
+  {%load static%}
+  <link rel="stylesheet" href="{% static 'posts/styles.css' %}" type="text/css">
 </head>
 <body>
   <div>
   <nav>
     {% if user.is_authenticated %}
-        <div><a href="{% url 'logout' %}">Logout</a></div>
-        Hi {{ user.username }}!
+        
+        You're logged in, {{ user.username }}!
+        <div id="logout-button"><a href="{% url 'logout' %}">Logout</a></div>
         {% else %}
-        <div><a href="{% url 'login' %}">Login</a></div>
+        <div id = 'login-button'><a href="{% url 'login' %}">Login</a></div>
     
         <p>You are not logged in</p>
   
         {% endif %}
-        <div class="bold"><a href="{% url 'posts:index' %}">Home</a></div>
+        <div id="home-button" class="bold"><a href="{% url 'posts:index' %}">Home</a></div>
   
         
   </nav>

@@ -10,6 +10,8 @@ def index(request):
     latest_post_list = Post.objects.order_by("-pub_date")[:10]
     return render(request,'posts/index.html', {'latest_post_list':latest_post_list})
 
+
+
 @login_required
 def submit_post(request):
     post_text = request.POST['new_post']
