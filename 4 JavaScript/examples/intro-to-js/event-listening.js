@@ -2,6 +2,8 @@ const box = document.getElementById('box')
 box.classList.add('red')
 
 // use event listeners to detect user interactions with an element
+// first argument is an event type/name, the second argument is a callback function
+// the callback will be called every time an event is detected
 box.addEventListener('mouseover', () => console.log('this happened'))
 box.addEventListener('click', () => box.classList.toggle('red'))
 
@@ -41,6 +43,7 @@ button.addEventListener('click', () => {
             const tallyBox = document.getElementById(el.value)
             tallyBox.innerText++
         })
+        // track successful voter names
         voters.push(nameInput.value)
     }
 
