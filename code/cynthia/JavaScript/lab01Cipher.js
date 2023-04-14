@@ -31,30 +31,17 @@
 
 // }
 
-alphabet = ['a','b','c', 'd','e','f','g','h','i','j','k','l', 'm', 'n','o', 'p', 'q','r','s','t','u','v','w','x','y','z' ]
+alphabet = ['a','b','c', 'd','e','f','g','h','i','j','k','l', 'm', 'n','o', 'p', 'q','r','s','t','u','v','w','x','y','z',]
 
-userInput = prompt('What is your secret message?')
+let userInput = prompt('What is your secret message?')
+var userNumber = prompt('Rotate the alphabet by (enter a number)')
 
-rotation = prompt('Rotate the alphabet by (enter a number)')
-let i = (26 + rotation) % 26
+var rotation = parseInt(userNumber)
 
-
-for(let i = 0; i<userInput.length; i++){
-    console.log(alphabet[i])
+let newMessage = '';
+for (item of userInput){
+    index = alphabet.indexOf(item)
+    newMessage += alphabet[(rotation + index) % 26]
 }
-
-
-
-// let newMessage = '';
-// for (let rotation in userInput){
-//     newMessage += newMessage +alphabet[(rotation + 26)%26]
-//     console.log(newMessage)
-
-// }
-
-// for (chr in userInput){
-//     index = alphabet.index(chr)
-//     newMessage = newMessage + alphabet[(index + rotation) % 26]
-//     console.log(newMessage)
-// }
+console.log(newMessage)
 
