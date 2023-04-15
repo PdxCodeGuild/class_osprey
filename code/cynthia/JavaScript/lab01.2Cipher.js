@@ -13,7 +13,7 @@ alphabet = ['a','b','c', 'd','e','f','g','h','i','j','k','l', 'm', 'n','o', 'p',
 
 
 submitButton.addEventListener('click', () => {
-    var rotation = parseInt(userNumber.value)
+    let rotation = parseInt(userNumber.value)
 
     let newMessage = '';
     for (item of userInput.value){

@@ -30,33 +30,41 @@ const numberConversion ={
     90: "ninty",
 };
 
-userNumber = prompt('enter a number from 0-999 ')
 
-let tensDigit = Math.floor((userNumber % 100)/10) * 10 
-let onesDigit = userNumber % 10
 
-// tensText = numberConversion[tensDigit]
-// onesText =numberConversion[onesDigit]
-let tensText = ''
-let onesText = ''
-if (userNumber < 100){ 
-    if (userNumber <= 9) {
-        console.log(numberConversion[onesDigit])
+const userNumberInput = document.querySelector('#userNumber')
+const submitButton = document.querySelector('button[id="convert"]')
+
+
+submitButton.addEventListener('click', () => {
+    let userNumber= userNumberInput.value
+
+    let tensDigit = Math.floor((userNumber % 100)/10) * 10 
+    let onesDigit = userNumber % 10
+
+    // tensText = numberConversion[tensDigit]
+    // onesText =numberConversion[onesDigit]
+    // let tensText = ''
+    // let onesText = ''
+
+
+// if branching issue
+    if (userNumber < 100){ 
+        if (userNumber <= 9) {
+            newOutput = numberConversion[onesDigit]
         } else if ( 11 <= userNumber <= 19) {
-            console.log(numberConversion[userNumber])
+                newOutput = numberConversion[userNumber]
         } else if (onesDigit == 0) {
-            console.log(numberConversion[tensDigit])
-        } 
-        if (userNumber <= 99){
-            console.log(numberConversion[tensDigit], numberConversion[onesDigit])
-        
+            newOutput = numberConversion[tensDigit]
+        } else { 
+            newOutput= numberConversion[tensDigit] + ' ' + numberConversion[onesDigit]
         }
-}
+    }
     else if (userNumber >= 100) {
         if (tensDigit == 10){
-            console.log((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ (numberConversion[onesDigit + tensDigit]))
+            newOutput = ((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ (numberConversion[onesDigit + tensDigit]))
         } else if (20 <= tensDigit && onesDigit == 0){
-            console.log((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ (numberConversion[tensDigit]))
+            newOutput = ((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ (numberConversion[tensDigit]))
 
         } else {
             
@@ -68,6 +76,8 @@ if (userNumber < 100){
                 onesText = ''
                 tensText = numberConversion[tensDigit]
             }
-                console.log((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ tensText, onesText)
+                newOutput = ((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ tensText, onesText)
         }
 }
+    output.innerHTML = newOutput
+})
