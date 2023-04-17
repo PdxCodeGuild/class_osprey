@@ -23,19 +23,22 @@ const deck = {
 let card1 = document.querySelector('#card1')
 let card2 = document.querySelector('#card2')
 let card3 = document.querySelector('#card3')
-const submitButton = document.querySelector('button[id="send"]')
+const submitButton = document.querySelector('#send')
 
-const handValue = deck[card1.value] + deck[card2.value] + deck[card3.value]
+
+
 
 submitButton.addEventListener('click', () => {
- 
-
+    let handValue = deck[card1.value] + deck[card2.value] + deck[card3.value]
     if (handValue < 17) {
         result = (handValue, 'hit')
+
     } else if (17>= handValue <21 ){
         result = (handValue, 'stay')
+
     } else if (handValue == 21) {
         result = ('Blackjack!')
+        
     } else {
         result = ("Already Busted")
     }
