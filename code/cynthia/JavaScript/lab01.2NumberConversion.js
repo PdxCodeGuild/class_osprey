@@ -42,41 +42,49 @@ submitButton.addEventListener('click', () => {
     let tensDigit = Math.floor((userNumber % 100)/10) * 10 
     let onesDigit = userNumber % 10
 
-    // tensText = numberConversion[tensDigit]
-    // onesText =numberConversion[onesDigit]
-    // let tensText = ''
-    // let onesText = ''
-
-
-// if branching issue
+    
     if (userNumber < 100){ 
+
         if (userNumber <= 9) {
             newOutput = numberConversion[onesDigit]
-        } else if ( 11 <= userNumber <= 19) {
-                newOutput = numberConversion[userNumber]
+
+
         } else if (onesDigit == 0) {
             newOutput = numberConversion[tensDigit]
-        } else { 
-            newOutput= numberConversion[tensDigit] + ' ' + numberConversion[onesDigit]
-        }
-    }
-    else if (userNumber >= 100) {
-        if (tensDigit == 10){
-            newOutput = ((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ (numberConversion[onesDigit + tensDigit]))
-        } else if (20 <= tensDigit && onesDigit == 0){
-            newOutput = ((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ (numberConversion[tensDigit]))
+            console.log('line 53')
+
+        // } else if ( 11 <= userNumber <= 19) {
+        //     newOutput = numberConversion[userNumber]
+        //     console.log('line 57')
 
         } else {
-            
+            newOutput= numberConversion[tensDigit] + ' ' + numberConversion[onesDigit]
+            console.log('line 61')
+        }
+    }
+
+
+    else if (userNumber >= 100) {
+
+        let tensDigit = Math.floor((userNumber % 100)/10) * 10 
+        newOutput = ((numberConversion[Math.floor(userNumber/100)])+ ' '+ 'hundred') 
+
+        if (tensDigit == 10){
+            newOutput = ((numberConversion[onesDigit + tensDigit]))
+
+        } else if (20 <= tensDigit && onesDigit == 0){
+            newOutput = ((numberConversion[tensDigit]))
+
+        } else {
+            onesText = numberConversion[onesDigit]
+            tensText = numberConversion[tensDigit]
             if (tensDigit == 0){
                 tensText = ''
-                onesText = numberConversion[onesDigit]
             } 
             if (onesDigit == 0){
                 onesText = ''
-                tensText = numberConversion[tensDigit]
             }
-                newOutput = ((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ tensText, onesText)
+            newOutput = (numberConversion[Math.floor(userNumber/100)])+ ' '+ 'hundred' +tensText + ' ' +onesText
         }
 }
     output.innerHTML = newOutput
