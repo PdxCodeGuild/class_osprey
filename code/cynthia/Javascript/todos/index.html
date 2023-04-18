@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@2"></script> 
+    <link rel="stylesheet" href="css/site.css" />
+
+    <script src="js/site.js" defer></script>
+
+    <script src="https://unpkg.com/vue@2"></script>
+    <title>Todo list!</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+        <h3>Here are todays tasks:</h3>
+        <ul>
+            <li v-for="t in todoList"><span v-bind:class="{completed:t.status}">{{t.task}}</span>
+                
+            <button  @click= 'toggleDone(t)'>completed</button>
+
+            </li>
+
+            <input type="text" v-model="inputText" v-on:keyup.enter="logInput" > 
+            <button @click="logInput" type="submit">Add a task!</button>
+
+
+        </ul>
+    </div>
+
+
+
+</body>
+</html>
