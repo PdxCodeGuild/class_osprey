@@ -53,9 +53,9 @@ submitButton.addEventListener('click', () => {
             newOutput = numberConversion[tensDigit]
             console.log('line 53')
 
-        // } else if ( 11 <= userNumber <= 19) {
-        //     newOutput = numberConversion[userNumber]
-        //     console.log('line 57')
+        } else if ( 11 <= userNumber && userNumber <= 19) {
+            newOutput = numberConversion[userNumber]
+            console.log('line 57')
 
         } else {
             newOutput= numberConversion[tensDigit] + ' ' + numberConversion[onesDigit]
