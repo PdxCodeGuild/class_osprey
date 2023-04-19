@@ -21,18 +21,18 @@ new Vue({
                     status: false})
         },
 
-        toggleDone(item) {
-            {"isDone = !isDone"}
+        toggleDone(t) {
+            "isDone = !isDone"
             // change status to true, find it in the todolist, replace
-           
+            this.status= !this.status
         
-            for (t in this.todoList) {
-                t = this.todoList.indexOf(this.t)
-                this.status= !status
-                this.todoList[t].splice(index, 1, true)
+            for (this.t in this.todoList) {
+                // t = this.todoList.indexOf(this.t)
+                this.todoList.splice(t, true)
+                this.todoList.appendChild(t)
+                console.log(this.todoList)
             }
            
-            
             //  t is one item in todolist, will have to update then save it back
         }
         
