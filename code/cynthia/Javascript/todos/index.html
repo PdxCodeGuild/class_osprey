@@ -14,22 +14,30 @@
 </head>
 <body>
     <div id="app">
-        {{ message }}
-        <h3>Here are todays tasks:</h3>
-        <ul>
-            <li v-for="t in todoList"><span v-bind:class="{completed:t.status}">{{t.task}}</span>
-                
-            <button  @click= 'toggleDone(t)'>  completed</button>
-
-            </li>
-
+        <h1>{{ message }}</h1>
+      
+        <ul id="task-button">
             <input type="text" v-model="inputText" v-on:keyup.enter="logInput" > 
-            <button @click="logInput" type="submit">Add a task!</button>
-
-
+            <button @click="logInput" type="submit">Add a new task!</button>
         </ul>
-    </div>
+        <div class="wrapper">
+        <p id="task-list">Here are your tasks:</p>
+        
+        
+        <li v-for="t in todoList"><span v-bind:class="{completed:t.status}">{{t.task}}</span>
+        <button id="completed-button"  @click= 'toggleDone(t)' class="btn btn-success">completed</button>
+        </li>
 
+            
+        
+        <p>Completed Tasks:</p>
+        <ul>
+            <li id='completed-list' style="text-decoration: line-through;" v-for="t in completedList"><span>{{t.task}}</span>
+        </ul>
+        <br>
+        </div>
+    </div>
+   
 
 
 </body>
