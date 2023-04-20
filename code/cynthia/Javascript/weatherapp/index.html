@@ -29,13 +29,15 @@
     <option value="Fairbanks, Ak"> Fairbanks, Ak</option>
     </select>
     <button class="btn btn-primary" @click="getInput">Get Weather</button>
+    <!-- {{output}} -->
+    <!-- <p>Today's weather is {{output}}, {{output.main}} -->
+    <p v-for='(w, indx) in output.weather'><span>{{w.description}}</span></p>
+    <p v-for='(temp, indx) in output'><span>{{temp.temp}}</span></p>
+    <p v-for='(temp, indx) in output'><span>   {{temp.feels_like}}</span></p>
 
-    <p>Today's weather is {{output.description}}
-        {{output.main}}
     </p>
-    <br>
-    <br>
-  
+   
+   
   
 
    
