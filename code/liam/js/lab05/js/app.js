@@ -7,7 +7,7 @@ Vue.component('WeatherDetail', {
                 <img :src="getImg" alt="weather icon">
             </div>
             <div class="timelog">
-                as of {{ getDate }}
+                as of {{ getDate() }}
             </div>
         </div>
         <div id='weather-details'>
@@ -34,22 +34,18 @@ Vue.component('WeatherDetail', {
     </fieldset>
 </div>`,
     props: ['output', 'weather'],
-    data: () => {
-        return {
-            getImg: getImg(),
-            todayDate: getDate(),
-        }
-    },
     computed: {
         getImg() {
             let code = this.weather.icon
             return `http://openweathermap.org/img/wn/${code}.png`
         },
+    },
+    methods: {
         getDate() {
             let datetime = new Date()
-            return this.todayDate = datetime.toLocaleDateString()
+            return datetime.toLocaleString()
         }
-    }
+    },
 })
 
 new Vue({

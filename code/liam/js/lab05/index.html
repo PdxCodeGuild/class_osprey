@@ -33,7 +33,9 @@
             </div>
         </div>
 
-        <template><weather-detail :output="output" :weather="weather"></weather-detail></template>
+        <template v-if="output.sys">
+            <weather-detail :output="output" :weather="weather"></weather-detail>
+        </template>
 
     </div>
 </body>
