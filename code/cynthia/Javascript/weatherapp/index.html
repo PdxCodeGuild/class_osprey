@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/site.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <script src="secrets.js"></script>
+    <script src="js/site.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+   
+    <title>Weather App</title>
+</head>
+<body>
+ 
+   <div id="app">
+    {{ message }}
+    <br>
+
+    <label for="locations" >Choose a Location</label>
+    <div id="location-info">
+        <p>{{userLocation.location}}</p>
+
+    </div>
+    <select name="locations" id="locations" v-model="locationString" @change = 'onChange()'>
+    <option value="Portland, Or">Portland, Or</option>
+    <option value="Sacramento, Ca"> Sacramento, Ca</option>
+    <option value="Fairbanks, Ak"> Fairbanks, Ak</option>
+    </select>
+    <button class="btn btn-primary" @click="getInput">Get Weather</button>
+
+    <p>Today's weather is {{output.description}}
+        {{output.main}}
+    </p>
+    <br>
+    <br>
+  
+  
+
+   
+   
+
+    </div>  
+      
+</body>
+</html>
