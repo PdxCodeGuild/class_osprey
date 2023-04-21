@@ -1,0 +1,40 @@
+body{
+    display: flexbox;
+    background-color: rgb(153, 153, 207);
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 1.5em;
+    padding-bottom: 2em;
+    background-color: rgba(86, 86, 141, 0.402);
+   
+}
+
+#button{
+    display: flex;
+    font-size: 1.2em;
+    padding: 1em;
+    align-items: center;
+}
+
+#location-info {
+    align-items: center;
+    font-size: 1.5em;
+    padding-left: 1em;
+}
+
+#weather-info {
+    display: flex;
+    font-size: 1em;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 1.5em;
+    font-size: 1.5em;
+  
+}
+
+/* #submit-button{
+    padding;
+} */

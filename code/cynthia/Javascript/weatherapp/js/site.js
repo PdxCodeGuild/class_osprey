@@ -5,7 +5,7 @@ new Vue({
         return {
             output: {},
             newImage: {},
-            message: 'check the weather!',
+            message: 'Weather Wiz',
             userLocation: {},
             locationString: '',
             
