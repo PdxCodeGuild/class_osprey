@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/site.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+    <script src="secrets.js"></script>
+    <script src="js/site.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+
+    <title>Pollen Air</title>
+</head>
+<body>
+    <div id="app">
+        <h3>{{message}}</h3>
+     
+        <button id="submit-button" class="btn btn-info btn-lg" @click="getForcast">Get Weather</button>
+        <!-- {{output}} -->
+        <br>
+        <!-- <p v-for= >start date{{output.metadata}}</p> -->
+        <input type="text" class="btn btn-info btn-lg" v-model="userAddress" @click="getLocation">
+        
+        <p v-for="(b, indx) in googleResult.location">{{b.location}}</p>
+            <h5>{{googleResult}}</h5>
+    
+    </div>
+
+
+</body>
+</html>
