@@ -4,7 +4,7 @@ new Vue({
     data() {
         return {
             output: {},
-            newImage: {},
+            
             message: 'Weather Wiz',
             userLocation: {},
             locationString: '',
@@ -14,6 +14,7 @@ new Vue({
                 {location:'Portland, Or', lat:'45', lon: '-122' },
                 {location:'Fairbanks, Ak', lat:'64', lon:'-147'}
             ],
+            newIcon: '',
 
         }
   
@@ -27,25 +28,29 @@ new Vue({
                     lat: this.userLocation.lat,
                     lon: this.userLocation.lon,
                     appid: appkey,
-                    units: 'imperial' },
+                    units: 'imperial', 
+                },
                 }).then(response => {this.output = response.data}).catch(err => console.error(err))
               
             },
 
         onChange(e) {
             this.userLocation = this.locations.find(l => this.locationString == l.location) 
+           
         },
 
-        // getImage() {
-        //     axios.get('http://openweathermap.org/img/'), {
-        //         params: {
-        //             icon: this.output.icon,
-        //         },
-        //     }.then(response=> {this.newImage = response}).catch(err => console.error(err))
-        // }
+
+
+    },
+    computed:{
+        getImgUrl(){
+            console.log(this.output.weather)
+            return `http://openweathermap.org/img/wn/${this.output.weather[0].icon}.png`
+            
+        }
+
     }
 })
 
 
 
-// response.data.weather[0]

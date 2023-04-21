@@ -39,10 +39,15 @@
 
         <div id="weather-info">
             <p>You'll see:</p><p v-for='(w, indx) in output.weather'>{{w.description}}</p>
+            <img v-if="output.weather" v-bind:src="getImgUrl"/>
+        
             <p>It will be: </p><p v-for='(temp, indx) in output'>{{temp.temp}}</p>
-            <p>It will feel like:</p><p v-for='(temp, indx) in output'>{{temp.feels_like}}</p>
+           
+            <p>It will feel like:</p> <p v-for='(temp, indx) in output'>{{temp.feels_like}}</p>
         </div>
-    
+
+      
+        
 
     </div>  
       
