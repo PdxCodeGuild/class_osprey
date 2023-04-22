@@ -15,19 +15,37 @@
 <body>
     <div id="app">
         <h3>{{message}}</h3>
-     
+        
+        <!-- <input type="text" v-model="userAddress" v-on:keyup.enter="onChange()"> -->
+
+        <input type="text" v-model="userAddress" @keyup.enter="getLocation">
+   
+
+            <!-- {{googleResult}} -->
+                <h5>latitude: {{googleResult.lat}}</h5>
+                <h5>longitude: {{googleResult.lng}}</h5>
+
+
+        <div id="days-button">
+            <label for="days" >Choose a date range:</label>
+
+            <select name="days" id="days" v-bind:value="daysString">
+            <option value="1">today's forecast</option>
+            <option value="2"> 2 day forecast</option>
+            <option value="3"> 3 day forecast</option>
+            </select>
+
         <button id="submit-button" class="btn btn-info btn-lg" @click="getForcast">Get Weather</button>
+        </div>
+
         {{output}}
         <br>
-        <!-- <p v-for= >start date{{output.metadata}}</p> -->
-        <!-- <input type="text" v-model="userAddress" @keyup.enter="onChange()"> -->
-<!-- 
-        <input type="text" v-model="userAddress" @keyup.enter="getLocation">
+        <li v-for='(s, indx) in output.metadata' >{{s}}</li>
+      
 
-        {{googleResult}}
-            <h5>latitude: {{googleResult.lat}}</h5>
-            <h5>longitude: {{googleResult.lng}}</h5>
-     -->
+
+
+  
     </div>
 
 
