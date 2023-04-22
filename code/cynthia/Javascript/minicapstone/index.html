@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/site.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@300&family=Raleway:wght@500&display=swap');
+    </style>
     <script src="https://unpkg.com/vue@2"></script>
     <script src="secrets.js"></script>
     <script src="js/site.js" defer></script>
@@ -14,21 +17,22 @@
 </head>
 <body>
     <div id="app">
+        <header>
         <h3>{{message}}</h3>
+        </header>
         
+        <div id="location-info">
         <!-- <input type="text" v-model="userAddress" v-on:keyup.enter="onChange()"> -->
-
+        <p id="location-header">Enter a location:</p>
         <input type="text" v-model="userAddress" @keyup.enter="getLocation">
-   
-
             <!-- {{googleResult}} -->
-                <h5>latitude: {{googleResult.lat}}</h5>
-                <h5>longitude: {{googleResult.lng}}</h5>
-
+                <!-- <p>latitude: {{googleResult.lat}}</p>
+                <p>longitude: {{googleResult.lng}}</p> -->
+        </div>
 
         <div id="days-button">
-            <label for="days" >Choose a date range:</label>
-
+            <!-- <label for="days" >Choose a date range:</label> -->
+            <p>Choose a date range:</p>
             <select name="days" id="days" v-bind:value="daysString">
             <option value="1">today's forecast</option>
             <option value="2"> 2 day forecast</option>
@@ -38,7 +42,7 @@
         <button id="submit-button" class="btn btn-info btn-lg" @click="getForcast">Get Weather</button>
         </div>
 
-        {{output}}
+        <p>{{output}}</p>
         <br>
         <li v-for='(s, indx) in output.metadata' >{{s}}</li>
       

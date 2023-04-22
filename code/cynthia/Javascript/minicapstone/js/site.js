@@ -9,7 +9,7 @@ new Vue({
             output: {},
             googleResult:{},
             userAddress:'',
-            message: 'Have a good day',
+            message: 'Summer Breeze',
             x: document.getElementById('location'),
             latString:'',
             lngString:'',

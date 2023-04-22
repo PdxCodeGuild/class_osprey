@@ -1,0 +1,31 @@
+body{
+    display: flexbox;
+    background-color: #afb3f7b2;
+    font-family: 'Pathway Extreme', sans-serif;;
+}
+
+header{
+    text-align: center;
+    font-style: italic;
+    font-size: 3em;
+    padding: em;
+    width: auto;
+    border-radius: 1%;
+    border:2px solid rgba(104, 96, 96, 0.723);
+    margin: 0px;
+    background-color: #f0f6f7f9;
+
+}
+
+#location-info {
+    justify-content: space-around; 
+    padding: .5em;
+    font-size: 1.5em;
+    
+}
+
+#days-button {
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 1.5em;
+}
