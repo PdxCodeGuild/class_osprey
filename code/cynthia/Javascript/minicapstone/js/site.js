@@ -12,7 +12,7 @@ new Vue({
             message: 'Have a good day',
             x: document.getElementById('location'),
             lat:'',
-            lat:'',
+            lng:'',
 
         }
         
@@ -25,8 +25,8 @@ new Vue({
         getForcast() {
             axios.get('https://api.breezometer.com/pollen/v2/forecast/daily', {
                 params: {
-                    lat: '31',
-                    lon: '-99',
+                    lat: '38.5815719',
+                    lon: '-121.4943996',
                     days: '1',
                     key: appKey,
                     metadata: true,
@@ -40,14 +40,16 @@ new Vue({
         getLocation() {
             axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
                 params: {
-                    address: 'Auburn, California',
+                    address: 'sacramento, california',
                     key: googleKey,
                 },
-            }).then(response => {this.googleResult = response.data.results[0].location}).catch(err => console.error(err))
+            }).then(response => {this.googleResult = response.data.results[0].geometry.location}).catch(err => console.error(err))
         },
-        Geocoder(){
+        // onChange(e) {
+        //     this.userAddress = this.googleResult.find(l => this.userAddress = l.lat) 
+        //     console.log(userAddress)
 
-        }
+        // },
       
     }
 
