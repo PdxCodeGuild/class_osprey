@@ -82,7 +82,7 @@ submitButton.addEventListener('click', () => {
         let englishTens = tensTable[tensDigit]
         let englishOnes = onesTable[onesDigit]
 
-        if (minutes === '00') {
+        if (minutes === '00' && numHour < 13) {
             displayPhrase.innerText = `The time is ${englishHour} o\'clock`
         } else if (numMinutes > 59 || numHour > 12) {
             displayPhrase.innerText = `Invalid entry, please try again.`

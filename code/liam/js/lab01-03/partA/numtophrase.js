@@ -66,7 +66,7 @@ if (numHour < 10) {
 let englishTens = tensTable[tensDigit]
 let englishOnes = onesTable[onesDigit]
 
-if (minutes === '00') {
+if (minutes === '00' && numHour < 13) {
     alert(`The time is ${englishHour} o\'clock`)
 } else if (numMinutes > 59 || numHour > 12) {
     alert(`Invalid entry, please refresh and try again.`)
