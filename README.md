@@ -47,14 +47,14 @@ Presentation Day: June 9, 2023
 | 01A   | Pick 3                 | 10           | Apr 13th      | Apr 17th              | Apr 27th           |
 | 02A   | Pick 3                 | 10           | Apr 13th      | Apr 17th              | Apr 27th           |
 | 03A   | Pick 3                 | 10           | Apr 13th      | Apr 17th              | Apr 27th           |
-<!-- | 01B   | Pick 3                 | 10           | Apr  27th      | Apr 5th               | Apr 11th           |
-| 02B   | Pick 3                 | 10           | Apr 27th      | Apr 5th               | Apr 11th           |
-| 03B   | Pick 3                 | 10           | Apr 27th      | Apr 5th               | Apr 11th           |
-| Group | Todo List              | 10           | Jul 1st       | Jul 5th               | Jul 15th           |
-| 04    | Vue Todos              | 15           | Jul 5th       | Jul 11th              | Jul 19th           |
-| 05    | Quotes in Vue          | 20           | Jul 7th       | Jul 11th              | Jul 21st           |
-| 06    | Mini-Capstone          | 30           | Jul 11th      | Jul 14th              | Jul 25th           |
- -->
+| 01B   | Pick 3                 | 10           | Apr 14th      | Apr 20th              | Apr 28th           |
+| 02B   | Pick 3                 | 10           | Apr 14th      | Apr 20th              | Apr 28th           |
+| 03B   | Pick 3                 | 10           | Apr 14th      | Apr 20th              | Apr 28th           |
+| Group | Todo List              | 10           | Apr 17th      | Apr 17th              | May 1st            |
+| 04    | Vue Todos              | 15           | Apr 17th      | Apr 20th              | May 1st            |
+| 05    | Weather API            | 20           | Apr 19th      | Apr 21st              | May 3rd            |
+| 06    | Mini-Capstone          | 30           | Apr 21st      | Apr 25th              | May 5th            |
+
 
 ## HTML/CSS Labs Assigned:
 | Lab   | Name                   | Points Value | Date Assigned | Due Date              | Not Accepted After |
