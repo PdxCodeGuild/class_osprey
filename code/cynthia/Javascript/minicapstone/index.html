@@ -25,14 +25,17 @@
         <hr>
         <div id="site-intro">
             <p>Summer Breeze Pollen Index provides information on common grasses, weeds and trees that cause seasonal allergies. </p>
-            <p>if the plant category is in season, it will display true followed by a pollen index level.</p>
-            <p>The pollen index is on a scale of 1-5: </p>
+            <p>if the plant category is in season, it will display true followed by a pollen index level.   </p>
+            <p>Those with severe allergies are recommended to stay indoors if a level is 3 or higher.</p>
+         
+
+            <p><strong>The pollen index is on a scale of 1-5:</strong>  </p>
             <ul>
-               <li>blank/1- not in season</li> 
-                <li> 2 - low allergen </li>
-                <li> 3 - moderate allergen</li>
-                <li>4 - high allergen</li> 
-               <li> 5 - severe allergen</li>
+               <p><strong>false or 1 </strong>- not in season</p>
+                <p><strong>2</strong>- low allergen</p>
+                <p><strong>3</strong>- moderate allergen</p>
+                <p><strong>4</strong>- high allergen </p>
+               <p><strong>5</strong>- severe allergen</p>
             </ul>
         </div>
 
@@ -45,8 +48,6 @@
         </div>
 
         <div id="days-button">
-
-            
             <p>Choose a date range:</p>
             <div id="select-button">
             <select class="form-select" name="days" id="days" v-model="daysString">
@@ -63,24 +64,21 @@
             <p id="inseason">What's in Season and its allergen index {{displayAddress}}</p>
             
             <p id="dates">{{startDate}} - {{endDate}}</p>
-
+          
             <div  id="allergen-list">
-            <p>🌿 Grass types: {{grassTypes}} </p>
+            <p class="list-header">🌿 Grass types: {{grassTypes}} </p>
                 <li> in season: {{grassSeason}}</li>
                 <li v-if="grassSeason"> index level: {{grassSeverity}} </li>
                 <br>
-            <p> 🌳 Tree types: {{treeTypes}} </p>
+            <p class="list-header"> 🌳 Tree types: {{treeTypes}} </p>
             <li> in season: {{treeSeason}}</li> 
                 <li v-if="treeSeason">index level: {{treeSeverity}}</li> 
                 <br>
-            <p><strong>🌾 Weed types: {{weedTypes}} </p>
+            <p class="list-header">🌾 Weed types: {{weedTypes}} </p>
                 <li>in season: {{weedSeason}}</li> 
                 <li v-if="weedSeason"> index level: {{weedSeverity}} </li>
             </div>
         </div>
-     
-
-  
     </div>
 
 
