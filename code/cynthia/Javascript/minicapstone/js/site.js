@@ -7,14 +7,25 @@ new Vue({
     data() {
         return{
             output: {},
-            googleResult:{},
             userAddress:'',
             message: 'Summer Breeze',
-            x: document.getElementById('location'),
             latString:'',
             lngString:'',
+            displayAddress: '',
             daysString:'',
-          
+            startDate: '',
+            endDate:'',
+            grassTypes: '',
+            treeTypes: '',
+            weedTypes:'',
+            grassSeason:'',
+            treeSeason: '',
+            weedSeason:'',
+            grassSeverity:'',
+            treeSeverity:'',
+            weedSeverity:'',
+            hasResults: false,
+            bpi:'',
         }
         
 
@@ -24,6 +35,7 @@ new Vue({
     methods:{
 
         getForcast() {
+            console.log(this.latString, this.lngString)
             axios.get('https://api.breezometer.com/pollen/v2/forecast/daily', {
                 params: {
                     lat: this.latString,
@@ -32,10 +44,25 @@ new Vue({
                     key: appKey,
                     metadata: true,
                     plants: true,
+                  
                    
                 },
-            }).then(response => {this.output = response.data}).catch(err => console.error(err))
-            console.log(this.daysString)
+            }).then(response => {
+             
+                this.startDate = response.data.metadata.start_date
+                this.endDate = response.data.metadata.end_date
+                this.grassTypes = response.data.metadata.types.grass.plants[0]
+                this.treeTypes = response.data.metadata.types.tree.plants.join(', ')
+                this.weedTypes = response.data.metadata.types.weed.plants.join(', ')
+                this.grassSeason = response.data.data[0].types.grass.in_season
+                this.treeSeason = response.data.data[0].types.tree.in_season
+                this.weedSeason = response.data.data[0].types.weed.in_season
+                this.grassSeverity = response.data.data[0].types.grass.index.value
+                this.treeSeverity = response.data.data[0].types.tree.index.value
+                this.weedSeverity = response.data.data[0].types.weed.index.value
+                this.bpi = response.data.data[0].index_id
+            }).catch(err => console.error(err))
+           
             
         },
 
@@ -45,22 +72,21 @@ new Vue({
                     address: this.userAddress,
                     key: googleKey,
                 },
-            }).then(response => {this.googleResult = response.data.results[0].geometry.location}).catch(err => console.error(err))
+            }).then(response => {
+                this.googleResult = response.data.results[0].geometry.location
+                this.latString = response.data.results[0].geometry.location.lat
+                this.lngString = response.data.results[0].geometry.location.lng
+                this.displayAddress = response.data.results[0].formatted_address
+            }).catch(err => console.error(err))
            
         },
 
 
-        // onChange(e) {
-        //     this.userAddress = this.googleResult.find(l => this.userAddress = l.latString) 
-        //     this.userAddress = this.googleResult.find(l => this.userAddress = l.lngString) 
-
-        // },
-
         changeDay(e) {
             this.daysString = e.target.value
-            
         },
       
+
      
     }
 

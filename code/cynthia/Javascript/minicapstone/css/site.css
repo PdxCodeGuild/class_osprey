@@ -1,31 +1,96 @@
 body{
     display: flexbox;
-    background-color: #afb3f7b2;
+    height: 100vh;
     font-family: 'Pathway Extreme', sans-serif;;
+    background-image: linear-gradient(#a3d6d3, white);
 }
 
 header{
     text-align: center;
     font-style: italic;
-    font-size: 3em;
-    padding: em;
-    width: auto;
+    font-size: 2em;
+    padding: .2em;
+    /* width: auto;
     border-radius: 1%;
     border:2px solid rgba(104, 96, 96, 0.723);
     margin: 0px;
-    background-color: #f0f6f7f9;
+    background-color: #b7d1d6f9; */
+   
 
+}
+hr {
+    border: 1px solid rgb(12, 11, 11);
+}
+
+#site-intro {
+    line-height: 1.5;
+    
+}
+#location-box {
+    height:25px;
+    width:200px;
+    font-size: .6em;
 }
 
 #location-info {
-    justify-content: space-around; 
+    text-align: center;
     padding: .5em;
     font-size: 1.5em;
-    
+}
+#select-button{
+    width: 4em;
 }
 
+
 #days-button {
-    justify-content: space-between;
+    display: flex;
+    text-align: center;
+    justify-content: center;
     padding: 1em;
     font-size: 1.5em;
+    /* width: 40em; */
+    
+}
+#dates{
+    text-align: center;
+    font-weight: bold;
+}
+#inseason{
+    padding-top: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}
+#allergen-list{
+    padding: .2em;
+    line-height: 1.8;
+}
+
+@media screen and (min-width: 700px) {
+    header{
+        font-size: 3em;
+    }
+    #select-button{
+        width: 7em;
+    }
+    #site-intro {
+        line-height: 1.5;
+        padding-left: 2em;
+        
+    }
+    #inseason {
+        font-size: 1.5em;
+    }
+    #dates{
+        font-size: 1.2em;
+    }
+    #allergen-list{
+        padding-left: 2em;
+        padding-bottom: 3em;
+        font-size: 1.3em;
+        white-space: 1em;
+    }
+    #flower{
+        font-size: 2em;
+        text-align: center;
+    }
 }
