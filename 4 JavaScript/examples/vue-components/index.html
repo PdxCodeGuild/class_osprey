@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Vue Components</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>{{libraryName}}</h1>
+
+        <!-- you can use components over and over -->
+        <!-- each will maintain its own state -->
+        <counter v-on:my-event="getCount"></counter>
+        <counter @my-event="getCount"></counter>
+        <counter @my-event="getCount"></counter>
+        <counter @my-event="getCount"></counter>
+        {{ emittedValue }}
+        <br>
+
+        <template v-for="b in books">
+            <!-- attach props as if they are html attributes -->
+            <!-- give each thing in a loop a unique key -->
+            <book-item :book="b" @delete-book="removeBook" :key="b.id"></book-item>
+        </template>
+
+    </div>
+
+</body>
+
+</html>
