@@ -63,6 +63,7 @@ new Vue({
             this.playerInfo = {}
         },
         playerDetails(id) {
+            this.playerInfo = {}
             this.loading = true
             axios.get(`https://xivapi.com/character/${id}`, {
                 params: {
