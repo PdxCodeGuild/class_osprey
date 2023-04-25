@@ -84,7 +84,7 @@ submitButton.addEventListener('click', () => {
             if (onesDigit == 0){
                 onesText = ''
             }
-            newOutput = (numberConversion[Math.floor(userNumber/100)])+ ' '+ 'hundred' +tensText + ' ' +onesText
+            newOutput = (numberConversion[Math.floor(userNumber/100)])+ ' '+ 'hundred' +' '+tensText + ' ' +onesText
         }
 }
     output.innerHTML = newOutput
