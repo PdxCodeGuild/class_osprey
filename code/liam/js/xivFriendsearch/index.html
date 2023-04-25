@@ -133,7 +133,7 @@
                     <show-mounts v-if="showAllMounts" v-for="m in playerInfo.Mounts" :mount="m" :key="m.Name"></show-mounts>
 
                     <div v-if="verifyFriend()" class="friend">
-                        <button @click="deleteFriend">Remove Friend</button>
+                        <button @click="deleteFriend(playerInfo)">Remove Friend</button>
                     </div>
                     <div v-else class="friend">
                         <button @click="addFriend">This is my friend</button>

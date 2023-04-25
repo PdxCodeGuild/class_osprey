@@ -79,8 +79,12 @@ new Vue({
         addFriend() {
             this.friendList.push(this.playerInfo)
         },
-        deleteFriend() {
-            this.friendList.splice(this.playerInfo, 1)
+        deleteFriend(player) {
+            const match = this.friendList.find(friend => friend.Character.ID === player.Character.ID)
+            const index = this.friendList.indexOf(match)
+            if (index !== -1) {
+                this.friendList.splice(index, 1)
+            }
         },
         verifyFriend() {
             let verify = this.friendList.find(friend => friend.Character.ID === this.playerInfo.Character.ID)
