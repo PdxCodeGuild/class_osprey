@@ -1,6 +1,7 @@
 from rest_framework import generics
 from books.models import Book
 from .serializers import BookSerializer
+from django.utils import timezone
 
 
 class BookAPIView(generics.ListAPIView):
@@ -33,3 +34,16 @@ class BookView(generics.RetrieveUpdateDestroyAPIView):
 # class BookDeleteView(generics.DestroyAPIView):
 #     queryset = Book.objects.all()
 #     serializer_class = BookSerializer
+
+
+class BookCheckOutView(generics.UpdateAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+    def perform_update(self, serializer):
+        book = Book.objects.get(pk=self.kwargs['pk'])
+        if book.is_checked_out():
+            serializer.save(check_in_date=timezone.now())
+        else:
+            serializer.save(check_out_date=timezone.now(),
+                            times_checked_out=book.times_checked_out + 1)
