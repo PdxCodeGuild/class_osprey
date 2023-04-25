@@ -139,7 +139,7 @@ hr {
         font-size: 5em;
     }
     #site-intro {
-        font-size: 3em;
+        font-size: 2em;
         line-height: 1.5;
         width:auto;
         padding: 2em;
@@ -167,15 +167,15 @@ hr {
         font-size: 1em;
     }
     #inseason {
-        font-size: 3em;
+        font-size: 2em;
     }
     #dates{
-        font-size: 3em;
+        font-size: 2em;
     }
     #allergen-list{
         padding-left: 2em;
         padding-bottom: 3em;
-        font-size: 3em;
+        font-size: 2em;
         line-height: 2em;
         width: 680px;
     }

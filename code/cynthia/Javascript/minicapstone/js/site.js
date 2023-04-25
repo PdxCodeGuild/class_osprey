@@ -1,5 +1,3 @@
-// const {Geocoder} = await google.maps.importLibrary("geocoding");
-
 
 new Vue({
     el: '#app',
@@ -27,10 +25,8 @@ new Vue({
             hasResults: false,
             bpi:'',
         }
-        
-
-       
     },
+
 
     methods:{
 
@@ -62,8 +58,6 @@ new Vue({
                 this.weedSeverity = response.data.data[0].types.weed.index.value
                 this.bpi = response.data.data[0].index_id
             }).catch(err => console.error(err))
-           
-            
         },
 
         getLocation() {
@@ -78,15 +72,11 @@ new Vue({
                 this.lngString = response.data.results[0].geometry.location.lng
                 this.displayAddress = response.data.results[0].formatted_address
             }).catch(err => console.error(err))
-           
         },
-
 
         changeDay(e) {
             this.daysString = e.target.value
         },
-      
-
      
     }
 
