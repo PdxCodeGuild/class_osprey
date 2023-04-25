@@ -15,10 +15,6 @@ const deck = {
     '10':10,
 }
 
-// card1 = prompt("What's your first card?")
-// card2 = prompt("What's your second card?")
-// card3 = prompt("What's your third card?")
-
 
 let card1 = document.querySelector('#card1')
 let card2 = document.querySelector('#card2')
@@ -32,15 +28,25 @@ submitButton.addEventListener('click', () => {
     let handValue = deck[card1.value] + deck[card2.value] + deck[card3.value]
     if (handValue < 17) {
         result = (handValue, 'hit')
+        
+    } else if (17 == handValue){
+            result = (handValue, 'stay')
 
-    } else if (17>= handValue <21 ){
+    } else if (handValue <21 ){
         result = (handValue, 'stay')
 
     } else if (handValue == 21) {
         result = ('Blackjack!')
-        
-    } else {
-        result = ("Already Busted")
+    } else if (handValue > 21){
+        result = (handValue, "Already Busted")
     }
+    
     output.innerHTML = result
 })
+
+
+
+
+
+
+    
