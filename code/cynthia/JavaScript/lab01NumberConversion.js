@@ -32,44 +32,94 @@ const numberConversion ={
     90: "ninty",
 };
 
-userNumber = prompt('enter a number from 0-999 ')
+let userNumber = prompt('enter a number from 0-999 ')
 
-let tensDigit = Math.floor((userNumber % 100)/10) * 10 
-let onesDigit = userNumber % 10
+// let tensDigit = Math.floor((userNumber % 100)/10) * 10 
+// let onesDigit = userNumber % 10
 
-// tensText = numberConversion[tensDigit]
-// onesText =numberConversion[onesDigit]
-let tensText = ''
-let onesText = ''
-if (userNumber < 100){ 
-    if (userNumber <= 9) {
-        console.log(numberConversion[onesDigit])
-        } else if ( 11 <= userNumber <= 19) {
-            console.log(numberConversion[userNumber])
-        } else if (onesDigit == 0) {
-            console.log(numberConversion[tensDigit])
-        } 
-        if (userNumber <= 99){
-            console.log(numberConversion[tensDigit], numberConversion[onesDigit])
+// let tensText = ''
+// let onesText = ''
+// if (userNumber < 100){ 
+//     if (userNumber <= 9) {
+//         console.log(numberConversion[onesDigit])
+//         } else if ( 11 <= userNumber <= 19) {
+//             console.log(numberConversion[userNumber])
+//         } else if (onesDigit == 0) {
+//             console.log(numberConversion[tensDigit])
+//         } 
+//         if (userNumber <= 99){
+//             console.log(numberConversion[tensDigit], numberConversion[onesDigit])
         
-        }
-}
-    else if (userNumber >= 100) {
-        if (tensDigit == 10){
-            console.log((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ (numberConversion[onesDigit + tensDigit]))
-        } else if (20 <= tensDigit && onesDigit == 0){
-            console.log((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ (numberConversion[tensDigit]))
+//         }
+// }
+//     else if (userNumber >= 100) {
+//         if (tensDigit == 10){
+//             console.log((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ (numberConversion[onesDigit + tensDigit]))
+//         } else if (20 <= tensDigit && onesDigit == 0){
+//             console.log((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ (numberConversion[tensDigit]))
+
+//         } else {
+            
+//             if (tensDigit == 0){
+//                 tensText = ''
+//                 onesText = numberConversion[onesDigit]
+//             } 
+//             if (onesDigit == 0){
+//                 onesText = ''
+//                 tensText = numberConversion[tensDigit]
+//             }
+//                 console.log((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ tensText, onesText)
+//         }
+// }
+
+
+
+    let tensDigit = Math.floor((userNumber % 100)/10) * 10 
+    let onesDigit = userNumber % 10
+
+    
+    if (userNumber < 100){ 
+
+        if (userNumber <= 9) {
+            console.log(numberConversion[onesDigit])
+
+
+        } else if (onesDigit == 0) {
+            console.log(newOutput = numberConversion[tensDigit])
+            
+
+        } else if ( 11 <= userNumber && userNumber <= 19) {
+            console.log(numberConversion[userNumber])
+        
 
         } else {
-            
+            console.log(numberConversion[tensDigit] + ' ' + numberConversion[onesDigit])
+         
+        }
+    }
+
+
+    else if (userNumber >= 100) {
+
+        let tensDigit = Math.floor((userNumber % 100)/10) * 10 
+        console.log((numberConversion[Math.floor(userNumber/100)])+ ' '+ 'hundred') 
+
+        if (tensDigit == 10){
+            console.log((numberConversion[onesDigit + tensDigit]))
+
+        } else if (20 <= tensDigit && onesDigit == 0){
+            console.log((numberConversion[tensDigit]))
+
+        } else {
+            onesText = numberConversion[onesDigit]
+            tensText = numberConversion[tensDigit]
             if (tensDigit == 0){
                 tensText = ''
-                onesText = numberConversion[onesDigit]
             } 
             if (onesDigit == 0){
                 onesText = ''
-                tensText = numberConversion[tensDigit]
             }
-                console.log((numberConversion[Math.floor(userNumber/100)])+ 'hundred'+ tensText, onesText)
+            console.log((numberConversion[Math.floor(userNumber/100)])+ ' '+ 'hundred' +tensText + ' ' +onesText)
         }
 }
+
