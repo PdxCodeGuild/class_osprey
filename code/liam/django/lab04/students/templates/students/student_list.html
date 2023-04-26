@@ -16,13 +16,18 @@
     {% csrf_token %}
     <div id="app">
         <div id="search-area">
-
+            <label for="search">Search by First Name: </label>
+            <input type="text" v-model="searchPhrase">
+            <button @click="searchStudents(searchPhrase)">SEARCH</button>
         </div>
 
         <h2>Student List</h2>
-    
-        <div v-for="s in students">
-            <student-info :student="s" :key="s.pk"></student-info>
+        
+        <div class="studentCards">
+            <div v-for="s in students">
+                <student-info :student="s" :key="s.id" 
+                @delete-student="deleteStudent" @edit-student="editStudent"></student-info>
+            </div>
         </div>
 
         <div id="create-new">
@@ -31,19 +36,19 @@
                 <legend><input type="text" placeholder="first name" v-model="newFirstName">
                         <input type="text" placeholder="last name" v-model="newLastName"></legend>
                         <div><label for="cohort">Cohort: </label>
-                    <input type="text" placeholder="is it a cool animal" v-model="newCohort">
+                    <input type="text" v-model="newCohort">
                     </div>
                 <div><label for="favtopic">Favorite Topic: </label>
-                    <input type="text" placeholder="not django hahaaa" v-model="newFavThing">
+                    <input type="text" v-model="newFavThing">
                     </div>
                 <div><label for="teacher">Favorite Teacher: </label>
-                    <input type="text" placeholder="there's only one!" v-model="newFavTeacher">
+                    <input type="text" v-model="newFavTeacher">
                     </div>
                 <div><label for="capstone">Capstone URL: </label>
-                    <input type="text" placeholder="better be a link." v-model="newCapstone">
+                    <input type="text" v-model="newCapstone">
                     </div>
                 <div>
-                    <button>ADD</button>
+                    <button @click="addStudent">ADD</button>
                 </div>
             </fieldset>
         </div>

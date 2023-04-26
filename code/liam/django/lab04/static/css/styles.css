@@ -1,10 +1,25 @@
+html {
+    background-color: #242c25;
+}
+
 #app {
-    background-color: #faebd7;
+    background-color: #e1e6e2;
+    font-family: sans-serif;
     color: #310f0f;
-    margin: 1em;
+    margin: auto;
     padding: 1em;
     border: 1px solid #310f0f;
     border-radius: 3px;
+    max-width: 700px;
+    min-width: 330px;
+
+    filter: drop-shadow(400px 400px 4px #839689) drop-shadow(-400px -400px 4px #839689);
+}
+
+.studentCards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
 }
 
 .studentdetails {
@@ -13,6 +28,10 @@
     'info delete'
     'edit edit';
     width: 300px;
+}
+
+.name {
+    font-weight: 800;
 }
 
 .info {
@@ -26,4 +45,8 @@
 
 .edit {
     grid-area: edit;
+}
+
+fieldset>div {
+    margin: 0.5em;
 }
