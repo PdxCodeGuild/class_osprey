@@ -23,16 +23,18 @@
         <div class="wrapper">
         <p id="task-list">Here are your tasks:</p>
         
-        
-        <li v-for="t in todoList"><span v-bind:doneClass="{completed:!isDone}">{{t.task}}</span>
-        <button id="completed-button"  @click= 'toggleDone(t)' class="btn btn-success">completed</button>
+        <li v-for="t in todoList" v-bind:key="t.task">
+            <span>
+                {{t.task}}
+            </span>
+            <button id="completed-button" @click='toggleDone(t)' class="button">completed</button>
         </li>
-
-            
         
         <p>Completed Tasks:</p>
         <ul>
-            <li id='completed-list' style="text-decoration: line-through;" v-for="t in completedList"><span>{{t.task}}</span>
+            <li id='completed-list' style="text-decoration: line-through;" v-for="t in completedList">
+                <span>{{t.task}}</span>
+            </li>
         </ul>
         <br>
         </div>

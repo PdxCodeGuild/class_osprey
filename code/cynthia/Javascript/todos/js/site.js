@@ -4,9 +4,7 @@ new Vue({
     el: '#app',
     data: {
         message: 'Do All the Things!',
-        todoList: [
-            {task:'Check off your first task!', status: false}
-        ],
+        todoList: [{task:'Check off your first task!', status: false}],
         completedList: [],
         inputText: '',
         isDone: false,
@@ -23,24 +21,14 @@ new Vue({
 
 
         toggleDone(t) {
-            "isDone = !isDone"
+            // "isDone = !isDone"
             // this.status= !this.status
-            for (this.t in this.todoList) {
-                if (this.status= !this.status){
-                    this.todoList.splice(t, true)
-                    this.completedList.push(t)}
-               
-            }
+            let index = this.todoList.indexOf(t)
+            this.todoList.splice(index, 1)
+            this.completedList.push(t)
+            console.log(this.completedList)
+
         }
-        
     },
-
-
-    computed: {
-        doneClass() {
-            return {completed: this.isDone}
-        }
-    }
-   
 })
 
