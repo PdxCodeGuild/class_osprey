@@ -15,6 +15,8 @@ Follow the instructions to install and set up the starter project. It has some t
 1. Activate your env with `source env/bin/activate` (or whatever the Windows equivalent is, sorry Liam I forget)
 1. Install the dependencies with `pip install -r requirements.txt`
 
+Then continue with the set-up instructions as written, no further changes are required.
+
 ## Part 2 - Basic API
 
 Create an API for the Pokedex in Django Rest Framework. Your API needs to have endpoints for all the Pokemon, as well as some sort of nested serializers so that your API returns the names of the types that each Pokemon belongs to, not just the pk of those types.
