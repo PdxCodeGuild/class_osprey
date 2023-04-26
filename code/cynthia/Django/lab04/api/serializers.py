@@ -3,6 +3,6 @@ from students.models import Student
 
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
-        model: Student
+        model = Student
         fields = ('first_name', 'last_name', 'cohort', 'favorite_topic', 
                   'favorite_teacher','capstone')
