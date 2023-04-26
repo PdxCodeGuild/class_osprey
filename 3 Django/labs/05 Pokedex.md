@@ -8,6 +8,13 @@ You can find the app to download here: https://github.com/flamingveggies/pokedex
 
 Follow the instructions to install and set up the starter project. It has some things you haven't seen like custom management commands and a custom user model, so there are a few extra steps. Make sure you follow the instructions!
 
+*Note:* The first two commands in Merritt's instructions use `pipenv`. To do the same thing with virtualenv, follow these steps:
+1. Copy the `pokedex-requirements.txt` file from this folder into the root of your `pokedex-main` folder. 
+1. (You may delete the `Pipfile` and `Pipfile.lock` if you like, the new requirements file replaces those.)
+1. (With your terminal in the root of `pokedex-main`) Create your new virtual environment with `virtualenv env`
+1. Activate your env with `source env/bin/activate` (or whatever the Windows equivalent is, sorry Liam I forget)
+1. Install the dependencies with `pip install -r requirements.txt`
+
 ## Part 2 - Basic API
 
 Create an API for the Pokedex in Django Rest Framework. Your API needs to have endpoints for all the Pokemon, as well as some sort of nested serializers so that your API returns the names of the types that each Pokemon belongs to, not just the pk of those types.
