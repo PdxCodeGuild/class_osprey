@@ -1,0 +1,29 @@
+#app {
+    background-color: #faebd7;
+    color: #310f0f;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #310f0f;
+    border-radius: 3px;
+}
+
+.studentdetails {
+    display: grid;
+    grid-template-areas: 
+    'info delete'
+    'edit edit';
+    width: 300px;
+}
+
+.info {
+    grid-area: info;
+}
+
+.delete {
+    grid-area: delete;
+    text-align: right;
+}
+
+.edit {
+    grid-area: edit;
+}
