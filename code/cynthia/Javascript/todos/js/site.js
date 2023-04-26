@@ -24,11 +24,12 @@ new Vue({
 
         toggleDone(t) {
             "isDone = !isDone"
-            this.status= !this.status
+            // this.status= !this.status
             for (this.t in this.todoList) {
-                this.todoList.splice(t, true)
-                this.completedList.push(t)
-                console.log(this.todoList)
+                if (this.status= !this.status){
+                    this.todoList.splice(t, true)
+                    this.completedList.push(t)}
+               
             }
         }
         
