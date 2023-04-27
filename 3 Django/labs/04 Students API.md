@@ -21,7 +21,7 @@ Use the [WSVincent DRF tutorial](https://learndjango.com/tutorials/django-rest-f
 
 Your API needs to have the ability to create students, retrieve either a list of students or any specific student, edit a student, and delete students. Make sure you use the browsable API to test all these features out.
 
-## Part 3 (Optional)
+## Part 3
 
 Add the ability to search or filter students using URL parameters. Consult the DRF documentation here: https://www.django-rest-framework.org/api-guide/filtering/
 
