@@ -1,0 +1,41 @@
+body {
+  
+    /* background-color: rgba(150, 106, 150, 0.789); */
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%,
+     rgba(204, 92, 235, 0.671) 0%,
+      rgba(173,110,238,1) 45%,
+       rgba(155,121,240,1) 51%,
+        rgba(144,127,241,1) 54%,
+         rgba(0, 213, 255, 0.653) 100%);
+}
+header{
+    text-align: center;
+    padding: 1em;
+    font-family: 'Sigmar', cursive;
+    font-size: 4em;
+    letter-spacing: 5px;
+}
+
+#login{
+    display:flex;
+    justify-content: flex-end ;
+    font-size: 1.2em;
+    /* padding: 1em; */
+    /* word-spacing: 5px; */
+}
+#logout-button{
+    padding-left: .6em;
+}
+
+#app {
+    justify-content: center;
+
+}
+#pokemon {
+    display:flex;
+    flex-wrap: wrap;
+    padding:1em;
+    border: 1px solid black;
+    flex-basis: auto;
+}
