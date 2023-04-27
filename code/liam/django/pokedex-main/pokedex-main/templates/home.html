@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="{% static 'js/app.js'%}" defer></script>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Pokedex</title>
+</head>
+<body>
+    {% csrf_token %}
+    <div id="app">
+        <div id="login">
+            {% if user.is_authenticated %}
+            <h1>Welcome, {{ user.username }}!</h1>
+            <p><a href="{% url 'logout' %}">Logout</a><p>
+            {% else %}
+            <h1>Welcome, visitor!</h1>
+            <p>You are not logged in. <a href="{% url 'login' %}">Login</a> <a href="{% url 'users:signup' %}">Sign Up</a></p>
+            {% endif %}
+        </div>
+        <div id="pokedex">
+            {% if user.is_authenticated %}
+            <div id="dex-entry">
+                <div v-for="p in pokemon" class="outer-border">
+                    <div class="inner-area">
+                        <div class="image">
+                            <img :src="p.image_front">
+                        </div>
+                        <div class="caught">
+                            <span v-if="hasPokemon(p)"><img src="{% static '/media/caught.png' %}" class="pokeball" alt="●"></span>
+                            <span v-else>O</span>
+                        </div>
+                        <div class="stats">
+                            <div>
+                                #[[ p.number]]: [[ p.name ]]
+                            </div>
+                            <dl>
+                                <dt>Height: </dt>
+                                <dd>[[p.height]]m</dd>
+                                <dt>Weight: </dt>
+                                <dd>[[p.weight]]kg</dd>
+                            </dl>
+                        </div>
+                        <div class="typelist">
+                            <span v-for="t in p.types"><span :class="t.type"> [[ t.type ]] </span></span>
+                        </div>
+                    </div>
+                    <div class="catch">
+                        <button v-if="!hasPokemon(p)" @click="catchPokemon(p)">Catch!</button>
+                        <button v-else @click="releasePokemon(p)">Release</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="information">
+                <span v-if="caughtPokemon.length === 0">Catch some new pokemon!</span>
+                <p v-else>Pokemon caught this session: </p>
+                <ul v-for="p in caughtPokemon">
+                    <li>[[ p ]]</li>
+                </ul>
+            </div>
+
+            {% else %}
+            <div class="information">
+                Log in or Sign Up to see!
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
