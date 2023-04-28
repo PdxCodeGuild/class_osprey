@@ -34,9 +34,12 @@
     
     <div id="app">
         
-        <!-- <p>[[types]]</p> -->
-        <p id='pokemon' v-for="p in pokemon" v-bind:key="p.name"> Pokemon: [[p.name]], type: [[p.types]], height: [[p.height]], weight: [[p.weight]] 
-        <img v-if="pokemon" v-bind:src="getImgUrlFront"/><img v-if="pokemon" v-bind:src="getImgUrlBack"/>
+        <p v-for="t in allTypes">[[t.type]]</p>[[allTypes]]
+        <p id='pokemon' v-for="p in pokemon" v-bind:key="p.name"> Pokemon: [[p.name]], height: [[p.height]], weight: [[p.weight]], [[p.types]] 
+        
+        <img id="front-image" v-if="pokemon" v-bind:src="getImgUrlFront"/>
+        <img id="back-image" v-if="pokemon" v-bind:src="getImgUrlBack"/>
+        
         {% if user.is_authenticated %}
         <button id="caught-button" @click='userCaught(p)' class="button">caught!</button>
         {% endif %}

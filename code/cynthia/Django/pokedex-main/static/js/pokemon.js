@@ -6,8 +6,9 @@ let app = new Vue({
     data: {
       message: 'Hello world!',
       pokemon: [],
-      types: [],
+      allTypes: [],
       caughtList:[],
+
     },
 
     methods: {
@@ -17,15 +18,16 @@ let app = new Vue({
 
         }).then(res => {
           this.pokemon = res.data
-       
-          // this.types = res.data.pokemon.type
+          this.allTypes = res.data.pokemon.types
+        
         })
+      
       },
+
       userCaught(p) {
         let index = this.pokemon.indexOf(p)
         this.pokemon.splice(index, 1)
         this.caughtList.push(p)
-
       }
 
       
@@ -39,7 +41,7 @@ let app = new Vue({
           console.log(this.pokemon)
     
           return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.pokemon[0].number}.png`
-        
+      
       },
       getImgUrlBack(){
         console.log(this.pokemon)

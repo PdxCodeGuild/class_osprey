@@ -34,8 +34,14 @@ header{
 }
 #pokemon {
     display:flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     padding:1em;
     border: 1px solid black;
-    flex-basis: auto;
+    height: auto;
+    width:500px
+}
+
+#front-image,
+#back-image {
+    font-size: 1em;
 }
