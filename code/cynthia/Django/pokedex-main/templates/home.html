@@ -22,11 +22,11 @@
     <header> Pokedex</header>
     <div id="login">
         {% if user.is_authenticated %}
-            <p>Welcome {{ user.username }}!</p>
+            <p id="welcome">Welcome {{ user.username }}!</p>
             
             <p id="logout-button"><a href="{% url 'logout' %}">Logout</a><p>
             {% else %}
-            <h1>Welcome, visitor!</h1>
+            <h1 >Welcome, visitor!</h1>
             <p>You are not logged in. <a href="{% url 'login' %}">Login</a> <a href="{% url 'users:signup' %}">Sign Up</a></p>
         {% endif %}
     </div>
@@ -34,16 +34,20 @@
     
     <div id="app">
         
-        <p v-for="t in allTypes">[[t.type]]</p>[[allTypes]]
-        <p id='pokemon' v-for="p in pokemon" v-bind:key="p.name"> Pokemon: [[p.name]], height: [[p.height]], weight: [[p.weight]], [[p.types]] 
-        
-        <img id="front-image" v-if="pokemon" v-bind:src="getImgUrlFront"/>
-        <img id="back-image" v-if="pokemon" v-bind:src="getImgUrlBack"/>
-        
-        {% if user.is_authenticated %}
+        <!-- <p v-for="t in allTypes">[[t.type]]</p>[[allTypes]] -->
+        <ul id='pokemon' v-for="p in pokemon" v-bind:key="p.name">
+            <p id='pokemon-name'> Pokemon: [[p.name]]</p> 
+            
+            
+          
+                <img id="front-image" v-if="pokemon" v-bind:src="getImgUrlFront"/>
+                <!-- <img id="back-image" v-if="pokemon" v-bind:src="getImgUrlBack"/> -->
+                <ul id="specs"> height: [[p.height]]   weight: [[p.weight]]   ID: [[p.number]]
+           
+        <!-- {% if user.is_authenticated %}
         <button id="caught-button" @click='userCaught(p)' class="button">caught!</button>
-        {% endif %}
-        </p>
+        {% endif %} -->
+        </ul>
        
     </div>
 </body>

@@ -1,47 +1,119 @@
 body {
-  
-    /* background-color: rgba(150, 106, 150, 0.789); */
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, rgba(2,0,36,1) 0%,
-     rgba(204, 92, 235, 0.671) 0%,
-      rgba(173,110,238,1) 45%,
-       rgba(155,121,240,1) 51%,
-        rgba(144,127,241,1) 54%,
-         rgba(0, 213, 255, 0.653) 100%);
+    background-image: url('https://images.squarespace-cdn.com/content/v1/573a52d207eaa04f72e97d3c/1566235724021-764URB3QJC1M0BFALH3M/Neutral+Stripes_FINAL_TILE_clay.jpg?format=1500w');
 }
+
 header{
     text-align: center;
     padding: 1em;
     font-family: 'Sigmar', cursive;
-    font-size: 4em;
+    font-size: 3em;
     letter-spacing: 5px;
+    border: 2px solid black;
+    background-color: rgba(170, 198, 223, 0.797);
+    border-radius: 2%;
+}
+
+
+
+#welcome {
+    justify-content: center;
 }
 
 #login{
-    display:flex;
+    display: flex;
     justify-content: flex-end ;
-    font-size: 1.2em;
-    /* padding: 1em; */
-    /* word-spacing: 5px; */
+    font-size: 1em;
+
 }
 #logout-button{
-    padding-left: .6em;
+    padding-left: .8em;
 }
 
 #app {
+    flex-direction: column;
     justify-content: center;
+    padding: .5em;
 
 }
+
 #pokemon {
-    display:flex;
-    /* flex-wrap: wrap; */
-    padding:1em;
-    border: 1px solid black;
+    text-align: center;
+   
+    border: 3px solid black;
     height: auto;
-    width:500px
+    width:350px;
+    border-radius: 2%;
+    background-color: rgba(201, 216, 228, 0.75);
+    padding: .6em;
+    word-spacing: .5em;
+    box-shadow: 10px 10px 5px rgb(152, 183, 193);
 }
+#pokemon-name{
+    font-size: 1.5em;
+    font-family: 'Sigmar', cursive;
 
+}
+#specs{
+    font-size: 1em;
+    padding-bottom: .4em;
+}
 #front-image,
 #back-image {
-    font-size: 1em;
+    height: 15em;
+}
+
+@media screen and (min-width: 700px){
+
+    #app{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+ 
+    header{
+        font-size: 4em;
+    }
+    #login {
+        display:flex;
+        justify-content: flex-end ;
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    header {
+        font-size: 8em;
+
+    }
+
+    
+    #login{
+        display: flex;
+        justify-content: flex-end ;
+        font-size: 4em;
+        font-weight: bold;
+    
+    }
+    #app {
+        align-items:center ;
+        justify-content: space-around;
+    }
+    #pokemon{
+        height: 520px;
+        width:525px;
+        word-spacing: .1em;
+    }
+    #pokemon-name {
+        font-size: 2.5em;
+    }
+    #specs{
+        font-size: 2.5em;
+        padding-bottom: 2em;
+    
+    }
+    #front-image,
+    #back-image {
+        height: 18em;
+    }
 }
