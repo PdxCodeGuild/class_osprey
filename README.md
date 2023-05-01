@@ -26,33 +26,35 @@ Capstone proposal due: May 17, 2023 (tentative)
 
 Presentation Day: June 9, 2023
 
-<!-- 
+
 ## Django Labs Assigned:
 
 | Lab   | Name                   | Points Value | Date Assigned | Due Date              | Not Accepted After |
 | ----- | ---------------------- | ------------ | ------------- | --------------------- | ------------------ |
-| 00    | Polls                  |              | Jun 8th       | Jun 13th              |                    |
-| 01    | Todo List              | 20           | Jun 13th      | Jun 20th              | Jun 27th           |
-| 02    | URL Shortener          | 20           | Jun 15th      | Jun 20th              | Jun 27th           |
-| 03    | Chirp                  | 30           | Jun 21st      | Jun 27th              | Jul 5th            |
-| 04    | Students API           | 10           | Jul 14th      | Jul 20th              | Jul 28th           |
+| 00    | Polls                  |              | Apr 4th       | Apr 7th               |                    |
+| 01    | Todo List              | 20           | Apr 5th       | Apr 10th              | Apr 19th           |
+| 02    | URL Shortener          | 20           | Apr 7th       | Apr 12th              | Apr 21st           |
+| 03    | Chirp                  | 30           | Apr 10th      | Apr 14th              | Apr 24th           |
+<!-- | 04    | Students API           | 10           | Jul 14th      | Jul 20th              | Jul 28th           |
 | 05    | Pokedex                | 30           | Jul 15th      | Jul 20th              | Jul 29th           |
+ -->
+
 
 ## JavaScript Labs Assigned:
 
 | Lab   | Name                   | Points Value | Date Assigned | Due Date              | Not Accepted After |
 | ----- | ---------------------- | ------------ | ------------- | --------------------- | ------------------ |
-| 01A   | Pick 3                 | 10           | Jun 27th      | Jul 5th               | Jul 11th           |
-| 02A   | Pick 3                 | 10           | Jun 27th      | Jul 5th               | Jul 11th           |
-| 03A   | Pick 3                 | 10           | Jun 27th      | Jul 5th               | Jul 11th           |
-| 01B   | Pick 3                 | 10           | Jun 27th      | Jul 5th               | Jul 11th           |
-| 02B   | Pick 3                 | 10           | Jun 27th      | Jul 5th               | Jul 11th           |
-| 03B   | Pick 3                 | 10           | Jun 27th      | Jul 5th               | Jul 11th           |
-| Group | Todo List              | 10           | Jul 1st       | Jul 5th               | Jul 15th           |
-| 04    | Vue Todos              | 15           | Jul 5th       | Jul 11th              | Jul 19th           |
-| 05    | Quotes in Vue          | 20           | Jul 7th       | Jul 11th              | Jul 21st           |
-| 06    | Mini-Capstone          | 30           | Jul 11th      | Jul 14th              | Jul 25th           |
- -->
+| 01A   | Pick 3                 | 10           | Apr 13th      | Apr 17th              | Apr 27th           |
+| 02A   | Pick 3                 | 10           | Apr 13th      | Apr 17th              | Apr 27th           |
+| 03A   | Pick 3                 | 10           | Apr 13th      | Apr 17th              | Apr 27th           |
+| 01B   | Pick 3                 | 10           | Apr 14th      | Apr 20th              | Apr 28th           |
+| 02B   | Pick 3                 | 10           | Apr 14th      | Apr 20th              | Apr 28th           |
+| 03B   | Pick 3                 | 10           | Apr 14th      | Apr 20th              | Apr 28th           |
+| Group | Todo List              | 10           | Apr 17th      | Apr 17th              | May 1st            |
+| 04    | Vue Todos              | 15           | Apr 17th      | Apr 20th              | May 1st            |
+| 05    | Weather API            | 20           | Apr 19th      | Apr 21st              | May 3rd            |
+| 06    | Mini-Capstone          | 30           | Apr 21st      | Apr 25th              | May 5th            |
+
 
 ## HTML/CSS Labs Assigned:
 | Lab   | Name                   | Points Value | Date Assigned | Due Date              | Not Accepted After |

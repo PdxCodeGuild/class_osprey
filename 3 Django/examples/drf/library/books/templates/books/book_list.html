@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+
+    <script src="{% static 'js/library.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+
+    <title>Class Osprey's Library</title>
+</head>
+
+<body>
+    {% csrf_token %}
+
+    <div id="app">
+        <h1>Class Osprey's Library</h1>
+
+        <template v-for="b in books">
+            <!-- attach props as if they are html attributes -->
+            <!-- give each thing in a loop a unique key -->
+            <book-item :book="b" @delete-book="removeBook" @checkout="checkOutBook" :key="b.id"></book-item>
+        </template>
+
+        <fieldset>
+            <legend>Add a New Book</legend>
+            <span>Title:</span><input type="text" v-model="newTitle"><br>
+            <span>Author:</span><input type="text" v-model="newAuthor">
+            <button @click="addBook">Add Book</button>
+        </fieldset>
+
+        <!-- you can get data from the django context into the vue context -->
+        <!-- using hidden input fields. But are you SURE you can't use DRF instead? -->
+        <input id="data" value="{{object_list}}" hidden>
+    </div>
+
+</body>
+
+</html>

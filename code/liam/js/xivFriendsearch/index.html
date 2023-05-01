@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&family=Kanit:wght@600&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/03c91ce9d4.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/app.js" defer></script>
+    
+    <title>FFXIV Character Search</title>
+</head>
+<body>
+    <div id="app">
+        <header id="header">
+            <div id="logo">
+                <h1>
+                    <img src="media/meteor.png" class="meteor-icon" alt="icon"/>
+                    FFXIV CHARACTER SEARCH 
+                    <img src="media/meteor.png" class="meteor-icon" alt="icon"/>
+                </h1>
+                
+            </div>
+        </header>
+
+        <aside id="favorites">
+            <h3>Friends: </h3>
+            <div v-if="friendList.length > 0">
+                <all-friends v-for="f in friendList" :friend="f" @select-friend="playerDetails" 
+                :key="f.Character.ID"></all-friends>
+            </div>
+            <p v-else>Add some friends!</p>
+        </aside>
+
+        <div id="search-area">
+            <label for="data-center-pick">Data Center: </label>
+            <select name="data-center-pick" v-model="dataCenter" class="form-select">
+                <option value="unselected" disabled>--Please Select--</option>
+                <option value="aether">Aether</option>
+                <option value="crystal">Crystal</option>
+                <option value="dynamis">Dynamis</option>
+                <option value="primal">Primal</option>
+            </select>
+
+            <div v-if="servers[dataCenter]">
+                <label for="server-pick">Server: </label>
+                <select name="server-pick" v-model="selectedServer">
+                    <option v-for="s in servers[dataCenter]"> {{ s }} </option>
+                </select>
+                <label for="name-search">Player Name: </label>
+                <input type="text" name="name-search" v-model="characterName" @keyup.enter="playerSearch(1)"/>
+                
+                <div id="submit">
+                    <button @click="playerSearch(1)">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-info">
+
+            <div v-if="loading" id="load">
+                LOADING RESULTS... <i class="fa-solid fa-spinner fa-spin"></i>
+            </div>
+
+            <div id="character-details" v-if="Object.keys(playerInfo).length > 0">
+                <h3 class="character-name">{{ playerInfo.Character.Name }}</h3>
+                <div class="close" @click="playerInfo = {}"><i class="fa-solid fa-xmark"></i></div>
+
+                <div class="player-portrait">
+                    <img :src="playerInfo.Character.Portrait" alt="player portrait">
+                </div>
+
+                <div class="inner-details">
+                    <p> <span class="title">Free Company: </span>
+                        <span v-if="playerInfo.Character.FreeCompanyName != null">{{ playerInfo.Character.FreeCompanyName }}</span>
+                        <span v-else>Not Registered with a Free Company</span>
+                    </p>
+                    <blockquote v-if="playerInfo.Character.FreeCompanyName != null" class="slogan">
+                        {{ playerInfo.FreeCompany.Slogan }}
+                    </blockquote>
+                    <p> <span class="title">Bio: </span>
+                        <blockquote v-if="playerInfo.Character.Bio != '-'">
+                            {{ playerInfo.Character.Bio }}
+                        </blockquote> 
+                        <span v-else>No Bio</span>
+                    </p>
+                    <p  class="title"> Nameday: {{ playerInfo.Character.Nameday }} </p>
+                    
+                    <p class="title">DoW/DoM Classes:</p>
+                    <div class="jobs">
+                    <div v-for="job in playerInfo.Character.ClassJobs" class="job" v-if="job.Level > 0 && (job.ClassID < 8 || job.ClassID > 18)">
+                        <span>{{ job.Level }} {{ job.UnlockedState.Name }}</span>
+                    </div>
+                    </div>
+                    <p class="title">DoH/DoL Classes:</p>
+                    <div class="jobs">
+                    <div v-for="job in playerInfo.Character.ClassJobs" class="job" v-if="job.Level > 0 && (job.ClassID > 7 && job.ClassID < 19)">
+                        <span>{{ job.Level }} {{ job.UnlockedState.Name }}</span>
+                    </div>
+                    </div>
+
+                    <div v-if="playerInfo.Minions != null && playerInfo.Mounts != null">
+                        <span class="title">
+                            {{ playerInfo.Minions.length }} Minions and {{ playerInfo.Mounts.length }} Mounts Collected
+                        </span>
+                        <div class="options">
+                                Show Minions: <input type="checkbox" @change="showAllMinions = !showAllMinions">
+                                Show Mounts: <input type="checkbox" @change="showAllMounts = !showAllMounts">
+                        </div>
+                    </div>
+                    <div v-else-if="playerInfo.Minions != null && playerInfo.Mounts === null">
+                        <span class="title">{{ playerInfo.Minions.length }} Minions and 0 Mounts </span>
+                        <div class="options">
+                                Show Minions: <input type="checkbox" @change="showAllMinions = !showAllMinions">
+                        </div>
+                    </div>
+                    <div v-else-if="playerInfo.Mounts != null && playerInfo.Minions === null">
+                        <span class="title">0 Minions and {{ playerInfo.Mounts.length }} Mounts</span>
+                        <div class="options">
+                                Show Mounts: <input type="checkbox" @change="showAllMounts = !showAllMounts">
+                        </div>
+                    </div>
+                    <div v-else class="title">0 Minions and 0 Mounts Collected</div>
+
+                    <show-minions v-if="showAllMinions" v-for="m in playerInfo.Minions" :minion="m" :key="m.Name"></show-minions>
+                    <show-mounts v-if="showAllMounts" v-for="m in playerInfo.Mounts" :mount="m" :key="m.Name"></show-mounts>
+
+                    <div v-if="verifyFriend()" class="friend">
+                        <button @click="deleteFriend(playerInfo)">Remove Friend</button>
+                    </div>
+                    <div v-else class="friend">
+                        <button @click="addFriend">This is my friend</button>
+                    </div>
+                </div>
+
+            </div>
+            <div id="results-page" v-if="playerSearch">
+                <player-tile v-for="p in searchResults" :player="p" @select-tile="playerDetails" :key="p.ID"></player-tile>
+            </div>
+            <div class="pages" v-if="prevPage() || nextPage()">
+                <p> 
+                    <span v-show="prevPage()">
+                        <button @click="playerSearch(prevPageNum)"><< Prev</button>
+                    </span>
+                    <span v-if="prevPage() && nextPage()"><img src="media/meteor.png" class="meteor-icon" alt="icon"/></span>
+                    <span v-show="nextPage()">
+                        <button @click="playerSearch(nextPageNum)">Next >></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
