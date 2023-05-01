@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- import Vue via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- import JS file where you write your Vue instance -->
+    <script src="js/app.js" defer></script>
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <title>Intro to Vue</title>
+</head>
+
+<body>
+
+    <!-- this is not inside the Vue instance -->
+    {{ cohortName }}
+
+    <!-- The Vue instance gets attached here -->
+    <div id="app">
+        <!-- Declarative Rendering -->
+        <!-- render data from the App's 'data' object -->
+        <h3>{{ cohortName }}</h3>
+        <p>Graduating on: {{ gradDate }}</p>
+
+        <!-- Data Binding -->
+        <!-- bind info from data object to HTML attributes -->
+        <a v-bind:href="repo">Github Repository</a>
+        <!-- : is shorthand for v-bind: -->
+        <a :href="repo">Github Repository</a>
+
+
+        <!-- DOM Events -->
+        <!-- the v-on directive attaches a method to an event listener -->
+        <!-- https://vuejs.org/guide/essentials/event-handling.html#event-modifiers -->
+        <h3>Events and modifiers</h3>
+        <p>clicks: {{ clicks }}</p>
+        <button v-on:click="clicks++">Click me!</button>
+        <!-- @ is shorthand for v-on: -->
+        <button @dblclick.once="clicker(100)" @click="clicker(3)">No, click me!</button>
+
+        <!-- Two-way data binding -->
+        <h3>Two-way data binding</h3>
+
+        <p>V-bind + key event listener</p>
+        <input type="text" v-bind:value="inputText" v-on:keyup.enter="logInput">
+        <p>V-model</p>
+        <input type="text" v-model="inputText">
+
+
+        <!-- Conditionals -->
+        <h3>Conditional Rendering</h3>
+
+        <!-- v-if only renders of the condition is true -->
+        <input type="text" v-model="inputText2">
+        <span v-if="!inputText2">type something!</span>
+        <span v-else-if="inputText2.length < 3">keep going!</span>
+        <span v-else-if="inputText2.length > 10">too long :(</span>
+        <span v-else>good job</span>
+        <br>
+
+        <!-- v-show always renders, with display:none if false -->
+        <input type="text" v-model="inputText2">
+        <span v-show="!inputText2">type something!</span>
+        <span v-show="inputText2.length < 3 && inputText2.length > 0">keep going!</span>
+        <span v-show="inputText2.length > 10">too long :(</span>
+
+
+        <!-- Computed Properties -->
+        <!-- Computed properties are written like methods, but with no arguments -->
+        <!-- and referred to like a data property -->
+        <h3>Computed Properties</h3>
+        <button @click="a++">Team A scores</button>
+        <button @click="b++">Team B scores</button>
+        <p>Team A's score: {{ a }}</p>
+        <p>Team B's score: {{ b }}</p>
+        <p>Team A's season total: {{ scoreA }}</p>
+        <p>Team B's season total: {{ scoreB }}</p>
+
+
+        <!-- Dynamic CSS classes -->
+        <!-- <div id="box" v-bind:class="{boxRed: isRed, transparent: isTransparent}"></div> -->
+        <div id="box" v-bind:class="boxClasses"></div>
+
+        <button @click="isRed = !isRed">Make it red!</button>
+        <button @click="isTransparent = !isTransparent">Make it transparent!</button>
+
+
+        <!-- Loops -->
+        <h3>Loops</h3>
+        <h4>Class Opal students and staff</h4>
+        <ul>
+            <li v-for="(s, indx) in students"><span>{{indx + 1}}. {{ s }}</span></li>
+            <!-- Don't do this! use a computed property instead -->
+            <!-- <li v-for="s in staff" v-if="s.isActive">{{ s.name }}</li> -->
+            <li v-for="s in activeStaff">{{ s.title }}: {{ s.name }}</li>
+
+        </ul>
+
+        <!-- Vue loops over objects by value! for some reason! -->
+        <h4>Seasons</h4>
+        <!-- template tags don't get rendered -->
+        <template v-for="(months, season) in seasons">
+            <!-- use (val, key) to access the keys -->
+            <h5>{{season}}</h5>
+            <ul>
+                <li v-for="m in months">{{ m }}</li>
+            </ul>
+        </template>
+
+    </div>
+
+
+</body>
+
+</html>
