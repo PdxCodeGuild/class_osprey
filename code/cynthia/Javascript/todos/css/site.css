@@ -1,0 +1,38 @@
+
+
+body{
+  
+    background-color: rgb(167, 205, 168);
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+
+}
+#app{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+#task-button,
+h1 {
+    text-align: center;
+    padding: 1em;
+}
+
+#task-list {
+    text-align: center;
+    font-size: 2em;
+  
+}
+
+p {
+    padding-top: 2em;
+    text-align: center;
+    font-size: 2em;
+}
+
+.wrapper {
+    height: auto;
+    width: auto;
+    border: 3px solid black;
+    padding: 4em;
+}
