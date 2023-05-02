@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/site.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Patrick+Hand&family=Permanent+Marker&display=swap');
+    </style>
+
+    <script src="https://kit.fontawesome.com/03c91ce9d4.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
+    <script src="//cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js"></script> 
+
+    <script src="js/site.js" defer></script>
+
+    <title>Ultimate Cool To-Do List</title>
+</head>
+<body>
+    <div id="app">
+        <div id="title">
+            <h2>My To-Do List</h2>
+        </div>
+        <div id="add-items">
+            <label for="todoNew"></label>
+            <input type="text" v-model="todoNew" placeholder="My New Task">
+            <select name="task-category" v-model="taskType">
+                <option value="unselected" disabled>--Task Type--</option>
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="important">Important</option>
+                <option value="other">Other</option>
+            </select>
+            <button @click="addItem"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div id="todo-list">
+            <draggable v-if="todoList.length > 0" animation="200" ghost-class="ghost">
+                <div v-for="i in todoList">
+                    <li v-if="!i.isDone">
+                    
+                        <span class="details">
+                            <label id="completion-toggle" :class="{ doneState: i.isDone }">
+                                <i class="fa-regular fa-circle-check" @click="isComplete(i)" title="Done!"></i>
+                            </label>
+                        </span>
+
+                    <span class="icon" v-if="i.type === 'work'"><i class="fa-solid fa-briefcase"></i></span>
+                    <span class="icon" v-else-if="i.type === 'personal'"><i class="fa-solid fa-user"></i></span>
+                    <span class="icon" v-else-if="i.type === 'important'"><i class="fa-solid fa-star"></i></span>
+                    <span class="icon" v-else="i.type === 'other'"><i class="fa-solid fa-circle-dot"></i></span>
+                    
+                    <span :class="{ taskState: i.isDone }">{{ i.name }} </span>
+                    <span class="details">
+                        
+                        <label id="removal-toggle" :class="{ doneState: !i.isDone }">
+                            <i class="fa-regular fa-circle-xmark" @click="removeItem(i)" title="Remove"></i>
+                        </label>
+                    </span>
+                    </li>
+                </div>
+            </draggable>
+            
+            <p v-if="itemsToDo > 1">Rearrange tasks by dragging!</p>
+            <span v-if="todoList.length < 1">Add some tasks to see them!</span>
+            <h4 v-if="itemsDone > 0">Completed Items:</h4>
+            <div v-for="i in todoList">
+                <li v-if="i.isDone">
+                    <span class="details">
+                        <label id="redo-toggle" :class="{ doneState: i.isDone }">
+                            <i class="fa-regular fa-circle-up" @click="isComplete(i)" title="Re-Do!"></i>
+                        </label>
+                    </span>
+                    <span :class="{ taskState: i.isDone }"> {{ i.name }} </span>
+                    <span class="details">
+                        <label id="removal-toggle" :class="{ doneState: !i.isDone }">
+                            <i class="fa-regular fa-circle-xmark" @click="removeItem(i)" title="Remove"></i>
+                        </label>
+                    </span>
+                </li>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

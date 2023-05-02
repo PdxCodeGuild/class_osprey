@@ -1,0 +1,190 @@
+body{
+    display: flexbox;
+    height: 100vh;
+    background-attachment: fixed;
+    font-family: 'Pathway Extreme', sans-serif;;
+    background-image: linear-gradient(#a3d6d3, white);
+}
+
+header{
+    text-align: center;
+    font-style: italic;
+    font-size: 2em;
+    padding: .2em;
+}
+
+hr {
+    border: 2px solid rgb(12, 11, 11);
+}
+
+#site-intro {
+    line-height: 1.5;
+    width: 400px;
+    padding: .8em;
+
+}
+#flower{
+    padding: 1em;
+    text-align: center;
+}
+#location-box {
+    height:30px;
+    width:200px;
+    font-size: .6em;
+}
+
+#location-info {
+    text-align: center;
+    padding: .5em;
+    font-size: 1.5em;
+}
+
+#submit-button {
+    margin-top: 15px;
+}
+
+#days-button {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-size: 1.5em;
+}
+
+#dates,
+#inseason{
+    padding: 1.2em;
+    text-align: center;
+    font-weight: bold;
+
+}
+#allergen-list{
+    line-height: 1.8;
+    width: 380px;
+    padding: 1em;
+}
+
+.list-header{
+    font-weight: bold;
+}
+
+@media screen and (min-width: 700px) {
+    hr{
+        border: 1.2px solid rgb(12, 11, 11);
+    }
+    header{
+        padding-top: 1.5em;
+        font-size: 3em;
+    }
+    #site-intro {
+        font-size: 1.6em;
+        line-height: 1.5;
+        width: 650px;
+        padding: 2em;
+    }
+    #location-info{
+        font-size: 1.9em;
+    }
+    #location-box {
+    
+        height:35px;
+        width:300px;
+        font-size: .9em;
+    }
+    #select-button{
+        width: 7em;
+    }
+    #submit-button {
+        margin-top: 30px;
+    }
+
+
+    #days-button {
+        padding-bottom: .9em;
+        font-size: 1.9em;
+    }
+  
+    #inseason {
+        font-size: 1.5em;
+    }
+    #dates{
+        font-size: 1.2em;
+    }
+    #allergen-list{
+        padding-left: 2em;
+        padding-bottom: 3em;
+        font-size: 1.3em;
+        line-height: 2em;
+        width: 680px;
+        
+    }
+    #flower{
+        font-size: 3em;
+        text-align: center;
+    }
+    li {
+        padding-left: 3em;
+    }
+    
+}
+
+@media screen and (min-width: 1000px) {
+
+    header{
+        text-align: center;
+        font-style: italic;
+        font-size: 4em;
+        padding: .2em;
+        font-size: 5em;
+    }
+    #site-intro {
+        font-size: 2em;
+        line-height: 1.5;
+        width:auto;
+        padding: 2em;
+    }
+    
+    #location-info{
+        font-size: 3em;
+    }
+    #location-box {
+        height:70px;
+        width:600px;
+        font-size: .7em;
+    }
+    #select-button{
+        width: 15em;
+        margin-top: 30px;
+    }
+
+    #days-button {
+        padding-bottom: 3em;
+        font-size: 3em;
+    }
+
+    #submit-button{
+        font-size: 1em;
+    }
+    #inseason {
+        font-size: 2em;
+    }
+    #dates{
+        font-size: 2em;
+    }
+    #allergen-list{
+        padding-left: 2em;
+        padding-bottom: 3em;
+        font-size: 2em;
+        line-height: 2em;
+        width: 680px;
+    }
+    
+    #flower{
+        font-size: 5em;
+        text-align: center;
+    }
+    li {
+        padding-left: 3em;
+    }
+}
