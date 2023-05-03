@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="{% static 'js/app.js'%}" defer></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+    <title>Students API</title>
+</head>
+<body>
+    {% csrf_token %}
+    <div id="app">
+        <div id="search-area">
+            <label for="search">Search by First Name: </label>
+            <input type="text" v-model="searchPhrase">
+            <button @click="searchStudents(searchPhrase)">SEARCH</button>
+        </div>
+
+        <h2>Student List</h2>
+        
+        <div class="studentCards">
+            <div v-for="s in students">
+                <student-info :student="s" :key="s.id" 
+                @delete-student="deleteStudent" @edit-student="editStudent"></student-info>
+            </div>
+        </div>
+
+        <div id="create-new">
+            MAKE UP A STUDENT. GO AHEAD.
+            <fieldset>
+                <legend><input type="text" placeholder="first name" v-model="newFirstName">
+                        <input type="text" placeholder="last name" v-model="newLastName"></legend>
+                        <div><label for="cohort">Cohort: </label>
+                    <input type="text" v-model="newCohort">
+                    </div>
+                <div><label for="favtopic">Favorite Topic: </label>
+                    <input type="text" v-model="newFavThing">
+                    </div>
+                <div><label for="teacher">Favorite Teacher: </label>
+                    <input type="text" v-model="newFavTeacher">
+                    </div>
+                <div><label for="capstone">Capstone URL: </label>
+                    <input type="text" v-model="newCapstone">
+                    </div>
+                <div>
+                    <button @click="addStudent">ADD</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>
